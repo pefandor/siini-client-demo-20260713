@@ -407,7 +407,7 @@ body.siini-hero-preview-hybrid .siini-hero-preview--hybrid {
 	display: block;
 	filter: contrast(1.02);
 	mix-blend-mode: multiply;
-	object-fit: contain;
+	object-fit: cover;
 	pointer-events: none;
 	position: relative;
 	z-index: 1;
@@ -1363,9 +1363,8 @@ body.siini-hero-preview-hybrid .siini-hero-preview--hybrid {
 }
 
 @media (max-width: 1160px) and (min-width: 901px) {
-	.siini-header-link--buyer,
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"],
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"] {
+	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
 		display: none !important;
 	}
 }
@@ -6870,7 +6869,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		text-decoration: none;
 	}
 
-	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
+	.siini-header-links > a[href="/concierge/"] {
 		background: var(--wp--preset--color--contrast);
 		border: 1px solid var(--wp--preset--color--contrast);
 		color: var(--wp--preset--color--base);
@@ -6879,8 +6878,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		padding: 0.58rem 0.72rem;
 	}
 
-	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:hover,
-	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:focus-visible {
+	.siini-header-links > a[href="/concierge/"]:hover,
+	.siini-header-links > a[href="/concierge/"]:focus-visible {
 		background: var(--wp--preset--color--base);
 		color: var(--wp--preset--color--contrast);
 		text-decoration: none;
@@ -7179,7 +7178,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	min-height: 2.2rem;
 }
 
-.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
+.siini-header-links > a[href="/concierge/"] {
 	background: var(--wp--preset--color--contrast);
 	border: 1px solid var(--wp--preset--color--contrast);
 	color: var(--wp--preset--color--base);
@@ -7194,8 +7193,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	white-space: nowrap;
 }
 
-.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:hover,
-.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:focus-visible {
+.siini-header-links > a[href="/concierge/"]:hover,
+.siini-header-links > a[href="/concierge/"]:focus-visible {
 	background: var(--wp--preset--color--base);
 	color: var(--wp--preset--color--contrast);
 	text-decoration: none;
@@ -7948,8 +7947,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	.siini-header-link--contacts,
 	.siini-header-link--about,
 	.siini-header-link--concierge,
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"],
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"] {
+	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
 		display: inline-flex !important;
 	}
 
@@ -7962,8 +7961,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	.siini-header-link--buyer,
 	.siini-header-link--contacts,
 	.siini-header-link--about,
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"],
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"] {
+	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
 		display: none !important;
 	}
 
@@ -7972,7 +7971,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		max-width: calc(50% - 4.2rem);
 	}
 
-	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
+	.siini-header-links > a[href="/concierge/"] {
 		padding-left: 0.68rem;
 		padding-right: 0.68rem;
 	}
@@ -8198,7 +8197,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	height: 100%;
 	inset: 0 0 0 auto;
 	max-height: none;
-	object-fit: cover;
+	object-fit: contain;
+	object-position: center;
 	opacity: 0.52;
 	top: 0;
 	width: min(56%, 24rem);
@@ -8751,7 +8751,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 }
 
 .siini-feature-hero__media a::before {
-	border: 1px solid rgba(20, 20, 20, 0.12);
+	border: 1px solid rgba(20, 20, 20, 0.06);
 	content: "";
 	inset: clamp(0.72rem, 1.35vw, 1.15rem);
 	pointer-events: none;
@@ -8908,6 +8908,10 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		min-height: clamp(14rem, 58vw, 20rem);
 	}
 
+	.siini-feature-hero__slide .siini-feature-hero__media {
+		min-height: clamp(14rem, 58vw, 20rem);
+	}
+
 	.siini-feature-hero__media img {
 		height: 100%;
 		max-height: none;
@@ -8915,6 +8919,10 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		object-fit: cover;
 		transform: scale(1.01);
 		width: 100%;
+	}
+
+	.siini-feature-hero__slide[data-siini-feature="c-p-company"] .siini-feature-hero__media img {
+		object-position: 58% center;
 	}
 
 	.siini-feature-hero__copy {
@@ -9172,6 +9180,9 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 @media (min-width: 901px) {
 	.siini-site-header__inner {
 		display: block !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		max-width: min(calc(100% - clamp(2.75rem, 6vw, 6rem)), 1440px) !important;
 		min-height: var(--siini-header-height) !important;
 		position: relative;
 	}
@@ -9189,15 +9200,15 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	}
 
 	.siini-site-header__nav {
-		left: 0;
-		max-width: calc(50% - 5.35rem);
+		left: clamp(0.3rem, 1.1vw, 0.85rem);
+		max-width: calc(50% - 4.9rem);
 	}
 
 	.siini-site-header__actions {
 		gap: clamp(0.44rem, 0.68vw, 0.82rem);
 		justify-content: flex-end;
-		max-width: calc(50% - 5.35rem);
-		right: 0;
+		max-width: calc(50% - 4.9rem);
+		right: clamp(0.3rem, 1.1vw, 0.85rem);
 	}
 
 	.siini-site-header__brand {
@@ -9231,7 +9242,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	}
 
 	.siini-header-links > .siini-header-link--concierge,
-	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
+	.siini-header-links > a[href="/concierge/"] {
 		background: var(--wp--preset--color--contrast);
 		border: 1px solid var(--wp--preset--color--contrast);
 		color: var(--wp--preset--color--base);
@@ -9272,20 +9283,20 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 
 	.siini-site-header__nav,
 	.siini-site-header__actions {
-		max-width: calc(50% - 4.85rem);
+		max-width: calc(50% - 4.6rem);
 	}
 }
 
 @media (max-width: 1160px) and (min-width: 901px) {
 	.siini-header-link--buyer,
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"],
-	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/"] {
+	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
 		display: none !important;
 	}
 
 	.siini-site-header__nav,
 	.siini-site-header__actions {
-		max-width: calc(50% - 4.45rem);
+		max-width: calc(50% - 4.4rem);
 	}
 }
 
@@ -9469,18 +9480,19 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 .siini-feature-hero__slide .siini-feature-hero__media img {
 	height: 100%;
 	object-fit: cover;
+	object-position: center;
 	transform: scale(1.01);
 	width: 100%;
 }
 
 .siini-feature-hero__slide[data-siini-feature="c-p-company"] .siini-feature-hero__media img,
 .siini-feature-hero__slide[data-siini-feature="stone-island"] .siini-feature-hero__media img {
-	object-position: center 45%;
+	object-position: center;
 }
 
 .siini-feature-hero__slide[data-siini-feature="nike"] .siini-feature-hero__media img,
 .siini-feature-hero__slide[data-siini-feature="new-balance"] .siini-feature-hero__media img {
-	object-position: center 52%;
+	object-position: center;
 }
 
 .siini-feature-hero__slide .siini-feature-hero__copy {
@@ -9587,10 +9599,9 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	right: clamp(0.75rem, 1.3vw, 1.15rem);
 }
 
-.siini-hero--slideshow .siini-feature-hero__arrow {
-	background: #141414;
-	color: #fff;
-	text-decoration: none;
+.siini-hero--slideshow .siini-feature-hero__arrow,
+.siini-category-grid--simple .siini-category-card::after {
+	display: none !important;
 }
 
 .siini-feature-hero__dots {
@@ -9801,5 +9812,52 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 @media (prefers-reduced-motion: reduce) {
 	.siini-feature-hero__slide {
 		transition: none;
+	}
+}
+
+/* Final homepage category photo reveal override. Keep at EOF to win older category layers. */
+.siini-category-grid--simple .siini-category-card img,
+.siini-category-grid--simple .siini-category-card.siini-category-card--visual:not(.siini-category-card--large) img,
+.siini-category-grid--simple .siini-category-card--visual.siini-category-card--large img {
+	filter: saturate(0.84) contrast(0.94) brightness(1.03) !important;
+	opacity: 0.66 !important;
+	transition: filter 280ms ease, opacity 280ms ease, transform 280ms ease !important;
+}
+
+.siini-category-grid--simple .siini-category-card--secondary img {
+	opacity: 0.58 !important;
+}
+
+.siini-category-grid--simple .siini-category-card::before {
+	background: linear-gradient(90deg, rgba(246, 245, 240, 0.96), rgba(246, 245, 240, 0.7) 46%, rgba(246, 245, 240, 0.08)) !important;
+	transition: background 280ms ease;
+}
+
+.siini-category-grid--simple .siini-category-card:hover img,
+.siini-category-grid--simple .siini-category-card:focus-visible img,
+.siini-category-grid--simple .siini-category-card.siini-category-card--visual:hover img,
+.siini-category-grid--simple .siini-category-card.siini-category-card--visual:focus-visible img,
+.siini-category-grid--simple .siini-category-card.siini-category-card--visual:not(.siini-category-card--large):hover img,
+.siini-category-grid--simple .siini-category-card.siini-category-card--visual:not(.siini-category-card--large):focus-visible img {
+	filter: saturate(1.12) contrast(1.06) brightness(1.03) !important;
+	opacity: 0.9 !important;
+	transform: scale(1.035);
+}
+
+.siini-category-grid--simple .siini-category-card:hover::before,
+.siini-category-grid--simple .siini-category-card:focus-visible::before {
+	background: linear-gradient(90deg, rgba(246, 245, 240, 0.92), rgba(246, 245, 240, 0.56) 44%, rgba(246, 245, 240, 0.02)) !important;
+}
+
+@media (max-width: 900px) {
+	.siini-category-grid--simple .siini-category-card img,
+	.siini-category-grid--simple .siini-category-card.siini-category-card--visual:not(.siini-category-card--large) img,
+	.siini-category-grid--simple .siini-category-card--visual.siini-category-card--large img {
+		filter: saturate(0.98) contrast(1.01) brightness(1.02) !important;
+		opacity: 0.7 !important;
+	}
+
+	.siini-category-grid--simple .siini-category-card--secondary img {
+		opacity: 0.64 !important;
 	}
 }

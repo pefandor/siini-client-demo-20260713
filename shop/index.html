@@ -6,9 +6,9 @@
 <meta name='robots' content='max-image-preview:large' />
 <script id="wc-dependency-detection">(()=>{"use strict";const e=["client/","assets/","build/","vendor/"],n=/\/plugins\/woocommerce\/(client|assets|build|vendor)\//;function t(t,r=""){if(!t)return!1;if(!r)return n.test(t);if(!t.startsWith(r))return!1;const s=t.substring(r.length);for(let n=0;n<e.length;n++)if(s.startsWith(e[n]))return!0;return!1}function r(e){if(!e)return"unknown";const n=e.split("/").pop();if(!n)return"unknown";return n.split("?")[0].split("#")[0]||"unknown"}function s(e,n){return!!e.includes(n+":")||!!e.includes("webpack://")}function i(e){if(!e||"string"!=typeof e)return"v8";const n=e.split("\n");for(let e=0;e<n.length;e++){const t=n[e];if(/@https?:\/\//.test(t))return"spidermonkey";if(/^\s*at\s/.test(t))return"v8"}return"v8"}function c(e=""){if("string"!=typeof e)return null;const n=e.match(/(https?:\/\/[^\s)]+?\.js)(?:[?:#]|$)/);if(n)return n[1];const t=e.match(/\(([^()\s]+\.js)(?:[?:#]|$)/);return t?t[1]:null}function o(e=""){if("string"!=typeof e)return null;const n=e.match(/@(https?:\/\/[^\s]+?\.js)(?:[?:#]|$)/);return n?n[1]:null}function u(e="",n="v8"){return"string"!=typeof e?null:"spidermonkey"===n?o(e):c(e)}function l(e,n){if(!e||"string"!=typeof e)return null;const t=i(e),r=e.split("\n");for(let e="v8"===t?1:0;e<r.length;e++){const i=r[e];if(s(i,n))continue;const c=u(i,t);if(c)return c}return null}function d(e,n,t,s,i=r){if(!e)return{type:"inline",message:`[WooCommerce] An inline or unknown script accessed wc.${n} without proper dependency declaration. This script should declare "${t}" as a dependency.`};const c=s&&"object"==typeof s?s[e]:void 0;return c&&c.handle&&Array.isArray(c.deps)?-1===c.deps.indexOf(t)?{type:"missing-dependency",message:`[WooCommerce] Script "${c.handle}" accessed wc.${n} without declaring "${t}" as a dependency. Add "${t}" to the script's dependencies array.`}:null:{type:"unregistered",message:`[WooCommerce] Unregistered script "${i(e)}" accessed wc.${n}. This script should be registered with wp_enqueue_script() and declare "${t}" as a dependency.`}}function p(e,n,t,r){let s=!1;function i(e,i){if(s)return e[i];if((e=>e in n)(i)){s=!0;try{const s=t();return r(s,i,n[i]),e[i]}finally{s=!1}}return e[i]}return new Proxy(e,{get:i})}!function(){let e=window.wc||{},n={},s=!1;const i={};let c=[];const WC_GLOBAL_EXPORTS={"wcBlocksRegistry":"wc-blocks-registry","wcSettings":"wc-settings","wcBlocksData":"wc-blocks-data-store","data":"wc-store-data","wcBlocksSharedContext":"wc-blocks-shared-context","wcBlocksSharedHocs":"wc-blocks-shared-hocs","priceFormat":"wc-price-format","blocksCheckout":"wc-blocks-checkout","blocksCheckoutEvents":"wc-blocks-checkout-events","blocksComponents":"wc-blocks-components","wcTypes":"wc-types","sanitize":"wc-sanitize"},WC_PLUGIN_URL="/siini-client-demo-20260713/wp-content/plugins/woocommerce/";function o(){const e=document.currentScript?.src;if(e&&"string"==typeof e)return e.replace(/\?.*$/,"");return l((new Error).stack??null,window.location.pathname)}function u(e,t,s){const c=(e||"inline")+":"+t;if(i[c])return;const o=d(e,t,s,n,r);o&&(console.warn(o.message),i[c]=!0)}function a(e,n,r){e?t(e,WC_PLUGIN_URL)||(s?u(e,n,r):c.push({callerUrl:e,wcGlobalKey:n,requiredDependencyHandle:r})):u(e,n,r)}let f=p(e,WC_GLOBAL_EXPORTS,o,a);Object.defineProperty(window,"wc",{get:()=>f,set(n){e=n||{},f=p(e,WC_GLOBAL_EXPORTS,o,a)},configurable:!0,enumerable:!0}),window.wc.wcUpdateDependencyRegistry=function(e){n=e||{},s=!0;for(let e=0;e<c.length;e++){const n=c[e];u(n.callerUrl,n.wcGlobalKey,n.requiredDependencyHandle)}c=[]},console.info("[WooCommerce] Dependency detection enabled. Warnings will be shown for scripts that access wc.* globals without proper dependencies.")}()})();</script>
 <title>Каталог &#8211; SINI</title>
-<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-<link rel="alternate" type="application/rss+xml" title="SINI &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="SINI &raquo; Comments Feed" href="/comments/feed/" />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="SINI &raquo; Feed" href="/siini-client-demo-20260713/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SINI &raquo; Comments Feed" href="/siini-client-demo-20260713/comments/feed/" />
 <link rel="alternate" type="application/rss+xml" title="SINI &raquo; Products Feed" href="/siini-client-demo-20260713/shop/feed/" />
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
@@ -16,55 +16,55 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </style>
 <style id="wp-block-group-inline-css">
 .wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
-/*# sourceURL=/wp-includes/blocks/group/style.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/group/style.min.css */
 </style>
 <style id="wp-block-group-theme-inline-css">
 :where(.wp-block-group.has-background){padding:1.25em 2.375em}
-/*# sourceURL=/wp-includes/blocks/group/theme.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/group/theme.min.css */
 </style>
 <style id="wp-block-site-title-inline-css">
 .wp-block-site-title{box-sizing:border-box}.wp-block-site-title :where(a){color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
-/*# sourceURL=/wp-includes/blocks/site-title/style.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/site-title/style.min.css */
 </style>
 <style id="woocommerce-customer-account-style-inline-css">
 @keyframes wc-skeleton-shimmer{to{transform:translateX(100%)}}.is-layout-constrained>.wp-block-woocommerce-customer-account.alignright{float:none;justify-content:flex-end}.is-layout-constrained>.wp-block-woocommerce-customer-account.alignleft{float:none;justify-content:flex-start}.is-layout-constrained>.wp-block-woocommerce-customer-account.aligncenter{float:none;justify-content:center}:where(.wp-block-woocommerce-customer-account){--wc-customer-account-viewport-gutter:var(--wp--preset--spacing--20,16px);--wc-customer-account-dropdown-padding-inline:var( --wp--preset--spacing--30,16px );--wc-customer-account-dropdown-padding-block:var( --wp--preset--spacing--20,8px );--wc-customer-account-dropdown-surface:var( --wp--preset--color--base,#fff );--wc-customer-account-dropdown-border-color:color-mix(in srgb,currentColor 20%,transparent);--wc-customer-account-dropdown-item-hover-bg:color-mix(in srgb,currentColor 10%,transparent)}:where(.wp-block-woocommerce-customer-account .wc-block-customer-account__link),:where(.wp-block-woocommerce-customer-account.wc-block-customer-account--has-dropdown .wc-block-customer-account__toggle){align-items:center;color:inherit;display:flex;font-family:inherit;font-size:inherit;font-weight:inherit;line-height:1;padding:.5em;text-decoration:none;white-space:nowrap}:where(.wp-block-woocommerce-customer-account .wc-block-customer-account__link):hover,:where(.wp-block-woocommerce-customer-account.wc-block-customer-account--has-dropdown .wc-block-customer-account__toggle):hover{text-decoration:underline}:where(.wp-block-woocommerce-customer-account .wc-block-customer-account__link) .wc-block-customer-account__account-icon,:where(.wp-block-woocommerce-customer-account.wc-block-customer-account--has-dropdown .wc-block-customer-account__toggle) .wc-block-customer-account__account-icon{height:1.5em;width:1.5em}:where(.wp-block-woocommerce-customer-account) .wc-block-customer-account__caret{height:.375em;margin-left:.25em;transition:transform .2s ease;width:.625em}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown{position:relative}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__toggle{background:none;border:none;cursor:pointer;font:inherit}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown.wc-block-customer-account--is-dropdown-open .wc-block-customer-account__caret{transform:rotate(180deg)}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__dropdown{background:var(--wc-customer-account-dropdown-surface);border:1px solid var(--wc-customer-account-dropdown-border-color);border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.12);left:0;max-width:calc(100vw - var(--wc-customer-account-viewport-gutter)*2);min-width:200px;position:absolute;top:100%;z-index:100}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__dropdown[hidden]{display:none}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown.wc-block-customer-account--show-above .wc-block-customer-account__dropdown{bottom:100%;top:auto}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown.wc-block-customer-account--align-right .wc-block-customer-account__dropdown{left:auto;right:0}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__dropdown-divider{background:var(--wc-customer-account-dropdown-border-color);height:1px}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__dropdown-item{color:inherit;display:block;font-size:var(--wp--preset--font-size--small);line-height:1.5;padding:calc(var(--wc-customer-account-dropdown-padding-block)/2) var(--wc-customer-account-dropdown-padding-block);text-decoration:none;white-space:nowrap}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__dropdown-item:focus,:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__dropdown-item:hover{background:var(--wc-customer-account-dropdown-item-hover-bg);text-decoration:none}:where(.wp-block-woocommerce-customer-account).wc-block-customer-account--has-dropdown .wc-block-customer-account__dropdown-item:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
 
-/*# sourceURL=/wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/customer-account-style.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/customer-account-style.css */
 </style>
 <style id="wp-block-paragraph-inline-css">
 .is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
-/*# sourceURL=/wp-includes/blocks/paragraph/style.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/paragraph/style.min.css */
 </style>
-<link rel='stylesheet' id='wc-blocks-style-css' href='../wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-10.9.3' media='all' />
 <style id="wc-blocks-style-inline-css">
 :root { --drawer-width: 480px; --neg-drawer-width: calc(var(--drawer-width) * -1); }
 /*# sourceURL=wc-blocks-style-inline-css */
 </style>
-<link rel='stylesheet' id='wc-blocks-style-mini-cart-contents-css' href='../wp-content/plugins/woocommerce/assets/client/blocks/mini-cart-contents.css' media='all' />
-<link rel='stylesheet' id='wc-blocks-packages-style-css' href='../wp-content/plugins/woocommerce/assets/client/blocks/packages-style.css' media='all' />
-<link rel='stylesheet' id='wc-blocks-style-mini-cart-css' href='../wp-content/plugins/woocommerce/assets/client/blocks/mini-cart.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-mini-cart-contents-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/mini-cart-contents.css?ver=wc-10.9.3' media='all' />
+<link rel='stylesheet' id='wc-blocks-packages-style-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/packages-style.css?ver=wc-10.9.3' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-mini-cart-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/mini-cart.css?ver=wc-10.9.3' media='all' />
 <style id="wp-block-template-part-theme-inline-css">
 :root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
-/*# sourceURL=/wp-includes/blocks/template-part/theme.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/template-part/theme.min.css */
 </style>
-<link rel='stylesheet' id='wc-blocks-style-breadcrumbs-css' href='../wp-content/plugins/woocommerce/assets/client/blocks/breadcrumbs.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-breadcrumbs-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/breadcrumbs.css?ver=wc-10.9.3' media='all' />
 <style id="wp-block-query-title-inline-css">
 .wp-block-query-title{box-sizing:border-box}
-/*# sourceURL=/wp-includes/blocks/query-title/style.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/query-title/style.min.css */
 </style>
-<link rel='stylesheet' id='wc-blocks-style-store-notices-css' href='../wp-content/plugins/woocommerce/assets/client/blocks/store-notices.css' media='all' />
-<link rel='stylesheet' id='wc-blocks-style-product-results-count-css' href='../wp-content/plugins/woocommerce/assets/client/blocks/product-results-count.css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-store-notices-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/store-notices.css?ver=wc-10.9.3' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-product-results-count-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/product-results-count.css?ver=wc-10.9.3' media='all' />
 <style id="wp-block-heading-inline-css">
 h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
-/*# sourceURL=/wp-includes/blocks/heading/style.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/heading/style.min.css */
 </style>
 <style id="wp-block-list-inline-css">
 ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
-/*# sourceURL=/wp-includes/blocks/list/style.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/list/style.min.css */
 </style>
 <style id="wp-block-columns-inline-css">
 .wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
-/*# sourceURL=/wp-includes/blocks/columns/style.min.css */
+/*# sourceURL=/siini-client-demo-20260713/wp-includes/blocks/columns/style.min.css */
 </style>
 <style id="wp-emoji-styles-inline-css">
 
@@ -85,7 +85,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 :root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
 /*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
 </style>
-<link rel='stylesheet' id='woocommerce-blocktheme-css' href='../wp-content/plugins/woocommerce/assets/css/woocommerce-blocktheme.css' media='all' />
+<link rel='stylesheet' id='woocommerce-blocktheme-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/css/woocommerce-blocktheme.css?ver=10.9.3' media='all' />
 <style id="global-styles-inline-css">
 :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--base: #ffffff;--wp--preset--color--surface: #f4f3ef;--wp--preset--color--contrast: #141414;--wp--preset--color--muted: #686f76;--wp--preset--color--accent: #0b7665;--wp--preset--color--accent-warm: #d95a32;--wp--preset--color--border: #d8d6cf;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 0.875rem;--wp--preset--font-size--medium: 1.125rem;--wp--preset--font-size--large: 1.5rem;--wp--preset--font-size--x-large: 2rem;--wp--preset--font-size--base: 1rem;--wp--preset--font-size--display: 3rem;--wp--preset--font-family--system-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;--wp--preset--spacing--20: 0.5rem;--wp--preset--spacing--30: 1rem;--wp--preset--spacing--40: 1.5rem;--wp--preset--spacing--50: 2.5rem;--wp--preset--spacing--60: 4rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--spacing--10: 0.25rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 720px;--wp--style--global--wide-size: 1180px; }:where(body) { margin: 0; }.wp-site-blocks { padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom); }.has-global-padding { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding > .alignfull { margin-right: calc(var(--wp--style--root--padding-right) * -1); margin-left: calc(var(--wp--style--root--padding-left) * -1); }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) { padding-right: 0; padding-left: 0; }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) > .alignfull { margin-left: 0; margin-right: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: var(--wp--preset--spacing--40); margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: var(--wp--preset--spacing--40); }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: var(--wp--preset--spacing--40);margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: var(--wp--preset--spacing--40);margin-block-end: 0;}:root :where(.is-layout-flex){gap: var(--wp--preset--spacing--40);}:root :where(.is-layout-grid){gap: var(--wp--preset--spacing--40);}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{background-color: var(--wp--preset--color--base);color: var(--wp--preset--color--contrast);font-family: var(--wp--preset--font-family--system-sans);font-size: var(--wp--preset--font-size--base);font-weight: 400;letter-spacing: 0;line-height: 1.55;--wp--style--root--padding-top: 0px;--wp--style--root--padding-right: var(--wp--preset--spacing--40);--wp--style--root--padding-bottom: 0px;--wp--style--root--padding-left: var(--wp--preset--spacing--40);}a:where(:not(.wp-element-button)){color: var(--wp--preset--color--accent);text-decoration: none;}:root :where(.wp-element-button, .wp-block-button__link){background-color: var(--wp--preset--color--contrast);border-radius: 6px;border-width: 0;color: var(--wp--preset--color--base);font-family: inherit;font-size: inherit;font-style: inherit;font-weight: 700;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-base-color{color: var(--wp--preset--color--base) !important;}.has-surface-color{color: var(--wp--preset--color--surface) !important;}.has-contrast-color{color: var(--wp--preset--color--contrast) !important;}.has-muted-color{color: var(--wp--preset--color--muted) !important;}.has-accent-color{color: var(--wp--preset--color--accent) !important;}.has-accent-warm-color{color: var(--wp--preset--color--accent-warm) !important;}.has-border-color{color: var(--wp--preset--color--border) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-base-background-color{background-color: var(--wp--preset--color--base) !important;}.has-surface-background-color{background-color: var(--wp--preset--color--surface) !important;}.has-contrast-background-color{background-color: var(--wp--preset--color--contrast) !important;}.has-muted-background-color{background-color: var(--wp--preset--color--muted) !important;}.has-accent-background-color{background-color: var(--wp--preset--color--accent) !important;}.has-accent-warm-background-color{background-color: var(--wp--preset--color--accent-warm) !important;}.has-border-background-color{background-color: var(--wp--preset--color--border) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-base-border-color{border-color: var(--wp--preset--color--base) !important;}.has-surface-border-color{border-color: var(--wp--preset--color--surface) !important;}.has-contrast-border-color{border-color: var(--wp--preset--color--contrast) !important;}.has-muted-border-color{border-color: var(--wp--preset--color--muted) !important;}.has-accent-border-color{border-color: var(--wp--preset--color--accent) !important;}.has-accent-warm-border-color{border-color: var(--wp--preset--color--accent-warm) !important;}.has-border-border-color{border-color: var(--wp--preset--color--border) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-base-font-size{font-size: var(--wp--preset--font-size--base) !important;}.has-display-font-size{font-size: var(--wp--preset--font-size--display) !important;}.has-system-sans-font-family{font-family: var(--wp--preset--font-family--system-sans) !important;}
 :root :where(.wp-block-woocommerce-product-price .wc-block-components-product-price){font-weight: 700;}
@@ -100,48 +100,58 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 .skip-link.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;word-break:normal!important}.skip-link.screen-reader-text:focus{background-color:#eee;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 /*# sourceURL=/wp-includes/css/wp-block-template-skip-link.min.css */
 </style>
-<link rel='stylesheet' id='woocommerce-layout-css' href='../wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css' media='all' />
-<link rel='stylesheet' id='woocommerce-smallscreen-css' href='../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css' media='only screen and (max-width: 768px)' />
-<link rel='stylesheet' id='woocommerce-general-css' href='../wp-content/plugins/woocommerce/assets/css/woocommerce.css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=10.9.3' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=10.9.3' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=10.9.3' media='all' />
 <style id="woocommerce-inline-inline-css">
 .woocommerce form .form-row .required { visibility: visible; }
 /*# sourceURL=woocommerce-inline-inline-css */
 </style>
 <link rel='stylesheet' id='siini-abril-fatface-css' href='https://fonts.googleapis.com/css2?family=Abril+Fatface&#038;display=swap' media='all' />
-<link rel='stylesheet' id='siini-storefront-css' href='../wp-content/themes/siini-storefront/assets/css/main.css' media='all' />
-<script id="jquery-core-js" src="../wp-includes/js/jquery/jquery.min.js"></script>
-<script id="jquery-migrate-js" src="../wp-includes/js/jquery/jquery-migrate.min.js"></script>
-<script data-wp-strategy="defer" defer id="wc-jquery-blockui-js" src="../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js"></script>
+<link rel='stylesheet' id='siini-storefront-css' href='/siini-client-demo-20260713/wp-content/themes/siini-storefront/assets/css/main.css?ver=0.5.52' media='all' />
+<script id="jquery-core-js" src="/siini-client-demo-20260713/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="/siini-client-demo-20260713/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script data-wp-strategy="defer" defer id="wc-jquery-blockui-js" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.10.9.3"></script>
 <script id="wc-add-to-cart-js-extra">
-var wc_add_to_cart_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_view_cart":"\u041f\u0435\u0440\u0435\u0439\u0442\u0438 \u0432 \u043a\u043e\u0440\u0437\u0438\u043d\u0443","cart_url":"/siini-client-demo-20260713/shop/","is_cart":"","cart_redirect_after_add":"no"};
+var wc_add_to_cart_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_view_cart":"\u041f\u0435\u0440\u0435\u0439\u0442\u0438 \u0432 \u043a\u043e\u0440\u0437\u0438\u043d\u0443","cart_url":"/siini-client-demo-20260713/cart/","is_cart":"","cart_redirect_after_add":"no"};
 //# sourceURL=wc-add-to-cart-js-extra
 </script>
-<script data-wp-strategy="defer" defer id="wc-add-to-cart-js" src="../wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js"></script>
-<script data-wp-strategy="defer" defer id="wc-js-cookie-js" src="../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js"></script>
+<script data-wp-strategy="defer" defer id="wc-add-to-cart-js" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=10.9.3"></script>
+<script data-wp-strategy="defer" defer id="wc-js-cookie-js" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.10.9.3"></script>
 <script id="woocommerce-js-extra">
 var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_password_show":"Show password","i18n_password_hide":"Hide password"};
 //# sourceURL=woocommerce-js-extra
 </script>
-<script data-wp-strategy="defer" defer id="woocommerce-js" src="../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js"></script>
-<link rel="https://api.w.org/" href="/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<script data-wp-strategy="defer" defer id="woocommerce-js" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=10.9.3"></script>
+
 <meta name="generator" content="WordPress 7.0" />
 <meta name="generator" content="WooCommerce 10.9.3" />
 <script id="wp-importmap" type="importmap">
-{"imports":{"@wordpress/interactivity":"/siini-client-demo-20260713/wp-includes/js/dist/script-modules/interactivity/index.min.js","@woocommerce/stores/store-notices":"/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/store-notices.js","@woocommerce/stores/woocommerce/cart":"/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/cart.js","@wordpress/interactivity-router":"/siini-client-demo-20260713/wp-includes/js/dist/script-modules/interactivity-router/index.min.js","@woocommerce/stores/woocommerce/products":"/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/products.js","@wordpress/a11y":"/siini-client-demo-20260713/wp-includes/js/dist/script-modules/a11y/index.min.js"}}
+{"imports":{"@wordpress/interactivity":"/siini-client-demo-20260713/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1","@woocommerce/stores/store-notices":"/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/store-notices.js?ver=c1eae8d5e518e3fbcf40","@woocommerce/stores/woocommerce/cart":"/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/cart.js?ver=6ef41e00d2939992b95c","@wordpress/interactivity-router":"/siini-client-demo-20260713/wp-includes/js/dist/script-modules/interactivity-router/index.min.js?ver=71aa17bac91628a0f874","@woocommerce/stores/woocommerce/products":"/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/products.js?ver=d2328963c7e9ed84708e","@wordpress/a11y":"/siini-client-demo-20260713/wp-includes/js/dist/script-modules/a11y/index.min.js?ver=1c371cb517a97cdbcb9f"}}
 </script>
-<script id="woocommerce/customer-account-js-module" src="../wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/customer-account.js" type="module"></script>
-<script id="woocommerce/mini-cart-js-module" src="../wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/mini-cart.js" type="module"></script>
-<script id="woocommerce/catalog-sorting-js-module" src="../wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/catalog-sorting.js" type="module"></script>
-<link rel="modulepreload" href="/siini-client-demo-20260713/wp-includes/js/dist/script-modules/interactivity/index.min.js" id="@wordpress/interactivity-js-modulepreload" data-wp-fetchpriority="low">
-<link rel="modulepreload" href="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/store-notices.js" id="@woocommerce/stores/store-notices-js-modulepreload">
-<link rel="modulepreload" href="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/products.js" id="@woocommerce/stores/woocommerce/products-js-modulepreload">
-<link rel="modulepreload" href="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/cart.js" id="@woocommerce/stores/woocommerce/cart-js-modulepreload">
+<script id="woocommerce/customer-account-js-module" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/customer-account.js?ver=4d4c517c6dc2b50c4b86" type="module"></script>
+<script id="woocommerce/mini-cart-js-module" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/mini-cart.js?ver=2960fb67445d34b8543a" type="module"></script>
+<script id="woocommerce/catalog-sorting-js-module" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/woocommerce/catalog-sorting.js?ver=4834bb2b899b3dade49a" type="module"></script>
+<link rel="modulepreload" href="/siini-client-demo-20260713/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1" id="@wordpress/interactivity-js-modulepreload" data-wp-fetchpriority="low">
+<link rel="modulepreload" href="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/store-notices.js?ver=c1eae8d5e518e3fbcf40" id="@woocommerce/stores/store-notices-js-modulepreload">
+<link rel="modulepreload" href="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/products.js?ver=d2328963c7e9ed84708e" id="@woocommerce/stores/woocommerce/products-js-modulepreload">
+<link rel="modulepreload" href="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/cart.js?ver=6ef41e00d2939992b95c" id="@woocommerce/stores/woocommerce/cart-js-modulepreload">
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	</head>
+	<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var brand = params.get('siini_brand');
+  var map = {'nike':'nike','c-p-company':'c-p-company','stone-island':'stone-island','new-balance':'new-balance'};
+  if (brand && map[brand]) {
+    window.location.replace('/siini-client-demo-20260713/brand/' + map[brand] + '/');
+  }
+})();
+</script>
+</head>
 
 <body class="archive post-type-archive post-type-archive-product wp-embed-responsive wp-theme-siini-storefront theme-siini-storefront siini-has-catalog-top woocommerce-shop woocommerce woocommerce-page woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-no-js">
 
-<a class="skip-link screen-reader-text" id="wp-skip-link" href="index.html#wp--skip-link--target">Skip to content</a><div class="wp-site-blocks"><div class="wp-block-template-part">
+<a class="skip-link screen-reader-text" id="wp-skip-link" href="#wp--skip-link--target">Skip to content</a><div class="wp-site-blocks"><div class="wp-block-template-part">
 <div class="siini-top-ticker" aria-label="Анонс новой коллекции">
 	<div class="siini-top-ticker__track" aria-hidden="true">
 		<span>НОВАЯ КОЛЛЕКЦИЯ C.P. COMPANY SS25 В SINI</span>
@@ -160,24 +170,24 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 		<div class="wp-block-group siini-site-header__nav is-layout-flex wp-container-core-group-is-layout-6f957b52 wp-block-group-is-layout-flex">
 				
 				<nav class="siini-mega-nav" aria-label="Основная навигация">
-					<a class="siini-mega-nav__link" href="../product-category/new-arrivals/index.html">Новинки</a>
+					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/product-category/new-arrivals/">Новинки</a>
 					<div class="siini-mega-nav__item">
 						<a class="siini-mega-nav__trigger" href="/siini-client-demo-20260713/brands/" aria-haspopup="true" aria-expanded="false">Бренды</a>
 						<div class="siini-mega-panel siini-mega-panel--brands" aria-label="Бренды">
 							<div class="siini-mega-panel__clip">
 								<div class="siini-mega-panel__inner siini-mega-panel__inner--brands">
-									<a href="/siini-client-demo-20260713/brand/c-p-company/">C.P. Company</a>
-									<a href="/siini-client-demo-20260713/brand/stone-island/">Stone Island</a>
-									<a href="/siini-client-demo-20260713/brand/nike/">Nike</a>
-									<a href="/siini-client-demo-20260713/brand/new-balance/">New Balance</a>
+									<a href="/siini-client-demo-20260713/shop/?siini_brand=c-p-company">C.P. Company</a>
+									<a href="/siini-client-demo-20260713/shop/?siini_brand=stone-island">Stone Island</a>
+									<a href="/siini-client-demo-20260713/shop/?siini_brand=nike">Nike</a>
+									<a href="/siini-client-demo-20260713/shop/?siini_brand=new-balance">New Balance</a>
 									<a href="/siini-client-demo-20260713/brands/">Все бренды</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<a class="siini-mega-nav__link" href="../product-category/sale/index.html">Sale</a>
+					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/product-category/sale/">Sale</a>
 					<div class="siini-mega-nav__item">
-						<a class="siini-mega-nav__trigger" href="/siini-client-demo-20260713/shop/" aria-haspopup="true" aria-expanded="false">Одежда</a>
+						<a class="siini-mega-nav__trigger" href="/siini-client-demo-20260713/shop/?siini_cat=outerwear" aria-haspopup="true" aria-expanded="false">Одежда</a>
 						<div class="siini-mega-panel siini-mega-panel--catalog" aria-label="Разделы каталога">
 							<div class="siini-mega-panel__clip">
 								<div class="siini-mega-panel__inner">
@@ -193,22 +203,22 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 									<a href="/siini-client-demo-20260713/product-category/pants-shorts/">Брюки и шорты</a>
 									<a href="/siini-client-demo-20260713/product-category/jeans/">Джинсы</a>
 									<a href="/siini-client-demo-20260713/product-category/sneakers/">Кроссовки</a>
-									<a href="index.html">Все товары</a>
+									<a href="/siini-client-demo-20260713/shop/">Все товары</a>
 								</div>
 								<div class="siini-mega-panel__group">
 									<span>Еще</span>
-									<a href="../product-category/new-arrivals/index.html">Новинки</a>
+									<a href="/siini-client-demo-20260713/product-category/new-arrivals/">Новинки</a>
 									<a href="/siini-client-demo-20260713/product-category/bags/">Сумки</a>
 									<a href="/siini-client-demo-20260713/product-category/accessories/">Аксессуары</a>
-									<a href="../product-category/sale/index.html">Распродажа</a>
+									<a href="/siini-client-demo-20260713/product-category/sale/">Распродажа</a>
 								</div>
 							</div>
 							</div>
 						</div>
 					</div>
-					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/shop/">Обувь</a>
-					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/shop/">Сумки</a>
-					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/shop/">Аксессуары</a>
+					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/shop/?siini_cat=sneakers">Обувь</a>
+					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/shop/?siini_cat=bags">Сумки</a>
+					<a class="siini-mega-nav__link" href="/siini-client-demo-20260713/shop/?siini_cat=accessories">Аксессуары</a>
 				</nav>
 				
 			</div>
@@ -216,7 +226,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 
 		
 		<div class="wp-block-group siini-site-header__brand is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-a2471f28 wp-block-group-is-layout-flex">
-			<p class="wp-block-site-title has-medium-font-size"><a href="../index.html" target="_self" rel="home">SINI</a></p>
+			<p class="wp-block-site-title has-medium-font-size"><a href="/siini-client-demo-20260713" target="_self" rel="home">SINI</a></p>
 		</div>
 		
 
@@ -224,16 +234,16 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 		<div class="wp-block-group siini-site-header__actions is-content-justification-right is-layout-flex wp-container-core-group-is-layout-3aae39b2 wp-block-group-is-layout-flex">
 				
 				<nav class="siini-header-links" aria-label="Навигация для покупателей">
-					<a class="siini-header-link--buyer" href="/faq/">Для покупателя</a>
-					<a href="index.html" class="siini-header-icon-link siini-header-search-link" aria-label="Поиск"><span aria-hidden="true"></span></a>
-					<a class="siini-header-link--contacts" href="/contacts/">Контакты</a>
-					<a class="siini-header-link--about" href="/about/">О нас</a>
-					<a class="siini-header-link--concierge" href="../concierge/index.html">Консьерж сервис</a>
+					<a class="siini-header-link--buyer" href="/siini-client-demo-20260713/faq/">Для покупателя</a>
+					<a href="/siini-client-demo-20260713/shop/" class="siini-header-icon-link siini-header-search-link" aria-label="Поиск"><span aria-hidden="true"></span></a>
+					<a class="siini-header-link--contacts" href="/siini-client-demo-20260713/contacts/">Контакты</a>
+					<a class="siini-header-link--about" href="/siini-client-demo-20260713/about/">О нас</a>
+					<a class="siini-header-link--concierge" href="/siini-client-demo-20260713/concierge/">Консьерж сервис</a>
 				</nav>
 				
 
 				
-				<a href="index.html" class="siini-header-icon-link siini-header-search-link siini-header-search-link--mobile" aria-label="Поиск"><span aria-hidden="true"></span></a>
+				<a href="/siini-client-demo-20260713/shop/" class="siini-header-icon-link siini-header-search-link siini-header-search-link--mobile" aria-label="Поиск"><span aria-hidden="true"></span></a>
 				
 
 						<div data-block-name="woocommerce/customer-account" data-display-style="icon_only" data-icon-class="wc-block-customer-account__account-icon" data-icon-style="line"
@@ -242,7 +252,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 		>	
 			<a
 				class="wc-block-customer-account__link"
-				href="/my-account/"
+				href="/siini-client-demo-20260713/my-account/"
 				 aria-label="Login"			>
 				<svg class="wc-block-customer-account__account-icon" viewbox="1 1 29 29" xmlns="http://www.w3.org/2000/svg">
 				<circle cx="16" cy="10.5" r="3.5" stroke="currentColor" stroke-width="2" fill="none" />
@@ -284,18 +294,18 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 			<details class="siini-mobile-menu">
 				<summary aria-label="Открыть меню"><span>Меню</span></summary>
 				<nav aria-label="Мобильная навигация">
-					<a href="../product-category/new-arrivals/index.html">Новинки</a>
-					<a href="index.html">Каталог</a>
+					<a href="/siini-client-demo-20260713/product-category/new-arrivals/">Новинки</a>
+					<a href="/siini-client-demo-20260713/shop/">Каталог</a>
 					<a href="/siini-client-demo-20260713/brands/">Бренды</a>
-						<a href="../product-category/sale/index.html">Sale</a>
-						<a href="/siini-client-demo-20260713/shop/">Одежда</a>
-						<a href="/siini-client-demo-20260713/shop/">Обувь</a>
-						<a href="/siini-client-demo-20260713/shop/">Сумки</a>
-						<a href="/siini-client-demo-20260713/shop/">Аксессуары</a>
-						<a href="/faq/">Для покупателя</a>
-						<a href="../concierge/index.html">Консьерж сервис</a>
-						<a href="/about/">О нас</a>
-						<a href="/contacts/">Контакты</a>
+						<a href="/siini-client-demo-20260713/product-category/sale/">Sale</a>
+						<a href="/siini-client-demo-20260713/shop/?siini_cat=outerwear">Одежда</a>
+						<a href="/siini-client-demo-20260713/shop/?siini_cat=sneakers">Обувь</a>
+						<a href="/siini-client-demo-20260713/shop/?siini_cat=bags">Сумки</a>
+						<a href="/siini-client-demo-20260713/shop/?siini_cat=accessories">Аксессуары</a>
+						<a href="/siini-client-demo-20260713/faq/">Для покупателя</a>
+						<a href="/siini-client-demo-20260713/concierge/">Консьерж сервис</a>
+						<a href="/siini-client-demo-20260713/about/">О нас</a>
+						<a href="/siini-client-demo-20260713/contacts/">Контакты</a>
 					</nav>
 				</details>
 			
@@ -309,7 +319,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 
 
 <main id="wp--skip-link--target" class="wp-block-group siini-site-main has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
-	<div data-block-name="woocommerce/breadcrumbs" class="woocommerce wp-block-breadcrumbs wc-block-breadcrumbs alignwide has-font-size has-small-font-size " style="  "><nav class="woocommerce-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Главная</a>&nbsp;&#47;&nbsp;Каталог</nav></div>
+	<div data-block-name="woocommerce/breadcrumbs" class="woocommerce wp-block-breadcrumbs wc-block-breadcrumbs alignwide has-font-size has-small-font-size " style="  "><nav class="woocommerce-breadcrumb" aria-label="Breadcrumb"><a href="/siini-client-demo-20260713">Главная</a>&nbsp;&#47;&nbsp;Каталог</nav></div>
 
 	<h1 class="alignwide wp-block-query-title">Каталог</h1>
 		
@@ -322,8 +332,8 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 			<section class="siini-catalog-filters" aria-label="Фильтры каталога">
 <details data-siini-catalog-filters-details>
 <summary><span>Фильтры</span><small>Размер, бренд, цена</small></summary>
-<form class="siini-catalog-filters__form" action="index.html" method="get"><label class="siini-catalog-filters__field"><span>Категория</span><select name="siini_cat"><option value="">Все категории</option><option value="pants-shorts">Брюки и шорты</option><option value="outerwear">Верхняя одежда</option><option value="sneakers">Кроссовки</option><option value="new-arrivals">Новинки</option><option value="tshirts">Футболки</option><option value="hoodies-sweatshirts">Худи и свитшоты</option></select></label><label class="siini-catalog-filters__field"><span>Бренд</span><select name="siini_brand"><option value="">Любой бренд</option><option value="c-p-company">C.P. Company</option><option value="new-balance">New Balance</option><option value="nike">Nike</option><option value="stone-island">Stone Island</option></select></label><label class="siini-catalog-filters__field siini-catalog-filters__field--price"><span>Цена от</span><input name="min_price" inputmode="numeric" pattern="[0-9]*" value="" placeholder="0"></label><label class="siini-catalog-filters__field siini-catalog-filters__field--price"><span>Цена до</span><input name="max_price" inputmode="numeric" pattern="[0-9]*" value="" placeholder="50000"></label></p>
-<div class="siini-catalog-filters__actions"><button type="submit">Показать товары</button><a href="index.html">Сбросить</a></div>
+<form class="siini-catalog-filters__form" action="/siini-client-demo-20260713/shop/" method="get"><label class="siini-catalog-filters__field"><span>Категория</span><select name="siini_cat"><option value="">Все категории</option><option value="pants-shorts">Брюки и шорты</option><option value="outerwear">Верхняя одежда</option><option value="sneakers">Кроссовки</option><option value="new-arrivals">Новинки</option><option value="tshirts">Футболки</option><option value="hoodies-sweatshirts">Худи и свитшоты</option></select></label><label class="siini-catalog-filters__field"><span>Бренд</span><select name="siini_brand"><option value="">Любой бренд</option><option value="c-p-company">C.P. Company</option><option value="new-balance">New Balance</option><option value="nike">Nike</option><option value="stone-island">Stone Island</option></select></label><label class="siini-catalog-filters__field siini-catalog-filters__field--price"><span>Цена от</span><input name="min_price" inputmode="numeric" pattern="[0-9]*" value="" placeholder="0"></label><label class="siini-catalog-filters__field siini-catalog-filters__field--price"><span>Цена до</span><input name="max_price" inputmode="numeric" pattern="[0-9]*" value="" placeholder="50000"></label></p>
+<div class="siini-catalog-filters__actions"><button type="submit">Показать товары</button><a href="/siini-client-demo-20260713/shop/">Сбросить</a></div>
 <div class="siini-catalog-filters__field siini-catalog-filters__field--sizes"><span>Размер</span></p>
 <div class="siini-catalog-size-filter" role="radiogroup" aria-label="Размер"><label class="siini-size-chip is-active"><input type="radio" name="siini_size" value="" checked='checked'><span>Любой</span></label></p>
 <fieldset class="siini-catalog-size-group">
@@ -347,14 +357,14 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 		<section class="wp-block-group siini-catalog-layout__content is-layout-flow wp-block-group-is-layout-flow">
 			<section class="siini-brand-catalog-banner siini-brand-catalog-banner--shop" aria-label="Каталог SINI">
 <div class="siini-brand-catalog-banner__copy">
-<nav class="siini-brand-catalog-banner__crumbs" aria-label="Хлебные крошки"><a href="../index.html">Главная</a><span>/</span><a href="index.html">Каталог</a></nav>
+<nav class="siini-brand-catalog-banner__crumbs" aria-label="Хлебные крошки"><a href="/siini-client-demo-20260713/">Главная</a><span>/</span><a href="/siini-client-demo-20260713/shop/">Каталог</a></nav>
 <p>SINI store</p>
 <h1 class="siini-brand-catalog-banner__logo siini-brand-catalog-banner__logo--shop"><span>Каталог SINI</span></h1>
 <p>Оригинальная одежда, обувь и аксессуары в наличии и под заказ. Выбирайте раздел, бренд или размер — дальше поможем с деталями.</p>
 <div class="siini-brand-catalog-banner__chips"><span>Оригиналы</span><span>В наличии</span><span>Под заказ</span><span>Редкие размеры</span></div>
-<div class="siini-brand-catalog-banner__actions"><a href="index.html#siini-products">Смотреть товары</a><span>11 товаров в каталоге</span></div>
+<div class="siini-brand-catalog-banner__actions"><a href="#siini-products">Смотреть товары</a><span>11 товаров в каталоге</span></div>
 </div>
-<figure class="siini-brand-catalog-banner__media"><img src="../wp-content/themes/siini-storefront/assets/images/siini-client/category-clothing.jpg" alt="Каталог SINI в SINI"></figure>
+<figure class="siini-brand-catalog-banner__media"><img src="/siini-client-demo-20260713/wp-content/themes/siini-storefront/assets/images/siini-client/category-clothing.jpg" alt="Каталог SINI в SINI"></figure>
 </section>
 
 
@@ -391,7 +401,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-new-balance-2002r-cloud-grey/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-04-new-balance-2002r-300x300.jpg" class="siini-home-product-card__image" alt="Кроссовки New Balance 2002R Cloud Grey" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-04-new-balance-2002r-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Кроссовки New Balance 2002R Cloud Grey" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-new-balance-2002r-cloud-grey/?attribute_pa_size=42-eu-8-5-us-26-5-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки New Balance 2002R Cloud Grey, размер 42 EU / 8.5 US / 26.5 CM">42</a><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-new-balance-2002r-cloud-grey/?attribute_pa_size=43-eu-9-5-us-27-5-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки New Balance 2002R Cloud Grey, размер 43 EU / 9.5 US / 27.5 CM">43</a></div>
 </p></div>
@@ -408,7 +418,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-black-metallic-grey/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-03-nike-dn-black-grey-300x300.jpg" class="siini-home-product-card__image" alt="Кроссовки Nike Air Max DN Black Metallic Grey" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-03-nike-dn-black-grey-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Кроссовки Nike Air Max DN Black Metallic Grey" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-black-metallic-grey/?attribute_pa_size=42-eu-8-5-us-26-5-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки Nike Air Max DN Black Metallic Grey, размер 42 EU / 8.5 US / 26.5 CM">42</a><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-black-metallic-grey/?attribute_pa_size=43-eu-9-5-us-27-5-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки Nike Air Max DN Black Metallic Grey, размер 43 EU / 9.5 US / 27.5 CM">43</a></div>
 </p></div>
@@ -425,7 +435,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-black-red-crimson/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-01-nike-dn-black-red-300x300.jpg" class="siini-home-product-card__image" alt="Кроссовки Nike Air Max DN Black Red Crimson" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-01-nike-dn-black-red-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Кроссовки Nike Air Max DN Black Red Crimson" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-black-red-crimson/?attribute_pa_size=42-eu-8-5-us-26-5-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки Nike Air Max DN Black Red Crimson, размер 42 EU / 8.5 US / 26.5 CM">42</a><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-black-red-crimson/?attribute_pa_size=43-eu-9-5-us-27-5-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки Nike Air Max DN Black Red Crimson, размер 43 EU / 9.5 US / 27.5 CM">43</a></div>
 </p></div>
@@ -442,7 +452,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-light-bone-taupe/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-02-nike-dn-light-bone-300x300.jpg" class="siini-home-product-card__image" alt="Кроссовки Nike Air Max DN Light Bone Taupe" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-02-nike-dn-light-bone-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Кроссовки Nike Air Max DN Light Bone Taupe" loading="eager" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-light-bone-taupe/?attribute_pa_size=43-eu-9-5-us-27-5-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки Nike Air Max DN Light Bone Taupe, размер 43 EU / 9.5 US / 27.5 CM">43</a><a href="/siini-client-demo-20260713/product/%d0%ba%d1%80%d0%be%d1%81%d1%81%d0%be%d0%b2%d0%ba%d0%b8-nike-air-max-dn-light-bone-taupe/?attribute_pa_size=44-eu-10-us-28-cm#size" class="siini-home-product-card__size" aria-label="Открыть Кроссовки Nike Air Max DN Light Bone Taupe, размер 44 EU / 10 US / 28 CM">44</a></div>
 </p></div>
@@ -459,7 +469,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d0%ba%d1%83%d1%80%d1%82%d0%ba%d0%b0-c-p-company-flatt-nylon-goggle-jacket-black/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-05-cp-jacket-300x300.jpg" class="siini-home-product-card__image" alt="Куртка C.P. Company Flatt Nylon Goggle Jacket Black" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-05-cp-jacket-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Куртка C.P. Company Flatt Nylon Goggle Jacket Black" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d0%ba%d1%83%d1%80%d1%82%d0%ba%d0%b0-c-p-company-flatt-nylon-goggle-jacket-black/?attribute_pa_size=m#size" class="siini-home-product-card__size" aria-label="Открыть Куртка C.P. Company Flatt Nylon Goggle Jacket Black, размер M">M</a><a href="/siini-client-demo-20260713/product/%d0%ba%d1%83%d1%80%d1%82%d0%ba%d0%b0-c-p-company-flatt-nylon-goggle-jacket-black/?attribute_pa_size=l#size" class="siini-home-product-card__size" aria-label="Открыть Куртка C.P. Company Flatt Nylon Goggle Jacket Black, размер L">L</a><a href="/siini-client-demo-20260713/product/%d0%ba%d1%83%d1%80%d1%82%d0%ba%d0%b0-c-p-company-flatt-nylon-goggle-jacket-black/?attribute_pa_size=xl#size" class="siini-home-product-card__size" aria-label="Открыть Куртка C.P. Company Flatt Nylon Goggle Jacket Black, размер XL">XL</a></div>
 </p></div>
@@ -476,7 +486,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d1%81%d0%b2%d0%b8%d1%82%d1%88%d0%be%d1%82-stone-island-cotton-waffle-regular/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-10-stone-waffle-300x300.jpg" class="siini-home-product-card__image" alt="Свитшот Stone Island Cotton Waffle Regular" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-10-stone-waffle-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Свитшот Stone Island Cotton Waffle Regular" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d1%81%d0%b2%d0%b8%d1%82%d1%88%d0%be%d1%82-stone-island-cotton-waffle-regular/?attribute_pa_size=l#size" class="siini-home-product-card__size" aria-label="Открыть Свитшот Stone Island Cotton Waffle Regular, размер L">L</a><a href="/siini-client-demo-20260713/product/%d1%81%d0%b2%d0%b8%d1%82%d1%88%d0%be%d1%82-stone-island-cotton-waffle-regular/?attribute_pa_size=xl#size" class="siini-home-product-card__size" aria-label="Открыть Свитшот Stone Island Cotton Waffle Regular, размер XL">XL</a></div>
 </p></div>
@@ -493,7 +503,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d1%81%d0%b2%d0%b8%d1%82%d1%88%d0%be%d1%82-stone-island-ghost-pieces-black/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-11-ghost-sweatshirt-300x300.jpg" class="siini-home-product-card__image" alt="Свитшот Stone Island Ghost Pieces Black" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-11-ghost-sweatshirt-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Свитшот Stone Island Ghost Pieces Black" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d1%81%d0%b2%d0%b8%d1%82%d1%88%d0%be%d1%82-stone-island-ghost-pieces-black/?attribute_pa_size=xl-l-xl#size" class="siini-home-product-card__size" aria-label="Открыть Свитшот Stone Island Ghost Pieces Black, размер XL (L-XL)">XL</a></div>
 </p></div>
@@ -510,7 +520,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d1%84%d1%83%d1%82%d0%b1%d0%be%d0%bb%d0%ba%d0%b0-c-p-company-logo-jersey-green/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-09-cp-green-tshirt-300x300.jpg" class="siini-home-product-card__image" alt="Футболка C.P. Company Logo Jersey Green" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-09-cp-green-tshirt-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Футболка C.P. Company Logo Jersey Green" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d1%84%d1%83%d1%82%d0%b1%d0%be%d0%bb%d0%ba%d0%b0-c-p-company-logo-jersey-green/?attribute_pa_size=xxxl#size" class="siini-home-product-card__size" aria-label="Открыть Футболка C.P. Company Logo Jersey Green, размер XXXL">XXXL</a></div>
 </p></div>
@@ -527,7 +537,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d1%85%d1%83%d0%b4%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%bd%d0%b8%d0%b8-c-p-company-beige-corduroy-350-full-zip-hooded-sweatshirt/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-07-cp-beige-hoodie-300x300.jpg" class="siini-home-product-card__image" alt="Худи на молнии C.P. Company Beige Corduroy 350 Full Zip Hooded Sweatshirt" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-07-cp-beige-hoodie-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Худи на молнии C.P. Company Beige Corduroy 350 Full Zip Hooded Sweatshirt" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d1%85%d1%83%d0%b4%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%bd%d0%b8%d0%b8-c-p-company-beige-corduroy-350-full-zip-hooded-sweatshirt/?attribute_pa_size=l#size" class="siini-home-product-card__size" aria-label="Открыть Худи на молнии C.P. Company Beige Corduroy 350 Full Zip Hooded Sweatshirt, размер L">L</a><a href="/siini-client-demo-20260713/product/%d1%85%d1%83%d0%b4%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%bd%d0%b8%d0%b8-c-p-company-beige-corduroy-350-full-zip-hooded-sweatshirt/?attribute_pa_size=xl#size" class="siini-home-product-card__size" aria-label="Открыть Худи на молнии C.P. Company Beige Corduroy 350 Full Zip Hooded Sweatshirt, размер XL">XL</a><a href="/siini-client-demo-20260713/product/%d1%85%d1%83%d0%b4%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%bd%d0%b8%d0%b8-c-p-company-beige-corduroy-350-full-zip-hooded-sweatshirt/?attribute_pa_size=xxl#size" class="siini-home-product-card__size" aria-label="Открыть Худи на молнии C.P. Company Beige Corduroy 350 Full Zip Hooded Sweatshirt, размер XXL">XXL</a></div>
 </p></div>
@@ -544,7 +554,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d1%85%d1%83%d0%b4%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%bd%d0%b8%d0%b8-c-p-company-blue-corduroy-350-full-zip-hooded-sweatshirt/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-08-cp-blue-hoodie-300x300.jpg" class="siini-home-product-card__image" alt="Худи на молнии C.P. Company Blue Corduroy 350 Full Zip Hooded Sweatshirt" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-08-cp-blue-hoodie-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Худи на молнии C.P. Company Blue Corduroy 350 Full Zip Hooded Sweatshirt" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d1%85%d1%83%d0%b4%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%bd%d0%b8%d0%b8-c-p-company-blue-corduroy-350-full-zip-hooded-sweatshirt/?attribute_pa_size=m#size" class="siini-home-product-card__size" aria-label="Открыть Худи на молнии C.P. Company Blue Corduroy 350 Full Zip Hooded Sweatshirt, размер M">M</a><a href="/siini-client-demo-20260713/product/%d1%85%d1%83%d0%b4%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%bd%d0%b8%d0%b8-c-p-company-blue-corduroy-350-full-zip-hooded-sweatshirt/?attribute_pa_size=l#size" class="siini-home-product-card__size" aria-label="Открыть Худи на молнии C.P. Company Blue Corduroy 350 Full Zip Hooded Sweatshirt, размер L">L</a></div>
 </p></div>
@@ -561,7 +571,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
             <button class="siini-home-product-card__favorite" type="button" aria-label="Добавить в избранное">♡</button><br />
             <a class="siini-home-product-card__media" href="/siini-client-demo-20260713/product/%d1%88%d1%82%d0%b0%d0%bd%d1%8b-c-p-company-flatt-nylon-cargo-lens-blue/"><br />
                 <span class="siini-home-product-card__badge">new</span><br />
-                <img width="300" height="300" src="../wp-content/uploads/2026/07/cropped-siini-product-06-cp-pants-300x300.jpg" class="siini-home-product-card__image" alt="Штаны C.P. Company Flatt Nylon Cargo Lens Blue" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
+                <img width="300" height="300" src="/siini-client-demo-20260713/wp-content/uploads/2026/07/cropped-siini-product-06-cp-pants-300x300.jpg?v=1783691321" class="siini-home-product-card__image" alt="Штаны C.P. Company Flatt Nylon Cargo Lens Blue" loading="lazy" />                                <span class="siini-home-product-card__quick">Смотреть</span><br />
             </a></p>
 <div class="siini-home-product-card__sizes-overlay" aria-label="Доступные размеры"><a href="/siini-client-demo-20260713/product/%d1%88%d1%82%d0%b0%d0%bd%d1%8b-c-p-company-flatt-nylon-cargo-lens-blue/?attribute_pa_size=50-l#size" class="siini-home-product-card__size" aria-label="Открыть Штаны C.P. Company Flatt Nylon Cargo Lens Blue, размер 50 (L)">50</a><a href="/siini-client-demo-20260713/product/%d1%88%d1%82%d0%b0%d0%bd%d1%8b-c-p-company-flatt-nylon-cargo-lens-blue/?attribute_pa_size=52-xl#size" class="siini-home-product-card__size" aria-label="Открыть Штаны C.P. Company Flatt Nylon Cargo Lens Blue, размер 52 (XL)">52</a></div>
 </p></div>
@@ -591,12 +601,12 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 	<div class="wp-block-columns alignwide siini-site-footer__inner is-layout-flex wp-container-core-columns-is-layout-79fb870f wp-block-columns-is-layout-flex">
 		
 		<div class="wp-block-column siini-site-footer__brand is-layout-flow wp-block-column-is-layout-flow">
-			<p style="font-style:italic;font-weight:700" class="wp-block-site-title has-medium-font-size"><a href="../index.html" target="_self" rel="home">SINI</a></p>
+			<p style="font-style:italic;font-weight:700" class="wp-block-site-title has-medium-font-size"><a href="/siini-client-demo-20260713" target="_self" rel="home">SINI</a></p>
 			
 			<p class="has-small-font-size wp-block-paragraph">Мультибрендовый магазин оригинальной одежды. В наличии и под заказ.</p>
 			
 			
-			<p class="siini-footer-link has-small-font-size wp-block-paragraph"><a href="/contacts/">Связаться с менеджером</a></p>
+			<p class="siini-footer-link has-small-font-size wp-block-paragraph"><a href="/siini-client-demo-20260713/contacts/">Связаться с менеджером</a></p>
 			
 		</div>
 		
@@ -607,7 +617,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 			<h3 class="wp-block-heading has-small-font-size">Покупателю</h3>
 			
 			
-			<ul class="siini-footer-list wp-block-list"><li><a href="index.html">Каталог</a></li><li><a href="../product-category/new-arrivals/index.html">Новинки</a></li><li><a href="../product-category/sale/index.html">Распродажа</a></li><li><a href="../concierge/index.html">Консьерж сервис</a></li></ul>
+			<ul class="siini-footer-list wp-block-list"><li><a href="/siini-client-demo-20260713/shop/">Каталог</a></li><li><a href="/siini-client-demo-20260713/product-category/new-arrivals/">Новинки</a></li><li><a href="/siini-client-demo-20260713/product-category/sale/">Распродажа</a></li><li><a href="/siini-client-demo-20260713/concierge/">Консьерж сервис</a></li></ul>
 			
 		</div>
 		
@@ -618,7 +628,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 			<h3 class="wp-block-heading has-small-font-size">Информация</h3>
 			
 			
-			<ul class="siini-footer-list wp-block-list"><li><a href="/about/">О нас</a></li><li><a href="/contacts/">Контакты</a></li><li><a href="/delivery-payment/">Доставка и оплата</a></li><li><a href="/faq/">FAQ</a></li></ul>
+			<ul class="siini-footer-list wp-block-list"><li><a href="/siini-client-demo-20260713/about/">О нас</a></li><li><a href="/siini-client-demo-20260713/contacts/">Контакты</a></li><li><a href="/siini-client-demo-20260713/delivery-payment/">Доставка и оплата</a></li><li><a href="/siini-client-demo-20260713/faq/">FAQ</a></li></ul>
 			
 		</div>
 		
@@ -629,7 +639,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 			<h3 class="wp-block-heading has-small-font-size">Юридическое</h3>
 			
 			
-			<ul class="siini-footer-list wp-block-list"><li><a href="/privacy/">Политика конфиденциальности</a></li><li><a href="/offer/">Публичная оферта</a></li><li><a href="/personal-data-consent/">Согласие на обработку данных</a></li><li><a href="/returns/">Возврат и обмен</a></li></ul>
+			<ul class="siini-footer-list wp-block-list"><li><a href="/siini-client-demo-20260713/privacy/">Политика конфиденциальности</a></li><li><a href="/siini-client-demo-20260713/offer/">Публичная оферта</a></li><li><a href="/siini-client-demo-20260713/personal-data-consent/">Согласие на обработку данных</a></li><li><a href="/siini-client-demo-20260713/returns/">Возврат и обмен</a></li></ul>
 			
 		</div>
 		
@@ -651,10 +661,10 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 </div>
 </div>
 <script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/siini-client-demo-20260713/wp-content/uploads/*","/siini-client-demo-20260713/wp-content/*","/siini-client-demo-20260713/wp-content/plugins/*","/siini-client-demo-20260713/wp-content/themes/siini-storefront/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/siini-storefront/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
     <div class="siini-cookie-notice" data-siini-cookie-notice hidden>
-        <p>Cookie для работы сайта. <a href="/privacy/">Политика</a>.</p>
+        <p>Cookie для работы сайта. <a href="/siini-client-demo-20260713/privacy/">Политика</a>.</p>
         <button type="button" class="siini-cookie-notice__button" data-siini-cookie-accept>ОК</button>
     </div>
 
@@ -671,24 +681,24 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
                         <input class="siini-visually-hidden" name="website" type="text" tabindex="-1" autocomplete="off">
                         <label class="siini-newsletter-popup__consent">
                             <input name="consent" type="checkbox" value="1" checked required>
-                            <span>Я соглашаюсь с <a href="/privacy/">политикой конфиденциальности</a></span>
+                            <span>Я соглашаюсь с <a href="/siini-client-demo-20260713/privacy/">политикой конфиденциальности</a></span>
                         </label>
                         <button type="submit">Подписаться</button>
                         <p class="siini-newsletter-popup__message" data-siini-newsletter-message role="status" aria-live="polite"></p>
                     </form>
                 </div>
                 <figure class="siini-newsletter-popup__visual">
-                    <img src="../wp-content/themes/siini-storefront/assets/images/siini-client/brand-cp-company.jpg" alt="SINI подборка">
+                    <img src="/siini-client-demo-20260713/wp-content/themes/siini-storefront/assets/images/siini-client/brand-cp-company.jpg" alt="SINI подборка">
                 </figure>
             </div>
         </section>
         <script id="wp-script-module-data-@wordpress/interactivity" type="application/json">
-{"config":{"woocommerce":{"nonOptimisticProperties":[],"currency":{"code":"RUB","precision":0,"symbol":"₽","symbolPosition":"right_space","decimalSeparator":",","thousandSeparator":" ","priceFormat":"%2$s %1$s"},"locale":{"siteLocale":"en_US","userLocale":"en_US","weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]},"placeholderImgSrc":"/siini-client-demo-20260713/wp-content/uploads/woocommerce-placeholder.webp"},"woocommerce/mini-cart-title-items-counter-block":{"itemsInCartTextTemplate":"(items: %d)"},"woocommerce/mini-cart-products-table-block":{"reduceQuantityLabel":"Reduce quantity of %s","increaseQuantityLabel":"Increase quantity of %s","quantityDescriptionLabel":"Quantity of %s in your cart.","removeFromCartLabel":"Remove %s from cart"},"woocommerce/mini-cart":{"displayCartPriceIncludingTax":false,"onCartClickBehaviour":"open_drawer","checkoutUrl":"/siini-client-demo-20260713/concierge/","buttonAriaLabelTemplate":"Number of items in the cart: %d"}},"state":{"woocommerce":{"cart":{"items":[],"coupons":[],"fees":[],"totals":{"total_items":"0","total_items_tax":"0","total_fees":"0","total_fees_tax":"0","total_discount":"0","total_discount_tax":"0","total_shipping":null,"total_shipping_tax":null,"total_price":"0","total_tax":"0","tax_lines":[],"currency_code":"RUB","currency_symbol":"₽","currency_minor_unit":0,"currency_decimal_separator":",","currency_thousand_separator":" ","currency_prefix":"","currency_suffix":" ₽"},"shipping_address":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","state":"","postcode":"","country":"RU","phone":""},"billing_address":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","state":"","postcode":"","country":"RU","email":"","phone":""},"needs_payment":false,"needs_shipping":false,"payment_requirements":["products"],"has_calculated_shipping":false,"shipping_rates":[],"items_count":0,"items_weight":0,"cross_sells":[],"errors":[],"payment_methods":[],"extensions":{}},"noticeId":"","restUrl":"/wp-json/"},"woocommerce/mini-cart-title-items-counter-block":{"itemsInCartText":"(items: 0)"},"woocommerce/mini-cart-products-table-block":{"cartItem":{}},"woocommerce/mini-cart-footer-block":{"formattedSubtotal":"0 ₽"},"woocommerce/mini-cart":{"isOpen":false,"totalItemsInCart":0,"shouldShowTaxLabel":false,"badgeIsVisible":false,"formattedSubtotal":"0 ₽","drawerOverlayClass":"wc-block-components-drawer__screen-overlay wc-block-components-drawer__screen-overlay--with-slide-out wc-block-components-drawer__screen-overlay--is-hidden","buttonAriaLabel":{},"productCountColor":""}},"derivedStateClosures":{"woocommerce/mini-cart":["state.buttonAriaLabel"]}}
+{"config":{"woocommerce":{"nonOptimisticProperties":[],"currency":{"code":"RUB","precision":0,"symbol":"₽","symbolPosition":"right_space","decimalSeparator":",","thousandSeparator":" ","priceFormat":"%2$s %1$s"},"locale":{"siteLocale":"en_US","userLocale":"en_US","weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]},"placeholderImgSrc":"/siini-client-demo-20260713/wp-content/uploads/woocommerce-placeholder.webp"},"woocommerce/mini-cart-title-items-counter-block":{"itemsInCartTextTemplate":"(items: %d)"},"woocommerce/mini-cart-products-table-block":{"reduceQuantityLabel":"Reduce quantity of %s","increaseQuantityLabel":"Increase quantity of %s","quantityDescriptionLabel":"Quantity of %s in your cart.","removeFromCartLabel":"Remove %s from cart"},"woocommerce/mini-cart":{"displayCartPriceIncludingTax":false,"onCartClickBehaviour":"open_drawer","checkoutUrl":"/siini-client-demo-20260713/checkout/","buttonAriaLabelTemplate":"Number of items in the cart: %d"}},"state":{"woocommerce":{"cart":{"items":[],"coupons":[],"fees":[],"totals":{"total_items":"0","total_items_tax":"0","total_fees":"0","total_fees_tax":"0","total_discount":"0","total_discount_tax":"0","total_shipping":null,"total_shipping_tax":null,"total_price":"0","total_tax":"0","tax_lines":[],"currency_code":"RUB","currency_symbol":"₽","currency_minor_unit":0,"currency_decimal_separator":",","currency_thousand_separator":" ","currency_prefix":"","currency_suffix":" ₽"},"shipping_address":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","state":"","postcode":"","country":"RU","phone":""},"billing_address":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","state":"","postcode":"","country":"RU","email":"","phone":""},"needs_payment":false,"needs_shipping":false,"payment_requirements":["products"],"has_calculated_shipping":false,"shipping_rates":[],"items_count":0,"items_weight":0,"cross_sells":[],"errors":[],"payment_methods":[],"extensions":{}},"noticeId":"","restUrl":"/siini-client-demo-20260713/wp-json/"},"woocommerce/mini-cart-title-items-counter-block":{"itemsInCartText":"(items: 0)"},"woocommerce/mini-cart-products-table-block":{"cartItem":{}},"woocommerce/mini-cart-footer-block":{"formattedSubtotal":"0 ₽"},"woocommerce/mini-cart":{"isOpen":false,"totalItemsInCart":0,"shouldShowTaxLabel":false,"badgeIsVisible":false,"formattedSubtotal":"0 ₽","drawerOverlayClass":"wc-block-components-drawer__screen-overlay wc-block-components-drawer__screen-overlay--with-slide-out wc-block-components-drawer__screen-overlay--is-hidden","buttonAriaLabel":{},"productCountColor":""}},"derivedStateClosures":{"woocommerce/mini-cart":["state.buttonAriaLabel"]}}
 </script>
 <script id="wp-script-module-data-@wordpress/interactivity-router" type="application/json">
 {"i18n":{"loading":"Loading page, please wait.","loaded":"Page Loaded."}}
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"\u0413\u043b\u0430\u0432\u043d\u0430\u044f","@id":""}},{"@type":"ListItem","position":2,"item":{"name":"\u041a\u0430\u0442\u0430\u043b\u043e\u0433","@id":"/siini-client-demo-20260713/shop/"}}]}</script>		<div class="wc-block-components-drawer__screen-overlay wc-block-components-drawer__screen-overlay--with-slide-out wc-block-components-drawer__screen-overlay--is-hidden"
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"\u0413\u043b\u0430\u0432\u043d\u0430\u044f","@id":"/siini-client-demo-20260713"}},{"@type":"ListItem","position":2,"item":{"name":"\u041a\u0430\u0442\u0430\u043b\u043e\u0433","@id":"/siini-client-demo-20260713/shop/"}}]}</script>		<div class="wc-block-components-drawer__screen-overlay wc-block-components-drawer__screen-overlay--with-slide-out wc-block-components-drawer__screen-overlay--is-hidden"
 			data-wp-interactive="woocommerce/mini-cart"
 			data-wp-router-region='{ "id": "woocommerce/mini-cart-overlay", "attachTo": "body" }'
 			data-wp-key="wc-mini-cart-overlay"
@@ -942,11 +952,11 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 					Shipping and discounts calculated at checkout.				</div>
 			</div>
 			<div class="wc-block-mini-cart__footer-actions">
-						<a data-block-name="woocommerce/mini-cart-cart-button-block" class="wc-block-components-button wp-element-button wc-block-mini-cart__footer-cart is-style-outline wp-block-woocommerce-mini-cart-cart-button-block" href="/siini-client-demo-20260713/shop/">
+						<a data-block-name="woocommerce/mini-cart-cart-button-block" class="wc-block-components-button wp-element-button wc-block-mini-cart__footer-cart is-style-outline wp-block-woocommerce-mini-cart-cart-button-block" href="/siini-client-demo-20260713/cart/">
 			<div class="wc-block-components-button__text">
 				Перейти в корзину			</div>
 		</a>
-				<a data-block-name="woocommerce/mini-cart-checkout-button-block" class="wc-block-components-button wp-element-button wc-block-mini-cart__footer-checkout wp-block-woocommerce-mini-cart-checkout-button-block" href="/siini-client-demo-20260713/concierge/">
+				<a data-block-name="woocommerce/mini-cart-checkout-button-block" class="wc-block-components-button wp-element-button wc-block-mini-cart__footer-checkout wp-block-woocommerce-mini-cart-checkout-button-block" href="/siini-client-demo-20260713/checkout/">
 			<div class="wc-block-components-button__text">
 				Оформить заказ			</div>
 		</a>
@@ -957,7 +967,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 			<div class="wc-block-mini-cart__empty-cart-wrapper">
 				<p class="has-text-align-center wp-block-paragraph"><strong>Your cart is currently empty!</strong></p>		<div data-block-name="woocommerce/mini-cart-shopping-button-block" class="wp-block-button has-text-align-center">
 			<a
-				href="index.html"
+				href="/siini-client-demo-20260713/shop/"
 				class="wc-block-components-button wp-element-button wc-block-mini-cart__shopping-button wp-block-woocommerce-mini-cart-shopping-button-block"			>
 				<div class="wc-block-components-button__text">
 					Start shopping				</div>
@@ -1010,23 +1020,23 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 /*# sourceURL=wp-interactivity-router-animations-inline-css */
 </style>
 <script id="siini-storefront-js-before">
-window.siiniSite = {"newsletterEndpoint":"\/wp-json\/siini\/v1\/newsletter","conciergeEndpoint":"\/wp-json\/siini\/v1\/siini-client-demo-20260713\/concierge","messages":{"sending":"\u041e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c...","success":"\u0413\u043e\u0442\u043e\u0432\u043e. \u0411\u0443\u0434\u0435\u043c \u043d\u0430 \u0441\u0432\u044f\u0437\u0438.","error":"\u041d\u0435 \u043f\u043e\u043b\u0443\u0447\u0438\u043b\u043e\u0441\u044c \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u043f\u043e\u0437\u0436\u0435 \u0438\u043b\u0438 \u043d\u0430\u043f\u0438\u0448\u0438\u0442\u0435 \u0432 Telegram."}};
+window.siiniSite = {"newsletterEndpoint":"\/siini-client-demo-20260713\/wp-json\/siini\/v1\/newsletter","conciergeEndpoint":"\/siini-client-demo-20260713\/wp-json\/siini\/v1\/concierge","messages":{"sending":"\u041e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c...","success":"\u0413\u043e\u0442\u043e\u0432\u043e. \u0411\u0443\u0434\u0435\u043c \u043d\u0430 \u0441\u0432\u044f\u0437\u0438.","error":"\u041d\u0435 \u043f\u043e\u043b\u0443\u0447\u0438\u043b\u043e\u0441\u044c \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u043f\u043e\u0437\u0436\u0435 \u0438\u043b\u0438 \u043d\u0430\u043f\u0438\u0448\u0438\u0442\u0435 \u0432 Telegram."}};
 //# sourceURL=siini-storefront-js-before
 </script>
-<script id="siini-storefront-js" src="../wp-content/themes/siini-storefront/assets/js/site.js"></script>
-<script id="sourcebuster-js-js" src="../wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js"></script>
+<script id="siini-storefront-js" src="/siini-client-demo-20260713/wp-content/themes/siini-storefront/assets/js/site.js?ver=0.5.52"></script>
+<script id="sourcebuster-js-js" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=10.9.3"></script>
 <script id="wc-order-attribution-js-extra">
-var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"/siini-client-demo-20260713/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
 //# sourceURL=wc-order-attribution-js-extra
 </script>
-<script id="wc-order-attribution-js" src="../wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js"></script>
+<script id="wc-order-attribution-js" src="/siini-client-demo-20260713/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=10.9.3"></script>
 <script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/siini-client-demo-20260713/wp-includes/js/wp-emoji-release.min.js"}}
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/siini-client-demo-20260713/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
 </script>
 <script type="module">
 /*! This file is auto-generated */
 const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
+//# sourceURL=/siini-client-demo-20260713/wp-includes/js/wp-emoji-loader.min.js
 </script>
 <div style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;"><p id="a11y-speak-intro-text" class="a11y-speak-intro-text" hidden>Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div></div></body>
 </html>
