@@ -5,6 +5,6 @@ Disallow: /wp-content/uploads/woocommerce_uploads/
 Disallow: /*?add-to-cart=
 Disallow: /*?*add-to-cart=
 Disallow: /wp-admin/
-Allow: /wp-admin/admin-ajax.php
+Allow: #
 
 Sitemap: /siini-client-demo-20260713/wp-sitemap.xml
