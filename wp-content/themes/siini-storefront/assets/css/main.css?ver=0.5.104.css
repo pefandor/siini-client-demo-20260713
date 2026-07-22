@@ -10144,7 +10144,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 
 .siini-about-contact__content {
 	background: #f1efe9;
-	border-color: rgba(20, 20, 20, 0.11);
+	border: 0;
 }
 
 .siini-about-contact__list a:hover,
