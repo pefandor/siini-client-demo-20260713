@@ -18822,3 +18822,14 @@ body.siini-filter-drawer-open {
 .siini-catalog-filters--professional .siini-filter-option.is-active span {
 	border-color: rgba(31, 103, 255, 0.34) !important;
 }
+
+/* Product card size chips: black hover/focus state for clearer interaction. */
+.siini-home-product-card__sizes .siini-home-product-card__size:hover,
+.siini-home-product-card__sizes .siini-home-product-card__size:focus-visible,
+.siini-home-product-card__sizes-overlay .siini-home-product-card__size:hover,
+.siini-home-product-card__sizes-overlay .siini-home-product-card__size:focus-visible {
+	background: #111 !important;
+	border-color: #111 !important;
+	color: #fff !important;
+	outline: 0;
+}
