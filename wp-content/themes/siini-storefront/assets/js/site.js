@@ -15,13 +15,58 @@
 		var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 		scrollers.forEach(function (scroller) {
-			var cards = Array.prototype.slice.call(scroller.querySelectorAll('[data-siini-new-card]'));
+			var originalCards = Array.prototype.slice.call(scroller.querySelectorAll('[data-siini-new-card]'));
+			var cards = originalCards;
 			var section = scroller.closest('[data-siini-home-new]');
 			var prevButton = section ? section.querySelector('[data-siini-new-prev]') : null;
 			var nextButton = section ? section.querySelector('[data-siini-new-next]') : null;
 			var carousel = scroller.closest('.siini-home-new-carousel');
+			var originalCount = originalCards.length;
+			var firstOriginalIndex = originalCount;
+			var lastOriginalIndex = (originalCount * 2) - 1;
 			var frame = 0;
-			var currentIndex = 0;
+			var currentIndex = firstOriginalIndex;
+			var dragStartX = 0;
+			var dragStartScrollLeft = 0;
+			var dragPointerId = null;
+			var hasPointerCapture = false;
+			var isDragging = false;
+			var isProgrammaticScroll = false;
+			var didDrag = false;
+			var snapTimer = 0;
+			var programmaticTimer = 0;
+			var suppressClickUntil = 0;
+			var dragSensitivity = 0.62;
+			var wheelSensitivity = 0.58;
+			var normalizeDelay = 260;
+			var normalizeTimer = 0;
+
+			function setupLoop() {
+				var beforeFragment;
+				var afterFragment;
+
+				if (originalCount < 2 || scroller.getAttribute('data-siini-new-loop-ready') === 'true') {
+					return;
+				}
+
+				beforeFragment = document.createDocumentFragment();
+				afterFragment = document.createDocumentFragment();
+
+				originalCards.forEach(function (card) {
+					var beforeClone = card.cloneNode(true);
+					var afterClone = card.cloneNode(true);
+
+					beforeClone.setAttribute('data-siini-new-clone', 'before');
+					afterClone.setAttribute('data-siini-new-clone', 'after');
+					beforeFragment.appendChild(beforeClone);
+					afterFragment.appendChild(afterClone);
+				});
+
+				scroller.insertBefore(beforeFragment, originalCards[0]);
+				scroller.appendChild(afterFragment);
+				scroller.setAttribute('data-siini-new-loop-ready', 'true');
+				cards = Array.prototype.slice.call(scroller.querySelectorAll('[data-siini-new-card]'));
+			}
 
 			function gapSize() {
 				var styles = window.getComputedStyle ? window.getComputedStyle(scroller) : null;
@@ -65,6 +110,12 @@
 				});
 			}
 
+			function clampScroll(left) {
+				var info = layoutInfo();
+
+				return Math.max(0, Math.min(info.maxScroll, left));
+			}
+
 			function nearestIndex(targets) {
 				var nearest = 0;
 				var nearestDistance = Infinity;
@@ -81,25 +132,68 @@
 				return nearest;
 			}
 
+			function normalizeLoopIndex(index) {
+				if (originalCount < 2) {
+					return index;
+				}
+
+				if (index < firstOriginalIndex) {
+					return index + originalCount;
+				}
+
+				if (index > lastOriginalIndex) {
+					return index - originalCount;
+				}
+
+				return index;
+			}
+
+			function normalizeLoopPosition() {
+				var targets = scrollTargets();
+				var normalizedIndex;
+
+				if (!targets.length || originalCount < 2) {
+					return;
+				}
+
+				currentIndex = nearestIndex(targets);
+				normalizedIndex = normalizeLoopIndex(currentIndex);
+
+				if (normalizedIndex === currentIndex || !targets[normalizedIndex]) {
+					return;
+				}
+
+				currentIndex = normalizedIndex;
+				markProgrammaticScroll();
+				scroller.scrollTo({
+					behavior: 'auto',
+					left: targets[currentIndex],
+				});
+				updateButtons();
+			}
+
+			function scheduleNormalize() {
+				window.clearTimeout(normalizeTimer);
+				normalizeTimer = window.setTimeout(normalizeLoopPosition, prefersReducedMotion ? 90 : normalizeDelay);
+			}
+
 			function updateButtons() {
 				var hasOverflow = canScroll();
-				var atStart = scroller.scrollLeft <= 2;
-				var atEnd = Math.ceil(scroller.scrollLeft) >= Math.max(0, scroller.scrollWidth - scroller.clientWidth) - 2;
 				var targets = scrollTargets();
 
 				currentIndex = nearestIndex(targets);
 
 				if (prevButton) {
-					prevButton.disabled = !hasOverflow || atStart;
+					prevButton.disabled = !hasOverflow;
 				}
 
 				if (nextButton) {
-					nextButton.disabled = !hasOverflow || atEnd;
+					nextButton.disabled = !hasOverflow;
 				}
 
 				if (carousel) {
-					carousel.classList.toggle('is-at-start', atStart);
-					carousel.classList.toggle('is-at-end', atEnd);
+					carousel.classList.toggle('is-at-start', !hasOverflow);
+					carousel.classList.toggle('is-at-end', !hasOverflow);
 				}
 			}
 
@@ -114,32 +208,63 @@
 				});
 			}
 
+			function markProgrammaticScroll() {
+				isProgrammaticScroll = true;
+				window.clearTimeout(programmaticTimer);
+				programmaticTimer = window.setTimeout(function () {
+					isProgrammaticScroll = false;
+				}, prefersReducedMotion ? 80 : 520);
+			}
+
+			function snapToNearest(behavior) {
+				var targets = scrollTargets();
+				var targetIndex;
+
+				if (!targets.length || !canScroll()) {
+					return;
+				}
+
+				targetIndex = nearestIndex(targets);
+				currentIndex = Math.max(0, Math.min(targets.length - 1, targetIndex));
+				markProgrammaticScroll();
+				scroller.scrollTo({
+					behavior: prefersReducedMotion ? 'auto' : behavior,
+					left: targets[currentIndex],
+				});
+				scheduleNormalize();
+			}
+
+			function scheduleSnap(delay) {
+				window.clearTimeout(snapTimer);
+				snapTimer = window.setTimeout(function () {
+					snapToNearest('smooth');
+				}, delay);
+			}
+
 			function move(direction) {
 				var targets = scrollTargets();
-				var scrollLeft = scroller.scrollLeft;
-				var targetIndex = currentIndex;
+				var targetIndex;
 
-				if (direction > 0) {
-					targetIndex = targets.findIndex(function (target) {
-						return target > scrollLeft + 2;
-					});
-					if (targetIndex < 0) {
-						targetIndex = targets.length - 1;
-					}
-				} else {
-					for (var index = targets.length - 1; index >= 0; index -= 1) {
-						if (targets[index] < scrollLeft - 2) {
-							targetIndex = index;
-							break;
-						}
-					}
+				if (!targets.length || !canScroll()) {
+					return;
+				}
+
+				currentIndex = normalizeLoopIndex(nearestIndex(targets));
+				targetIndex = currentIndex + (direction > 0 ? 1 : -1);
+
+				if (targetIndex < 0) {
+					targetIndex = targets.length - 1;
+				} else if (targetIndex > targets.length - 1) {
+					targetIndex = 0;
 				}
 
 				currentIndex = Math.max(0, Math.min(targets.length - 1, targetIndex));
+				markProgrammaticScroll();
 				scroller.scrollTo({
 					behavior: prefersReducedMotion ? 'auto' : 'smooth',
 					left: targets[currentIndex],
 				});
+				scheduleNormalize();
 			}
 
 			if (prevButton) {
@@ -154,10 +279,105 @@
 				});
 			}
 
-			scroller.addEventListener('scroll', scheduleUpdate, { passive: true });
+			function endDrag() {
+				if (!isDragging) {
+					return;
+				}
+
+				isDragging = false;
+				dragPointerId = null;
+				hasPointerCapture = false;
+				scroller.classList.remove('is-pointer-down');
+				scroller.classList.remove('is-dragging');
+
+				if (didDrag) {
+					suppressClickUntil = Date.now() + 350;
+					scheduleNormalize();
+				}
+
+				window.setTimeout(function () {
+					didDrag = false;
+				}, 360);
+			}
+
+			scroller.addEventListener('pointerdown', function (event) {
+				if (!canScroll() || (event.pointerType === 'mouse' && event.button !== 0)) {
+					return;
+				}
+
+				isDragging = true;
+				didDrag = false;
+				dragPointerId = event.pointerId;
+				hasPointerCapture = false;
+				dragStartX = event.clientX;
+				dragStartScrollLeft = scroller.scrollLeft;
+				scroller.classList.add('is-pointer-down');
+			});
+
+			scroller.addEventListener('pointermove', function (event) {
+				if (!isDragging || (dragPointerId !== null && event.pointerId !== dragPointerId)) {
+					return;
+				}
+
+				var deltaX = event.clientX - dragStartX;
+				if (Math.abs(deltaX) > 4) {
+					didDrag = true;
+					scroller.classList.add('is-dragging');
+					if (!hasPointerCapture && scroller.setPointerCapture) {
+						try {
+							scroller.setPointerCapture(event.pointerId);
+							hasPointerCapture = true;
+						} catch (error) {
+							// Pointer capture is a progressive enhancement for smoother drag.
+						}
+					}
+				}
+
+				if (didDrag) {
+					event.preventDefault();
+					window.clearTimeout(snapTimer);
+					scroller.scrollLeft = clampScroll(dragStartScrollLeft - (deltaX * dragSensitivity));
+				}
+			});
+
+			scroller.addEventListener('pointerup', endDrag);
+			scroller.addEventListener('pointercancel', endDrag);
+			scroller.addEventListener('lostpointercapture', endDrag);
+			scroller.addEventListener('dragstart', function (event) {
+				event.preventDefault();
+			});
+			scroller.addEventListener('click', function (event) {
+				if (!didDrag && Date.now() > suppressClickUntil) {
+					return;
+				}
+
+				event.preventDefault();
+				event.stopImmediatePropagation();
+			}, true);
+			scroller.addEventListener('wheel', function (event) {
+				var horizontalDelta = Math.abs(event.deltaX) > Math.abs(event.deltaY) * 0.55 ? event.deltaX : 0;
+				var unit = event.deltaMode === 1 ? 16 : (event.deltaMode === 2 ? scroller.clientWidth : 1);
+
+				if (!horizontalDelta || !canScroll()) {
+					return;
+				}
+
+				event.preventDefault();
+				window.clearTimeout(snapTimer);
+				scroller.scrollLeft = clampScroll(scroller.scrollLeft + (horizontalDelta * unit * wheelSensitivity));
+				scheduleNormalize();
+			}, { passive: false });
+			scroller.addEventListener('scroll', function () {
+				scheduleUpdate();
+				if (!isDragging && !isProgrammaticScroll) {
+					scheduleNormalize();
+				}
+			}, { passive: true });
 			window.addEventListener('resize', function () {
 				window.setTimeout(function () {
 					var targets = scrollTargets();
+					currentIndex = normalizeLoopIndex(currentIndex);
+					markProgrammaticScroll();
 					scroller.scrollTo({
 						behavior: 'auto',
 						left: targets[Math.max(0, Math.min(targets.length - 1, currentIndex))],
@@ -166,8 +386,789 @@
 				}, 120);
 			}, { passive: true });
 
+			setupLoop();
+			(function () {
+				var targets = scrollTargets();
+
+				if (targets[firstOriginalIndex]) {
+					markProgrammaticScroll();
+					scroller.scrollTo({
+						behavior: 'auto',
+						left: targets[firstOriginalIndex],
+					});
+					currentIndex = firstOriginalIndex;
+				}
+
+				updateButtons();
+			}());
 			updateButtons();
 			window.setTimeout(updateButtons, 250);
+		});
+	});
+}());
+
+(function () {
+	'use strict';
+
+	var STORAGE_KEY = 'siini_favorites_v1';
+
+	function ready(callback) {
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', callback);
+			return;
+		}
+
+		callback();
+	}
+
+	function readFavorites() {
+		try {
+			var raw = window.localStorage.getItem(STORAGE_KEY);
+			var parsed = raw ? JSON.parse(raw) : [];
+			var list = Array.isArray(parsed) ? parsed : Object.keys(parsed || {}).map(function (key) {
+				return parsed[key];
+			});
+			var map = {};
+
+			list.forEach(function (item) {
+				if (item && item.productId) {
+					map[String(item.productId)] = item;
+				}
+			});
+
+			return map;
+		} catch (error) {
+			return {};
+		}
+	}
+
+	function writeFavorites(map) {
+		var list = Object.keys(map).map(function (key) {
+			return map[key];
+		}).sort(function (a, b) {
+			return (b.timestamp || 0) - (a.timestamp || 0);
+		});
+
+		try {
+			window.localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+		} catch (error) {}
+
+		return list;
+	}
+
+	function cardFromToggle(toggle) {
+		return toggle ? toggle.closest('[data-siini-product-card]') : null;
+	}
+
+	function productId(card) {
+		return card ? String(card.getAttribute('data-product-id') || '') : '';
+	}
+
+	function fallbackCopyText(value) {
+		var textarea;
+
+		textarea = document.createElement('textarea');
+		textarea.value = value;
+		textarea.setAttribute('readonly', 'readonly');
+		textarea.style.position = 'fixed';
+		textarea.style.left = '-9999px';
+		document.body.appendChild(textarea);
+		textarea.select();
+
+		try {
+			document.execCommand('copy');
+		} catch (error) {}
+
+		document.body.removeChild(textarea);
+
+		return Promise.resolve();
+	}
+
+	function copyText(value) {
+		if (window.navigator.clipboard && window.navigator.clipboard.writeText) {
+			return window.navigator.clipboard.writeText(value).catch(function () {
+				return fallbackCopyText(value);
+			});
+		}
+
+		return fallbackCopyText(value);
+	}
+
+	function markCopied(button) {
+		var originalLabel = button.getAttribute('aria-label') || 'Скопировать ссылку';
+
+		button.classList.add('is-copied');
+		button.setAttribute('aria-label', 'Ссылка скопирована');
+		button.setAttribute('title', 'Ссылка скопирована');
+
+		window.setTimeout(function () {
+			button.classList.remove('is-copied');
+			button.setAttribute('aria-label', originalLabel);
+			button.removeAttribute('title');
+		}, 1400);
+	}
+
+	function collectFavorite(card) {
+		var titleNode = card.querySelector('h3 a');
+		var imageNode = card.querySelector('.siini-home-product-card__image');
+		var currentPriceNode = card.querySelector('[data-siini-card-current-price]');
+		var oldPriceNode = card.querySelector('[data-siini-card-old-price]');
+		var id = productId(card);
+
+		return {
+			productId: id,
+			title: card.getAttribute('data-siini-favorite-title') || (titleNode ? titleNode.textContent.trim() : ''),
+			brand: card.getAttribute('data-siini-favorite-brand') || '',
+			priceText: card.getAttribute('data-siini-favorite-price') || (currentPriceNode ? currentPriceNode.textContent.trim() : ''),
+			oldPriceText: card.getAttribute('data-siini-favorite-old-price') || (oldPriceNode ? oldPriceNode.textContent.trim() : ''),
+			permalink: card.getAttribute('data-siini-favorite-url') || (titleNode ? titleNode.href : ''),
+			imageSrc: card.getAttribute('data-siini-favorite-image') || (imageNode ? imageNode.currentSrc || imageNode.src : ''),
+			timestamp: Date.now(),
+		};
+	}
+
+	function setToggleState(button, active) {
+		button.classList.toggle('is-active', active);
+		button.setAttribute('aria-pressed', active ? 'true' : 'false');
+		button.setAttribute('aria-label', active ? 'Убрать из избранного' : 'Добавить в избранное');
+		button.textContent = active ? '♥' : '♡';
+	}
+
+	function updateCounters(count) {
+		Array.prototype.slice.call(document.querySelectorAll('[data-siini-favorites-count]')).forEach(function (node) {
+			node.textContent = String(count);
+			node.hidden = count <= 0;
+		});
+	}
+
+	function clearNode(node) {
+		while (node.firstChild) {
+			node.removeChild(node.firstChild);
+		}
+	}
+
+	function appendText(parent, tag, className, text) {
+		var node = document.createElement(tag);
+		node.className = className;
+		node.textContent = text || '';
+		parent.appendChild(node);
+		return node;
+	}
+
+	function renderDrawer(list) {
+		var content = document.querySelector('[data-siini-favorites-content]');
+
+		if (!content) {
+			return;
+		}
+
+		clearNode(content);
+
+		if (!list.length) {
+			var empty = document.createElement('div');
+			var link = document.createElement('a');
+
+			empty.className = 'siini-favorites-drawer__empty';
+			appendText(empty, 'p', 'siini-favorites-drawer__empty-text', 'В избранном пока пусто');
+			link.className = 'siini-favorites-drawer__catalog';
+			link.href = '/shop/';
+			link.textContent = 'В каталог';
+			empty.appendChild(link);
+			content.appendChild(empty);
+			return;
+		}
+
+		list.forEach(function (item) {
+			var row = document.createElement('article');
+			var media = document.createElement('a');
+			var image = document.createElement('img');
+			var body = document.createElement('div');
+			var title = document.createElement('a');
+			var price = document.createElement('p');
+			var open = document.createElement('a');
+			var remove = document.createElement('button');
+
+			row.className = 'siini-favorites-drawer__item';
+			media.className = 'siini-favorites-drawer__media';
+			media.href = item.permalink || '/shop/';
+			image.alt = item.title || '';
+			image.loading = 'lazy';
+			image.src = item.imageSrc || '';
+			media.appendChild(image);
+
+			body.className = 'siini-favorites-drawer__body';
+			appendText(body, 'p', 'siini-favorites-drawer__brand', item.brand || 'SINI');
+			title.className = 'siini-favorites-drawer__title';
+			title.href = item.permalink || '/shop/';
+			title.textContent = item.title || 'Товар';
+			body.appendChild(title);
+
+			price.className = 'siini-favorites-drawer__price';
+			appendText(price, 'span', 'siini-favorites-drawer__price-current', item.priceText || '');
+			if (item.oldPriceText) {
+				appendText(price, 'del', 'siini-favorites-drawer__price-old', item.oldPriceText);
+			}
+			body.appendChild(price);
+
+			open.className = 'siini-favorites-drawer__open';
+			open.href = item.permalink || '/shop/';
+			open.textContent = 'Открыть товар';
+			body.appendChild(open);
+
+			remove.className = 'siini-favorites-drawer__remove';
+			remove.type = 'button';
+			remove.setAttribute('aria-label', 'Убрать из избранного');
+			remove.setAttribute('data-siini-favorite-remove', item.productId);
+			remove.textContent = '♥';
+
+			row.appendChild(media);
+			row.appendChild(body);
+			row.appendChild(remove);
+			content.appendChild(row);
+		});
+	}
+
+	function ensureDrawerInBody() {
+		var drawer = document.querySelector('[data-siini-favorites-drawer]');
+
+		if (drawer && drawer.parentNode !== document.body) {
+			document.body.appendChild(drawer);
+		}
+	}
+
+	function syncFavorites() {
+		ensureDrawerInBody();
+
+		var map = readFavorites();
+		var list = Object.keys(map).map(function (key) {
+			return map[key];
+		}).sort(function (a, b) {
+			return (b.timestamp || 0) - (a.timestamp || 0);
+		});
+
+		Array.prototype.slice.call(document.querySelectorAll('[data-siini-favorite-toggle]')).forEach(function (button) {
+			var id = productId(cardFromToggle(button));
+			setToggleState(button, !!(id && map[id]));
+		});
+
+		updateCounters(list.length);
+		renderDrawer(list);
+	}
+
+	function openDrawer() {
+		ensureDrawerInBody();
+
+		var drawer = document.querySelector('[data-siini-favorites-drawer]');
+		var panel = drawer ? drawer.querySelector('.siini-favorites-drawer__panel') : null;
+
+		if (!drawer) {
+			return;
+		}
+
+		syncFavorites();
+		drawer.hidden = false;
+		document.documentElement.classList.add('siini-favorites-open');
+		document.body.classList.add('siini-favorites-open');
+		Array.prototype.slice.call(document.querySelectorAll('[data-siini-favorites-open]')).forEach(function (button) {
+			button.setAttribute('aria-expanded', 'true');
+		});
+
+		if (panel) {
+			panel.focus({ preventScroll: true });
+		}
+	}
+
+	function closeDrawer() {
+		ensureDrawerInBody();
+
+		var drawer = document.querySelector('[data-siini-favorites-drawer]');
+
+		if (drawer) {
+			drawer.hidden = true;
+		}
+
+		document.documentElement.classList.remove('siini-favorites-open');
+		document.body.classList.remove('siini-favorites-open');
+		Array.prototype.slice.call(document.querySelectorAll('[data-siini-favorites-open]')).forEach(function (button) {
+			button.setAttribute('aria-expanded', 'false');
+		});
+	}
+
+	ready(function () {
+		document.addEventListener('click', function (event) {
+			var toggle = event.target.closest('[data-siini-favorite-toggle]');
+			var copyLink = event.target.closest('[data-siini-card-copy-link]');
+			var opener = event.target.closest('[data-siini-favorites-open]');
+			var closer = event.target.closest('[data-siini-favorites-close]');
+			var remove = event.target.closest('[data-siini-favorite-remove]');
+			var map;
+			var card;
+			var id;
+
+			if (copyLink) {
+				event.preventDefault();
+				event.stopPropagation();
+				copyText(copyLink.getAttribute('data-copy-url') || window.location.href).then(function () {
+					markCopied(copyLink);
+				});
+				return;
+			}
+
+			if (toggle) {
+				event.preventDefault();
+				event.stopPropagation();
+				card = cardFromToggle(toggle);
+				id = productId(card);
+				if (!card || !id) {
+					return;
+				}
+				map = readFavorites();
+				if (map[id]) {
+					delete map[id];
+				} else {
+					map[id] = collectFavorite(card);
+				}
+				writeFavorites(map);
+				syncFavorites();
+				return;
+			}
+
+			if (opener) {
+				event.preventDefault();
+				openDrawer();
+				return;
+			}
+
+			if (closer) {
+				event.preventDefault();
+				closeDrawer();
+				return;
+			}
+
+			if (remove) {
+				event.preventDefault();
+				map = readFavorites();
+				delete map[String(remove.getAttribute('data-siini-favorite-remove') || '')];
+				writeFavorites(map);
+				syncFavorites();
+			}
+		});
+
+		document.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape') {
+				closeDrawer();
+			}
+		});
+
+		window.addEventListener('storage', function (event) {
+			if (event.key === STORAGE_KEY) {
+				syncFavorites();
+			}
+		});
+
+		syncFavorites();
+	});
+}());
+
+(function () {
+	'use strict';
+
+	function ready(callback) {
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', callback);
+			return;
+		}
+
+		callback();
+	}
+
+	function config() {
+		return window.siiniSite || {};
+	}
+
+	function cartUrl() {
+		return config().cartUrl || '/cart/';
+	}
+
+	function endpoint() {
+		return config().addToCartEndpoint || '/?wc-ajax=add_to_cart';
+	}
+
+	function setMessage(card, message, isError) {
+		var node = card.querySelector('[data-siini-card-message]');
+
+		if (!node) {
+			return;
+		}
+
+		node.textContent = message || '';
+		node.classList.toggle('is-error', !!isError);
+		node.hidden = !message;
+	}
+
+	function selectedSize(card) {
+		return card.querySelector('[data-siini-card-size].is-selected');
+	}
+
+	function updateCtaForSelection(card) {
+		var cta = card.querySelector('[data-siini-card-cta]');
+		var selected = selectedSize(card);
+
+		if (!cta) {
+			return;
+		}
+
+		if (selected) {
+			cta.textContent = cta.getAttribute('data-add-text') || 'Добавить в корзину';
+			cta.classList.add('is-ready');
+			cta.setAttribute('aria-disabled', 'false');
+			card.classList.add('has-selected-size');
+			return;
+		}
+
+		cta.textContent = cta.getAttribute('data-default-text') || 'Выбрать размер';
+		cta.classList.remove('is-ready');
+		cta.setAttribute('aria-disabled', card.getAttribute('data-product-type') === 'variable' ? 'true' : 'false');
+		card.classList.remove('has-selected-size');
+	}
+
+	function applyFragments(response) {
+		if (!response || !response.fragments) {
+			return;
+		}
+
+		Object.keys(response.fragments).forEach(function (selector) {
+			var fragment = response.fragments[selector];
+			var nodes = Array.prototype.slice.call(document.querySelectorAll(selector));
+
+			nodes.forEach(function (node) {
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = fragment;
+				if (wrapper.firstElementChild) {
+					node.replaceWith(wrapper.firstElementChild);
+				}
+			});
+		});
+	}
+
+	function dispatchCartEvents(response, cta) {
+		if (window.jQuery) {
+			window.jQuery(document.body).trigger('added_to_cart', [
+				response && response.fragments ? response.fragments : {},
+				response && response.cart_hash ? response.cart_hash : '',
+				window.jQuery(cta),
+			]);
+		}
+
+		document.body.dispatchEvent(new window.CustomEvent('wc-blocks_added_to_cart', {
+			bubbles: true,
+			detail: { preserveCartData: false },
+		}));
+	}
+
+	function showAddedState(card) {
+		var cta = card.querySelector('[data-siini-card-cta]');
+		var added = card.querySelector('[data-siini-card-added]');
+		var link = card.querySelector('[data-siini-card-added] a');
+		var quantity = Math.max(0, parseInt(card.getAttribute('data-selected-quantity') || '0', 10) || 0) + 1;
+
+		setCardQuantity(card, quantity);
+		card.classList.add('is-added');
+		Array.prototype.slice.call(card.querySelectorAll('.added_to_cart.wc-forward')).forEach(function (node) {
+			node.remove();
+		});
+
+		if (link) {
+			link.href = cartUrl();
+		}
+
+		if (cta) {
+			cta.hidden = true;
+			cta.classList.remove('is-loading');
+		}
+
+		if (added) {
+			added.hidden = false;
+		}
+	}
+
+	function setCardQuantity(card, quantity) {
+		var safeQuantity = Math.max(1, parseInt(quantity, 10) || 1);
+		var count = card.querySelector('[data-siini-card-added-count]');
+		var minusButtons = Array.prototype.slice.call(card.querySelectorAll('[data-siini-card-qty-minus]'));
+
+		card.setAttribute('data-selected-quantity', String(safeQuantity));
+
+		if (count) {
+			count.textContent = String(safeQuantity);
+		}
+
+		minusButtons.forEach(function (button) {
+			button.disabled = safeQuantity <= 1;
+			button.setAttribute('aria-disabled', safeQuantity <= 1 ? 'true' : 'false');
+		});
+	}
+
+	function addToCart(card, cta, options) {
+		var settings = options || {};
+		var type = card.getAttribute('data-product-type') || cta.getAttribute('data-product-type') || '';
+		var selected = selectedSize(card);
+		var variationId = selected ? parseInt(selected.getAttribute('data-variation-id') || '0', 10) || 0 : 0;
+		var productId = parseInt(card.getAttribute('data-product-id') || cta.getAttribute('data-product-id') || cta.getAttribute('data-product_id') || '0', 10) || 0;
+		var requestProductId = type === 'variable' && variationId ? variationId : productId;
+		var body = new window.URLSearchParams();
+
+		if (type === 'variable' && !variationId) {
+			setMessage(card, 'Сначала выберите размер.', true);
+			return Promise.reject(new Error('missing-size'));
+		}
+
+		body.set('product_id', String(requestProductId));
+		body.set('quantity', '1');
+
+		if (variationId) {
+			body.set('variation_id', String(variationId));
+		}
+
+		if (selected && selected.getAttribute('data-attribute-name')) {
+			body.set(selected.getAttribute('data-attribute-name'), selected.getAttribute('data-attribute-value') || '');
+		}
+
+		cta.classList.add('is-loading');
+		cta.setAttribute('aria-busy', 'true');
+		card.classList.add('is-quantity-loading');
+		setMessage(card, '', false);
+
+		return window.fetch(endpoint(), {
+			method: 'POST',
+			credentials: 'same-origin',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+				'X-Requested-With': 'XMLHttpRequest',
+			},
+			body: body.toString(),
+		}).then(function (response) {
+			return response.json();
+		}).then(function (response) {
+			if (response && response.error) {
+				throw new Error('add-to-cart-error');
+			}
+
+			applyFragments(response);
+			dispatchCartEvents(response, cta);
+			if (!settings.skipAddedState) {
+				showAddedState(card);
+			}
+			setMessage(card, '', false);
+			return response;
+		}).catch(function (error) {
+			if (error && error.message === 'missing-size') {
+				throw error;
+			}
+
+			cta.classList.remove('is-loading');
+			card.classList.remove('is-quantity-loading');
+			if (settings.silentError) {
+				setMessage(card, '', false);
+				return null;
+			}
+			setMessage(card, (config().messages && config().messages.cartError) || 'Не получилось добавить. Попробуйте еще раз.', true);
+			throw error;
+		}).finally(function () {
+			cta.removeAttribute('aria-busy');
+			card.classList.remove('is-quantity-loading');
+		});
+	}
+
+	function initCard(card) {
+		var cta = card.querySelector('[data-siini-card-cta]');
+		var sizes = Array.prototype.slice.call(card.querySelectorAll('[data-siini-card-size]'));
+
+		sizes.forEach(function (button) {
+			button.addEventListener('click', function (event) {
+				event.preventDefault();
+				event.stopPropagation();
+
+				sizes.forEach(function (other) {
+					other.classList.toggle('is-selected', other === button);
+					other.setAttribute('aria-pressed', other === button ? 'true' : 'false');
+				});
+
+				card.classList.remove('is-added');
+				card.setAttribute('data-selected-quantity', '0');
+				if (cta) {
+					cta.hidden = false;
+				}
+				Array.prototype.slice.call(card.querySelectorAll('[data-siini-card-added]')).forEach(function (node) {
+					node.hidden = true;
+				});
+				setMessage(card, '', false);
+				updateCtaForSelection(card);
+			});
+		});
+
+		if (cta) {
+			cta.addEventListener('click', function (event) {
+				var type = card.getAttribute('data-product-type') || cta.getAttribute('data-product-type') || '';
+
+				if (cta.classList.contains('is-loading')) {
+					event.preventDefault();
+					return;
+				}
+
+				if (type !== 'variable' && !cta.classList.contains('ajax_add_to_cart')) {
+					return;
+				}
+
+				event.preventDefault();
+				addToCart(card, cta).catch(function () {});
+			});
+		}
+
+		Array.prototype.slice.call(card.querySelectorAll('[data-siini-card-qty-plus]')).forEach(function (button) {
+			button.addEventListener('click', function (event) {
+				var current = parseInt(card.getAttribute('data-selected-quantity') || '1', 10) || 1;
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				if (!card.classList.contains('is-added') || card.classList.contains('is-quantity-loading') || !cta) {
+					return;
+				}
+
+				setCardQuantity(card, current + 1);
+				addToCart(card, cta, {
+					silentError: true,
+					skipAddedState: true,
+				}).catch(function () {});
+			});
+		});
+
+		Array.prototype.slice.call(card.querySelectorAll('[data-siini-card-qty-minus]')).forEach(function (button) {
+			button.addEventListener('click', function (event) {
+				var current = parseInt(card.getAttribute('data-selected-quantity') || '1', 10) || 1;
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				if (!card.classList.contains('is-added')) {
+					return;
+				}
+
+				if (current <= 1) {
+					setCardQuantity(card, 1);
+					return;
+				}
+
+				setCardQuantity(card, current - 1);
+			});
+		});
+
+		updateCtaForSelection(card);
+	}
+
+	ready(function () {
+		Array.prototype.slice.call(document.querySelectorAll('[data-siini-product-card]')).forEach(initCard);
+	});
+}());
+
+(function () {
+	'use strict';
+
+	function ready(callback) {
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', callback);
+			return;
+		}
+
+		callback();
+	}
+
+	ready(function () {
+		var modal = document.createElement('div');
+		var dialog = document.createElement('div');
+		var closeButton = document.createElement('button');
+		var image = document.createElement('img');
+		var previousActive = null;
+
+		modal.className = 'siini-product-lightbox';
+		modal.setAttribute('data-siini-product-lightbox', '');
+		modal.setAttribute('role', 'presentation');
+		modal.hidden = true;
+
+		dialog.className = 'siini-product-lightbox__dialog';
+		dialog.setAttribute('role', 'dialog');
+		dialog.setAttribute('aria-modal', 'true');
+		dialog.setAttribute('aria-label', 'Фото товара');
+
+		closeButton.className = 'siini-product-lightbox__close';
+		closeButton.type = 'button';
+		closeButton.setAttribute('aria-label', 'Закрыть фото');
+		closeButton.textContent = '×';
+
+		image.className = 'siini-product-lightbox__image';
+		image.alt = '';
+		image.draggable = false;
+
+		dialog.appendChild(closeButton);
+		dialog.appendChild(image);
+		modal.appendChild(dialog);
+		document.body.appendChild(modal);
+
+		function closeLightbox() {
+			modal.hidden = true;
+			image.removeAttribute('src');
+			image.alt = '';
+			document.documentElement.classList.remove('siini-lightbox-open');
+			document.body.classList.remove('siini-lightbox-open');
+
+			if (previousActive && typeof previousActive.focus === 'function') {
+				previousActive.focus({ preventScroll: true });
+			}
+		}
+
+		function openLightbox(trigger) {
+			var src = trigger.getAttribute('data-siini-card-lightbox-src') || '';
+
+			if (!src) {
+				return;
+			}
+
+			previousActive = document.activeElement;
+			image.src = src;
+			image.alt = trigger.getAttribute('data-siini-card-lightbox-alt') || '';
+			modal.hidden = false;
+			document.documentElement.classList.add('siini-lightbox-open');
+			document.body.classList.add('siini-lightbox-open');
+			closeButton.focus({ preventScroll: true });
+		}
+
+		document.addEventListener('click', function (event) {
+			var trigger = event.target.closest('[data-siini-card-lightbox]');
+
+			if (!trigger) {
+				return;
+			}
+
+			event.preventDefault();
+			event.stopPropagation();
+			openLightbox(trigger);
+		});
+
+		closeButton.addEventListener('click', function () {
+			closeLightbox();
+		});
+
+		modal.addEventListener('click', function (event) {
+			if (event.target === modal) {
+				closeLightbox();
+			}
+		});
+
+		document.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape' && !modal.hidden) {
+				closeLightbox();
+			}
 		});
 	});
 }());
@@ -362,6 +1363,131 @@
 (function () {
 	'use strict';
 
+	function ready(callback) {
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', callback);
+			return;
+		}
+
+		callback();
+	}
+
+	ready(function () {
+		var roots = Array.prototype.slice.call(document.querySelectorAll('[data-siini-review-carousel]'));
+		var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		roots.forEach(function (root) {
+			var slides = Array.prototype.slice.call(root.querySelectorAll('[data-siini-review-slide]'));
+			var dots = Array.prototype.slice.call(root.querySelectorAll('[data-siini-review-dot]'));
+			var prev = root.querySelector('[data-siini-review-prev]');
+			var next = root.querySelector('[data-siini-review-next]');
+			var activeIndex = 0;
+			var timer = 0;
+			var paused = false;
+
+			if (slides.length <= 1) {
+				if (prev) {
+					prev.disabled = true;
+				}
+				if (next) {
+					next.disabled = true;
+				}
+				return;
+			}
+
+			function show(index) {
+				activeIndex = (index + slides.length) % slides.length;
+
+				slides.forEach(function (slide, slideIndex) {
+					var isActive = slideIndex === activeIndex;
+					var isPrev = slideIndex === (activeIndex - 1 + slides.length) % slides.length;
+					var isNext = slideIndex === (activeIndex + 1) % slides.length;
+					var isPrevTwo = slideIndex === (activeIndex - 2 + slides.length) % slides.length;
+					var isNextTwo = slideIndex === (activeIndex + 2) % slides.length;
+
+					slide.classList.toggle('is-active', isActive);
+					slide.classList.toggle('is-prev', isPrev);
+					slide.classList.toggle('is-next', isNext);
+					slide.classList.toggle('is-prev-two', isPrevTwo);
+					slide.classList.toggle('is-next-two', isNextTwo);
+					slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+				});
+
+				dots.forEach(function (dot, dotIndex) {
+					var isActive = dotIndex === activeIndex;
+					dot.classList.toggle('is-active', isActive);
+					dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+				});
+			}
+
+			function stopTimer() {
+				if (timer) {
+					window.clearInterval(timer);
+					timer = 0;
+				}
+			}
+
+			function startTimer() {
+				if (prefersReducedMotion || timer) {
+					return;
+				}
+
+				timer = window.setInterval(function () {
+					if (!paused) {
+						show(activeIndex + 1);
+					}
+				}, 6200);
+			}
+
+			function manual(index) {
+				stopTimer();
+				show(index);
+				window.setTimeout(startTimer, 8000);
+			}
+
+			if (prev) {
+				prev.addEventListener('click', function () {
+					manual(activeIndex - 1);
+				});
+			}
+
+			if (next) {
+				next.addEventListener('click', function () {
+					manual(activeIndex + 1);
+				});
+			}
+
+			dots.forEach(function (dot, dotIndex) {
+				dot.addEventListener('click', function () {
+					manual(dotIndex);
+				});
+			});
+
+			root.addEventListener('pointerenter', function () {
+				paused = true;
+			});
+
+			root.addEventListener('pointerleave', function () {
+				paused = false;
+			});
+
+			root.addEventListener('focusin', function () {
+				paused = true;
+			});
+
+			root.addEventListener('focusout', function () {
+				paused = false;
+			});
+
+			show(0);
+			startTimer();
+		});
+	});
+}());
+
+(function () {
+	'use strict';
+
 	if (!window.matchMedia || !document.body) {
 		return;
 	}
@@ -532,6 +1658,89 @@
 		var roots = Array.prototype.slice.call(document.querySelectorAll('[data-siini-catalog-filters]'));
 		var activeRoot = null;
 
+		function initPriceSlider(root) {
+			var slider = root.querySelector('[data-siini-price-slider]');
+			if (!slider) {
+				return;
+			}
+
+			var minRange = slider.querySelector('[data-siini-price-min]');
+			var maxRange = slider.querySelector('[data-siini-price-max]');
+			var minInput = root.querySelector('input[name="min_price"]');
+			var maxInput = root.querySelector('input[name="max_price"]');
+			var min = Number(slider.getAttribute('data-min') || 0);
+			var max = Number(slider.getAttribute('data-max') || 50000);
+
+			if (!minRange || !maxRange || !minInput || !maxInput) {
+				return;
+			}
+
+			function clamp(value, fallback) {
+				value = Number(value);
+				if (!Number.isFinite(value)) {
+					return fallback;
+				}
+
+				return Math.min(max, Math.max(min, value));
+			}
+
+			function inputValue(input, fallback) {
+				return input.value.trim() === '' ? fallback : clamp(input.value, fallback);
+			}
+
+			function paint() {
+				var minValue = clamp(minRange.value, min);
+				var maxValue = clamp(maxRange.value, max);
+				var minPercent = ((minValue - min) / (max - min)) * 100;
+				var maxPercent = ((maxValue - min) / (max - min)) * 100;
+
+				slider.style.setProperty('--siini-price-min', minPercent + '%');
+				slider.style.setProperty('--siini-price-max', maxPercent + '%');
+			}
+
+			function syncFromRanges(changed) {
+				var minValue = clamp(minRange.value, min);
+				var maxValue = clamp(maxRange.value, max);
+
+				if (minValue > maxValue) {
+					if (changed === maxRange) {
+						minValue = maxValue;
+						minRange.value = String(minValue);
+					} else {
+						maxValue = minValue;
+						maxRange.value = String(maxValue);
+					}
+				}
+
+				minInput.value = minValue <= min ? '' : String(Math.round(minValue));
+				maxInput.value = maxValue >= max ? '' : String(Math.round(maxValue));
+				paint();
+			}
+
+			function syncFromInputs() {
+				var minValue = inputValue(minInput, min);
+				var maxValue = inputValue(maxInput, max);
+
+				if (minValue > maxValue) {
+					maxValue = minValue;
+				}
+
+				minRange.value = String(minValue);
+				maxRange.value = String(maxValue);
+				paint();
+			}
+
+			minRange.addEventListener('input', function () {
+				syncFromRanges(minRange);
+			});
+			maxRange.addEventListener('input', function () {
+				syncFromRanges(maxRange);
+			});
+			minInput.addEventListener('input', syncFromInputs);
+			maxInput.addEventListener('input', syncFromInputs);
+			syncFromInputs();
+		}
+
 		function setOpen(root, open) {
 			var opener = root.querySelector('[data-siini-filter-open]');
 			var panel = root.querySelector('.siini-catalog-filters__panel');
@@ -557,6 +1766,7 @@
 
 		roots.forEach(function (root) {
 			var opener = root.querySelector('[data-siini-filter-open]');
+			initPriceSlider(root);
 
 			if (opener) {
 				opener.addEventListener('click', function () {
@@ -655,6 +1865,13 @@
 			setExpanded(false);
 		}
 
+		function clearSearchLock() {
+			panel.hidden = true;
+			document.body.classList.remove('siini-search-open');
+			document.documentElement.classList.remove('siini-search-open');
+			setExpanded(false);
+		}
+
 		function submitSearch(event) {
 			var query = input.value.trim();
 
@@ -666,6 +1883,7 @@
 
 			event.preventDefault();
 			input.value = query;
+			clearSearchLock();
 			window.location.assign('/?s=' + encodeURIComponent(query) + '&post_type=product');
 		}
 
@@ -690,6 +1908,11 @@
 				closeSearch();
 			}
 		});
+
+		window.addEventListener('pagehide', clearSearchLock);
+		window.addEventListener('pageshow', clearSearchLock);
+		document.addEventListener('DOMContentLoaded', clearSearchLock);
+		clearSearchLock();
 	});
 }());
 
@@ -1704,4 +2927,246 @@
 				});
 		});
 	}
+}());
+
+(function () {
+	'use strict';
+
+	function ready(callback) {
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', callback);
+			return;
+		}
+
+		callback();
+	}
+
+	function itemWord(count) {
+		var abs = Math.abs(count);
+		var lastTwo = abs % 100;
+		var last = abs % 10;
+
+		if (lastTwo >= 11 && lastTwo <= 14) {
+			return 'товаров';
+		}
+
+		if (last === 1) {
+			return 'товар';
+		}
+
+		if (last >= 2 && last <= 4) {
+			return 'товара';
+		}
+
+		return 'товаров';
+	}
+
+	function replaceText(node, from, to) {
+		if (!node) {
+			return;
+		}
+
+		var text = (node.textContent || '').trim();
+		if (text === from || text.indexOf(from) !== -1) {
+			var nextText = text.replace(from, to);
+			if (node.textContent !== nextText) {
+				node.textContent = nextText;
+			}
+		}
+	}
+
+	function setTextIfChanged(node, text) {
+		if (node && node.textContent !== text) {
+			node.textContent = text;
+		}
+	}
+
+	function setAttributeIfChanged(node, name, value) {
+		if (node && node.getAttribute(name) !== value) {
+			node.setAttribute(name, value);
+		}
+	}
+
+	function localizeDrawer(drawer) {
+		if (!drawer) {
+			return;
+		}
+
+		var close = drawer.querySelector('.wc-block-components-drawer__close');
+		var count = drawer.querySelector('.wp-block-woocommerce-mini-cart-title-items-counter-block');
+		var label = drawer.querySelector('.wp-block-woocommerce-mini-cart-title-label-block');
+		var subtotal = drawer.querySelector('.wc-block-mini-cart__footer-subtotal .wc-block-components-totals-item__label');
+		var description = drawer.querySelector('.wc-block-mini-cart__footer-subtotal .wc-block-components-totals-item__description');
+
+		if (close) {
+			setAttributeIfChanged(close, 'aria-label', 'Закрыть корзину');
+			setAttributeIfChanged(close, 'title', 'Закрыть корзину');
+		}
+
+		setTextIfChanged(label, 'Корзина');
+
+		if (count) {
+			var match = (count.textContent || '').match(/\d+/);
+			var amount = match ? parseInt(match[0], 10) : 0;
+			setTextIfChanged(count, amount > 0 ? '(' + amount + ' ' + itemWord(amount) + ')' : '');
+		}
+
+		setTextIfChanged(subtotal, 'Итого');
+
+		setTextIfChanged(description, 'Доставка и скидки рассчитываются при оформлении заказа.');
+
+		Array.prototype.slice.call(drawer.querySelectorAll('caption h2, .screen-reader-text')).forEach(function (node) {
+			replaceText(node, 'Products in cart', 'Товары в корзине');
+			replaceText(node, 'Product', 'Товар');
+			replaceText(node, 'Details', 'Детали');
+			replaceText(node, 'Total', 'Сумма');
+			replaceText(node, 'Previous price:', 'Старая цена:');
+			replaceText(node, 'Discounted price:', 'Цена со скидкой:');
+		});
+
+		Array.prototype.slice.call(drawer.querySelectorAll('.wc-block-cart-items__header span')).forEach(function (node) {
+			replaceText(node, 'Product', 'Товар');
+			replaceText(node, 'Details', 'Детали');
+			replaceText(node, 'Total', 'Сумма');
+		});
+
+		Array.prototype.slice.call(drawer.querySelectorAll('.wc-block-mini-cart__empty-cart-wrapper p')).forEach(function (node) {
+			replaceText(node, 'Your cart is currently empty!', 'Корзина пока пуста.');
+		});
+
+		Array.prototype.slice.call(drawer.querySelectorAll('.wc-block-mini-cart__shopping-button .wc-block-components-button__text')).forEach(function (node) {
+			replaceText(node, 'Start shopping', 'Перейти в каталог');
+		});
+	}
+
+	ready(function () {
+		var observer = null;
+		var isApplying = false;
+		var queued = false;
+
+		function apply() {
+			if (isApplying) {
+				return;
+			}
+
+			isApplying = true;
+			var drawer = document.querySelector('.wc-block-mini-cart__drawer, .wc-block-components-drawer');
+			localizeDrawer(drawer);
+			if (drawer && !observer && window.MutationObserver) {
+				observer = new window.MutationObserver(function () {
+					if (queued) {
+						return;
+					}
+
+					queued = true;
+					window.requestAnimationFrame(function () {
+						queued = false;
+						localizeDrawer(drawer);
+					});
+				});
+				observer.observe(drawer, {
+					childList: true,
+					subtree: true
+				});
+			}
+			isApplying = false;
+		}
+
+		apply();
+		document.addEventListener('click', function (event) {
+			if (event.target && event.target.closest && event.target.closest('.wc-block-mini-cart__button')) {
+				window.setTimeout(apply, 0);
+				window.setTimeout(apply, 350);
+				window.setTimeout(apply, 1000);
+			}
+		});
+		document.body.addEventListener('wc-blocks_added_to_cart', function () {
+			window.setTimeout(apply, 350);
+			window.setTimeout(apply, 1000);
+		});
+	});
+
+	ready(function () {
+		var quantityInputs = Array.prototype.slice.call(document.querySelectorAll('.siini-commerce-flow .quantity input.qty'));
+
+		Array.prototype.slice.call(document.querySelectorAll('.siini-commerce-flow--checkout .optional')).forEach(function (node) {
+			if ((node.textContent || '').trim() === '(optional)') {
+				node.textContent = '(необязательно)';
+			}
+		});
+
+		Array.prototype.slice.call(document.querySelectorAll('.quantity label')).forEach(function (node) {
+			if (/ quantity$/i.test((node.textContent || '').trim())) {
+				node.textContent = node.textContent.replace(/ quantity$/i, ' количество');
+			}
+		});
+
+		quantityInputs.forEach(function (input) {
+			var quantity = input.closest('.quantity');
+			var minus;
+			var plus;
+
+			if (!quantity || quantity.getAttribute('data-siini-quantity-ready') === 'true') {
+				return;
+			}
+
+			quantity.setAttribute('data-siini-quantity-ready', 'true');
+			quantity.classList.add('siini-quantity-stepper');
+
+			minus = document.createElement('button');
+			minus.type = 'button';
+			minus.className = 'siini-quantity-stepper__button siini-quantity-stepper__button--minus';
+			minus.setAttribute('aria-label', 'Уменьшить количество');
+			minus.textContent = '−';
+
+			plus = document.createElement('button');
+			plus.type = 'button';
+			plus.className = 'siini-quantity-stepper__button siini-quantity-stepper__button--plus';
+			plus.setAttribute('aria-label', 'Увеличить количество');
+			plus.textContent = '+';
+
+			quantity.insertBefore(minus, input);
+			quantity.appendChild(plus);
+
+			function valueBounds() {
+				return {
+					max: input.max === '' ? Infinity : parseFloat(input.max),
+					min: input.min === '' ? 0 : parseFloat(input.min),
+					step: input.step === '' || input.step === 'any' ? 1 : parseFloat(input.step)
+				};
+			}
+
+			function updateDisabled() {
+				var bounds = valueBounds();
+				var value = parseFloat(input.value) || bounds.min || 0;
+
+				minus.disabled = value <= bounds.min;
+				plus.disabled = value >= bounds.max;
+			}
+
+			function change(direction) {
+				var bounds = valueBounds();
+				var value = parseFloat(input.value) || bounds.min || 0;
+				var next = value + (direction * bounds.step);
+
+				next = Math.max(bounds.min, Math.min(bounds.max, next));
+				input.value = String(next);
+				input.dispatchEvent(new Event('input', { bubbles: true }));
+				input.dispatchEvent(new Event('change', { bubbles: true }));
+				updateDisabled();
+			}
+
+			minus.addEventListener('click', function () {
+				change(-1);
+			});
+
+			plus.addEventListener('click', function () {
+				change(1);
+			});
+
+			input.addEventListener('input', updateDisabled);
+			input.addEventListener('change', updateDisabled);
+			updateDisabled();
+		});
+	});
 }());

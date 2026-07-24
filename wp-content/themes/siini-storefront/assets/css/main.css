@@ -1363,8 +1363,8 @@ body.siini-hero-preview-hybrid .siini-hero-preview--hybrid {
 }
 
 @media (max-width: 1160px) and (min-width: 901px) {
-	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
-	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=accessories"] {
 		display: none !important;
 	}
 }
@@ -4056,14 +4056,19 @@ html.siini-product-reveal-ready .siini-product-reveal.is-visible {
 }
 
 .siini-cookie-notice__button,
-.siini-newsletter-popup button[type="submit"] {
+.siini-newsletter-popup button[type="submit"],
+.siini-newsletter-popup .siini-newsletter-popup__telegram {
 	background: var(--wp--preset--color--contrast);
 	border: 0;
 	color: var(--wp--preset--color--base);
 	cursor: pointer;
+	display: inline-flex;
 	font-size: 0.78rem;
 	font-weight: 700;
+	justify-content: center;
 	padding: 0.72rem 0.95rem;
+	text-align: center;
+	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
 }
@@ -6889,7 +6894,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		text-decoration: none;
 	}
 
-	.siini-header-links > a[href="/concierge/"] {
+	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
 		background: var(--wp--preset--color--contrast);
 		border: 1px solid var(--wp--preset--color--contrast);
 		color: var(--wp--preset--color--base);
@@ -6898,8 +6903,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		padding: 0.58rem 0.72rem;
 	}
 
-	.siini-header-links > a[href="/concierge/"]:hover,
-	.siini-header-links > a[href="/concierge/"]:focus-visible {
+	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:hover,
+	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:focus-visible {
 		background: var(--wp--preset--color--base);
 		color: var(--wp--preset--color--contrast);
 		text-decoration: none;
@@ -7089,7 +7094,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	font-size: clamp(2rem, 4vw, 2.45rem);
 }
 
-.siini-newsletter-popup button[type="submit"] {
+.siini-newsletter-popup button[type="submit"],
+.siini-newsletter-popup .siini-newsletter-popup__telegram {
 	background: var(--wp--preset--color--base);
 	border: 0;
 	color: var(--wp--preset--color--contrast);
@@ -7101,7 +7107,9 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 }
 
 .siini-newsletter-popup button[type="submit"]:hover,
-.siini-newsletter-popup button[type="submit"]:focus-visible {
+.siini-newsletter-popup button[type="submit"]:focus-visible,
+.siini-newsletter-popup .siini-newsletter-popup__telegram:hover,
+.siini-newsletter-popup .siini-newsletter-popup__telegram:focus-visible {
 	opacity: 0.82;
 }
 
@@ -7198,7 +7206,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	min-height: 2.2rem;
 }
 
-.siini-header-links > a[href="/concierge/"] {
+.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
 	background: var(--wp--preset--color--contrast);
 	border: 1px solid var(--wp--preset--color--contrast);
 	color: var(--wp--preset--color--base);
@@ -7213,8 +7221,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	white-space: nowrap;
 }
 
-.siini-header-links > a[href="/concierge/"]:hover,
-.siini-header-links > a[href="/concierge/"]:focus-visible {
+.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:hover,
+.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"]:focus-visible {
 	background: var(--wp--preset--color--base);
 	color: var(--wp--preset--color--contrast);
 	text-decoration: none;
@@ -7967,8 +7975,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	.siini-header-link--contacts,
 	.siini-header-link--about,
 	.siini-header-link--concierge,
-	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
-	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=accessories"] {
 		display: inline-flex !important;
 	}
 
@@ -7981,8 +7989,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	.siini-header-link--buyer,
 	.siini-header-link--contacts,
 	.siini-header-link--about,
-	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
-	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=accessories"] {
 		display: none !important;
 	}
 
@@ -7991,7 +7999,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 		max-width: calc(50% - 4.2rem);
 	}
 
-	.siini-header-links > a[href="/concierge/"] {
+	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
 		padding-left: 0.68rem;
 		padding-right: 0.68rem;
 	}
@@ -9258,7 +9266,7 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	}
 
 	.siini-header-links > .siini-header-link--concierge,
-	.siini-header-links > a[href="/concierge/"] {
+	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
 		background: var(--wp--preset--color--contrast);
 		border: 1px solid var(--wp--preset--color--contrast);
 		color: var(--wp--preset--color--base);
@@ -9305,8 +9313,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 
 @media (max-width: 1160px) and (min-width: 901px) {
 	.siini-header-link--buyer,
-	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
-	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=accessories"] {
 		display: none !important;
 	}
 
@@ -10299,13 +10307,13 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 	.siini-header-link--contacts,
 	.siini-header-link--about,
 	.siini-header-link--concierge,
-	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
-	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=accessories"] {
 		display: inline-flex !important;
 	}
 
 	.siini-header-links > .siini-header-link--concierge,
-	.siini-header-links > a[href="/concierge/"] {
+	.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
 		align-items: center;
 		font-size: clamp(0.64rem, 0.68vw, 0.76rem) !important;
 		min-height: 2.34rem;
@@ -10342,8 +10350,8 @@ body.siini-hero-preview-feature .siini-hero-preview--feature {
 
 @media (max-width: 1120px) and (min-width: 901px) {
 	.siini-header-link--buyer,
-	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
-	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"] {
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=accessories"] {
 		display: none !important;
 	}
 
@@ -10918,12 +10926,12 @@ body :where(a, button, input, select, textarea, p, span, small, strong, em, h1, 
 	white-space: nowrap;
 }
 
-.siini-mega-nav__link[href="/product-category/new-arrivals/"] {
+.siini-mega-nav__link[href="/siini-client-demo-20260713/product-category/new-arrivals/"] {
 	color: var(--siini-demo-accent) !important;
 }
 
 .siini-header-links > .siini-header-link--concierge,
-.siini-header-links > a[href="/concierge/"] {
+.siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
 	background: transparent !important;
 	border: 0 !important;
 	color: var(--siini-demo-ink) !important;
@@ -11081,8 +11089,8 @@ body :where(a, button, input, select, textarea, p, span, small, strong, em, h1, 
 }
 
 @media (max-width: 1080px) and (min-width: 901px) {
-	.siini-mega-nav__link[href="/shop/?siini_cat=bags"],
-	.siini-mega-nav__link[href="/shop/?siini_cat=accessories"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=bags"],
+	.siini-mega-nav__link[href="/siini-client-demo-20260713/shop/?siini_cat=accessories"],
 	.siini-header-link--about,
 	.siini-header-link--contacts {
 		display: none !important;
@@ -12431,6 +12439,43 @@ body :where(a, button, input, select, textarea, p, span, small, strong, em, h1, 
 	width: 2.5rem;
 }
 
+.siini-demo-footer__socials a svg {
+	display: block;
+	fill: currentColor;
+	height: 1.05rem;
+	width: 1.05rem;
+}
+
+.siini-footer-icon-label {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.siini-demo-footer__socials--cta {
+	gap: 0.8rem;
+	margin-top: 1.35rem;
+}
+
+.siini-demo-footer__socials--cta a {
+	background: rgba(255, 255, 255, 0.02);
+	height: 3rem;
+	width: 3rem;
+}
+
+.siini-demo-footer__socials--cta a:hover,
+.siini-demo-footer__socials--cta a:focus-visible {
+	background: #fff;
+	border-color: #fff;
+	color: #111;
+}
+
 .siini-demo-footer__subscribe {
 	border: 1px solid #2e2e2e;
 	display: flex;
@@ -13498,6 +13543,44 @@ body.single-product {
 	font-weight: 800;
 }
 
+.siini-product-description-details {
+	border-top: 1px solid var(--siini-demo-line, #e6e3de);
+	display: grid;
+	gap: 0;
+	margin: 1rem 0 0;
+	padding: 0.2rem 0 0;
+}
+
+.siini-product-description-details div {
+	align-items: baseline;
+	border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+	display: grid;
+	gap: 0.75rem;
+	grid-template-columns: minmax(6.5rem, 0.42fr) minmax(0, 1fr);
+	padding: 0.62rem 0;
+}
+
+.siini-product-description-details dt,
+.siini-product-description-details dd {
+	margin: 0;
+}
+
+.siini-product-description-details dt {
+	color: var(--siini-demo-muted, #87817a);
+	font-size: 0.68rem;
+	font-weight: 900;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.siini-product-description-details dd {
+	color: var(--siini-demo-ink, #101010);
+	font-size: 0.86rem;
+	font-weight: 750;
+	line-height: 1.3;
+	overflow-wrap: anywhere;
+}
+
 .siini-product-trust {
 	display: none;
 }
@@ -13723,6 +13806,12 @@ body.single-product {
 		padding-right: 0;
 	}
 
+	.siini-product-description-details div {
+		gap: 0.22rem;
+		grid-template-columns: 1fr;
+		padding: 0.58rem 0;
+	}
+
 	.siini-product-related__header {
 		align-items: start;
 		display: grid;
@@ -13866,7 +13955,7 @@ body.single-product {
 	}
 
 	.siini-site-header .siini-header-links > .siini-header-link--concierge,
-	.siini-site-header .siini-header-links > a[href="/concierge/"] {
+	.siini-site-header .siini-header-links > a[href="/siini-client-demo-20260713/concierge/"] {
 		font-size: 14.5px !important;
 		font-weight: 600 !important;
 		letter-spacing: 0.02em !important;
@@ -14647,6 +14736,8 @@ body.single-product {
 
 .siini-concierge-service-hero h1,
 .siini-concierge-find h2,
+.siini-concierge-reviews h2,
+.siini-concierge-proof h2,
 .siini-concierge-process h2,
 .siini-concierge-brief h2,
 .siini-concierge-final h2 {
@@ -14793,6 +14884,8 @@ body.single-product {
 }
 
 .siini-concierge-find,
+.siini-concierge-reviews,
+.siini-concierge-proof,
 .siini-concierge-process,
 .siini-concierge-brief,
 .siini-concierge-final {
@@ -14802,6 +14895,7 @@ body.single-product {
 }
 
 .siini-concierge-find .siini-section__header,
+.siini-concierge-reviews .siini-section__header,
 .siini-concierge-process .siini-section__header {
 	align-items: flex-end;
 	display: flex;
@@ -14811,6 +14905,8 @@ body.single-product {
 }
 
 .siini-concierge-find h2,
+.siini-concierge-reviews h2,
+.siini-concierge-proof h2,
 .siini-concierge-process h2,
 .siini-concierge-brief h2,
 .siini-concierge-final h2 {
@@ -14869,6 +14965,332 @@ body.single-product {
 	font-size: 0.78rem;
 	font-weight: 650;
 	line-height: 1.24;
+}
+
+.siini-concierge-reviews__layout {
+	align-items: start;
+	background: transparent;
+	border: 0;
+	display: grid;
+	gap: clamp(1rem, 2.2vw, 2rem);
+	grid-template-columns: minmax(18rem, 0.76fr) minmax(0, 1.24fr);
+}
+
+.siini-concierge-reviews,
+.siini-concierge-reviews :where(div, article, p, span, small, strong, a) {
+	list-style: none !important;
+}
+
+.siini-concierge-reviews__summary,
+.siini-concierge-review-card {
+	background: #fff;
+	border: 1px solid var(--siini-concierge-line);
+	min-width: 0;
+}
+
+.siini-concierge-reviews__summary {
+	align-content: start;
+	display: grid;
+	min-height: clamp(19rem, 24vw, 24rem);
+	padding: clamp(1.25rem, 3vw, 2.65rem);
+}
+
+.siini-concierge-reviews__summary > span,
+.siini-concierge-review-card > span,
+.siini-concierge-review-card > small {
+	color: var(--siini-concierge-muted);
+	display: block;
+	font-size: 0.72rem;
+	font-weight: 850;
+	line-height: 1.1;
+	margin-bottom: 0.78rem;
+	text-transform: uppercase;
+}
+
+.siini-concierge-review-card > small {
+	align-self: end;
+	font-size: 0.68rem;
+	margin: 1.1rem 0 0;
+	opacity: 0.78;
+}
+
+.siini-concierge-reviews__summary strong {
+	display: block;
+	font-size: clamp(2.15rem, 4vw, 4.6rem);
+	font-weight: 900;
+	letter-spacing: 0;
+	line-height: 0.92;
+	max-width: 8.5ch;
+	text-transform: uppercase;
+}
+
+.siini-concierge-reviews__summary p,
+.siini-concierge-review-card p,
+.siini-concierge-reviews__note span {
+	color: var(--siini-concierge-muted);
+	font-size: 0.96rem;
+	font-weight: 650;
+	line-height: 1.45;
+	margin: 0;
+}
+
+.siini-concierge-reviews__summary p {
+	margin-top: 1rem;
+	max-width: 30rem;
+}
+
+.siini-concierge-reviews__summary .siini-concierge-button {
+	justify-self: start;
+	margin-top: 1.5rem;
+}
+
+.siini-concierge-reviews__feed {
+	align-content: center;
+	display: grid;
+	gap: clamp(0.8rem, 1.35vw, 1.15rem);
+	min-width: 0;
+	padding: clamp(0.4rem, 1.4vw, 1.1rem) 0;
+	position: relative;
+}
+
+.siini-concierge-reviews__feed::before {
+	display: none;
+}
+
+.siini-concierge-review-card {
+	align-content: start;
+	display: grid;
+	margin-left: clamp(1.7rem, 4vw, 3rem);
+	max-width: min(100%, 35rem);
+	min-height: 0;
+	padding: clamp(0.9rem, 1.7vw, 1.25rem);
+	position: relative;
+}
+
+.siini-concierge-review-card::before {
+	display: none;
+}
+
+.siini-concierge-review-card:nth-child(2),
+.siini-concierge-review-card:nth-child(5) {
+	margin-left: clamp(3.2rem, 7vw, 5.4rem);
+	max-width: min(100%, 39rem);
+}
+
+.siini-concierge-review-card:nth-child(3) {
+	margin-left: clamp(2.2rem, 5vw, 4rem);
+	max-width: min(100%, 31rem);
+}
+
+.siini-concierge-review-card:nth-child(4) {
+	margin-left: clamp(4rem, 9vw, 7rem);
+	max-width: min(100%, 33rem);
+}
+
+.siini-concierge-review-card p {
+	color: var(--siini-concierge-ink);
+	font-size: clamp(0.98rem, 1.08vw, 1.08rem);
+	font-weight: 720;
+	line-height: 1.38;
+	max-width: 32rem;
+}
+
+.siini-concierge-reviews__note {
+	align-items: center;
+	background: var(--siini-concierge-ink);
+	color: #fff;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	padding: 1rem clamp(1rem, 2vw, 1.35rem);
+}
+
+.siini-concierge-reviews__note span {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.siini-concierge-reviews__note a {
+	color: #fff;
+	flex: 0 0 auto;
+	font-size: 0.76rem;
+	font-weight: 850;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.siini-concierge-reviews__note a:hover,
+.siini-concierge-reviews__note a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.24em;
+}
+
+.siini-concierge-proof {
+	background: #f6f4ef;
+	border: 1px solid var(--siini-concierge-line);
+	box-sizing: border-box;
+	padding: clamp(1.15rem, 2.5vw, 1.75rem);
+	scroll-margin-top: calc(var(--siini-top-ticker-height, 28px) + var(--siini-header-height, 64px) + 1.25rem);
+}
+
+.siini-concierge-proof,
+.siini-concierge-proof * {
+	list-style: none !important;
+}
+
+.siini-concierge-proof__header {
+	align-items: end;
+	display: grid;
+	gap: clamp(1rem, 2vw, 1.5rem);
+	grid-template-columns: minmax(0, 1fr) auto;
+	margin-bottom: clamp(1rem, 2vw, 1.4rem);
+}
+
+.siini-concierge-proof__header h2 {
+	font-family: "Abril Fatface", Georgia, "Times New Roman", serif !important;
+	font-size: clamp(2rem, 3.05vw, 3.25rem);
+	font-weight: 400 !important;
+	line-height: 1.02;
+	margin: 0;
+	max-width: 18ch;
+	text-transform: uppercase;
+}
+
+.siini-concierge-proof__header a {
+	color: var(--siini-concierge-ink);
+	font-size: 0.78rem;
+	font-weight: 850;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.siini-concierge-proof__header a:hover,
+.siini-concierge-proof__header a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.24em;
+}
+
+.siini-concierge-proof__grid {
+	display: grid;
+	gap: clamp(0.75rem, 1.3vw, 1.1rem);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.siini-concierge-proof-card {
+	align-content: space-between;
+	background: #fff;
+	border: 1px solid var(--siini-concierge-line);
+	display: grid;
+	gap: 1.2rem;
+	min-height: clamp(18rem, 23vw, 22rem);
+	min-width: 0;
+	padding: clamp(1.1rem, 2vw, 1.55rem);
+}
+
+.siini-concierge-proof-card > span,
+.siini-concierge-proof-card > small {
+	color: var(--siini-concierge-muted);
+	display: block;
+	font-size: 0.72rem;
+	font-weight: 850;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+.siini-concierge-proof-card p,
+.siini-concierge-proof-card li {
+	color: var(--siini-concierge-ink);
+	font-size: clamp(1rem, 1.22vw, 1.22rem);
+	font-weight: 720;
+	line-height: 1.34;
+	margin: 0;
+}
+
+.siini-concierge-proof-card--quote p {
+	font-size: clamp(1.25rem, 1.85vw, 1.85rem);
+	font-weight: 820;
+	letter-spacing: 0;
+	line-height: 1.08;
+	max-width: 18ch;
+}
+
+.siini-concierge-proof-card ul {
+	display: grid;
+	gap: 0.8rem;
+	margin: 0;
+	padding: 0;
+}
+
+.siini-concierge-proof-card li {
+	border-top: 1px solid rgba(16, 16, 16, 0.1);
+	padding-top: 0.8rem;
+}
+
+.siini-concierge-proof-card li:first-child {
+	border-top: 0;
+	padding-top: 0;
+}
+
+.siini-concierge-proof-card--maps {
+	background: #fbfaf7;
+}
+
+.siini-concierge-proof-card--maps strong {
+	display: block;
+	font-size: clamp(1.65rem, 2.8vw, 3rem);
+	font-weight: 900;
+	line-height: 0.95;
+	max-width: 9ch;
+	text-transform: uppercase;
+}
+
+.siini-concierge-proof-card--maps p {
+	color: var(--siini-concierge-muted);
+	font-size: 1rem;
+	font-weight: 650;
+	max-width: 24rem;
+}
+
+.siini-concierge-proof-card--maps .siini-concierge-button {
+	align-self: end;
+	justify-self: start;
+}
+
+.siini-concierge-proof__strip {
+	align-items: center;
+	background: var(--siini-concierge-ink);
+	color: #fff;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	margin-top: clamp(0.75rem, 1.3vw, 1.1rem);
+	min-height: 4rem;
+	padding: 1rem clamp(1rem, 2vw, 1.4rem);
+}
+
+.siini-concierge-proof__strip p {
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 0.98rem;
+	font-weight: 650;
+	line-height: 1.35;
+	margin: 0;
+	max-width: 52rem;
+}
+
+.siini-concierge-proof__strip a {
+	color: #fff;
+	flex: 0 0 auto;
+	font-size: 0.78rem;
+	font-weight: 850;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.siini-concierge-proof__strip a:hover,
+.siini-concierge-proof__strip a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.24em;
 }
 
 .siini-concierge-process__grid {
@@ -15055,6 +15477,8 @@ body.single-product {
 	}
 
 	.siini-concierge-find,
+	.siini-concierge-reviews,
+	.siini-concierge-proof,
 	.siini-concierge-process,
 	.siini-concierge-brief,
 	.siini-concierge-final {
@@ -15062,12 +15486,15 @@ body.single-product {
 	}
 
 	.siini-concierge-find .siini-section__header,
+	.siini-concierge-reviews .siini-section__header,
 	.siini-concierge-process .siini-section__header {
 		align-items: flex-start;
 		display: grid;
 	}
 
 	.siini-concierge-find h2,
+	.siini-concierge-reviews h2,
+	.siini-concierge-proof h2,
 	.siini-concierge-process h2,
 	.siini-concierge-brief h2,
 	.siini-concierge-final h2 {
@@ -15077,10 +15504,131 @@ body.single-product {
 	}
 
 	.siini-concierge-find__grid,
+	.siini-concierge-reviews__layout,
+	.siini-concierge-proof__header,
+	.siini-concierge-proof__grid,
 	.siini-concierge-process__grid,
 	.siini-concierge-brief,
 	.siini-concierge-brief__list {
 		grid-template-columns: 1fr;
+	}
+
+	.siini-concierge-proof {
+		padding: 1rem;
+		scroll-margin-top: calc(var(--siini-top-ticker-height, 28px) + var(--siini-header-height, 56px) + 0.9rem);
+	}
+
+	.siini-concierge-proof__header {
+		align-items: start;
+		margin-bottom: 0.85rem;
+	}
+
+	.siini-concierge-proof__header h2 {
+		font-size: clamp(1.55rem, 6.8vw, 2rem);
+		line-height: 1.06;
+		max-width: 15ch;
+		overflow-wrap: normal;
+		word-break: normal;
+	}
+
+	.siini-concierge-proof__header a {
+		justify-self: start;
+	}
+
+	.siini-concierge-proof-card {
+		gap: 1rem;
+		min-height: 0;
+		padding: 1rem;
+	}
+
+	.siini-concierge-proof-card p,
+	.siini-concierge-proof-card li,
+	.siini-concierge-proof-card--maps p {
+		font-size: 0.92rem;
+		line-height: 1.38;
+	}
+
+	.siini-concierge-proof-card--quote p {
+		font-size: 1.18rem;
+		line-height: 1.16;
+		max-width: 22ch;
+	}
+
+	.siini-concierge-proof-card--maps strong {
+		font-size: clamp(1.6rem, 8vw, 2.15rem);
+		max-width: 10ch;
+	}
+
+	.siini-concierge-proof-card--maps .siini-concierge-button {
+		justify-self: stretch;
+	}
+
+	.siini-concierge-proof__strip {
+		align-items: stretch;
+		display: grid;
+		min-height: 0;
+		padding: 1rem;
+	}
+
+	.siini-concierge-proof__strip p {
+		font-size: 0.88rem;
+	}
+
+	.siini-concierge-reviews__summary {
+		min-height: 0;
+		padding: 1.15rem;
+	}
+
+	.siini-concierge-reviews__feed {
+		gap: 0.75rem;
+		padding: 0.75rem 0 0;
+	}
+
+	.siini-concierge-reviews__feed::before {
+		display: none;
+	}
+
+	.siini-concierge-reviews__summary strong {
+		font-size: clamp(1.95rem, 9vw, 2.65rem);
+		line-height: 0.96;
+		max-width: 10ch;
+	}
+
+	.siini-concierge-reviews__summary p,
+	.siini-concierge-review-card p,
+	.siini-concierge-reviews__note span {
+		font-size: 0.88rem;
+		line-height: 1.42;
+	}
+
+	.siini-concierge-reviews__summary .siini-concierge-button {
+		justify-self: stretch;
+		margin-top: 1.15rem;
+	}
+
+	.siini-concierge-review-card {
+		margin-left: 0;
+		max-width: none;
+		min-height: 10rem;
+		padding: 1rem;
+	}
+
+	.siini-concierge-review-card:nth-child(2),
+	.siini-concierge-review-card:nth-child(3),
+	.siini-concierge-review-card:nth-child(4),
+	.siini-concierge-review-card:nth-child(5) {
+		margin-left: 0;
+		max-width: none;
+	}
+
+	.siini-concierge-review-card::before {
+		display: none;
+	}
+
+	.siini-concierge-reviews__note {
+		align-items: stretch;
+		display: grid;
+		padding: 0.9rem 1rem;
 	}
 
 	.siini-concierge-find__tile {
@@ -17987,7 +18535,7 @@ body.siini-filter-drawer-open {
 
 .siini-catalog-filters--professional .siini-catalog-price-range__input input {
 	appearance: textfield;
-	background: transparent !important;
+	background: var(--siini-filter-soft) !important;
 	border: 0 !important;
 	border-radius: 0 !important;
 	box-shadow: none !important;
@@ -18000,6 +18548,12 @@ body.siini-filter-drawer-open {
 	outline: 0 !important;
 	padding: 0 !important;
 	width: 100% !important;
+}
+
+.siini-catalog-layout .siini-catalog-filters--professional .siini-catalog-price-range__input input,
+.siini-catalog-filters--professional .siini-catalog-filters__field--price .siini-catalog-price-range__input input {
+	background: var(--siini-filter-soft) !important;
+	box-shadow: none !important;
 }
 
 .siini-catalog-filters--professional .siini-catalog-filters__field > .siini-catalog-price-range__input {
@@ -18171,6 +18725,199 @@ body.siini-filter-drawer-open {
 	border-color: rgba(17, 17, 17, 0.32) !important;
 	color: var(--siini-filter-ink) !important;
 	font-weight: 680 !important;
+}
+
+/* Search overlay polish: remove the dark header artifact and soften the product search UI. */
+.siini-product-search {
+	inset: 0 !important;
+	isolation: isolate;
+	pointer-events: none;
+	position: fixed !important;
+	z-index: 120 !important;
+}
+
+.siini-product-search[hidden] {
+	display: none !important;
+}
+
+.siini-product-search__backdrop {
+	background: transparent !important;
+	inset: 0 !important;
+	pointer-events: auto;
+	position: absolute !important;
+}
+
+.siini-product-search__panel {
+	background: rgba(251, 250, 247, 0.98) !important;
+	border: 0 !important;
+	box-shadow: 0 1rem 2.6rem rgba(17, 17, 17, 0.08) !important;
+	box-sizing: border-box;
+	margin-top: calc(var(--siini-top-ticker-height, 28px) + var(--siini-header-height, 64px)) !important;
+	padding: clamp(1rem, 1.8vw, 1.32rem) clamp(1rem, 4vw, 4rem) !important;
+	pointer-events: auto;
+	position: relative !important;
+	width: 100%;
+}
+
+.siini-product-search__form {
+	margin: 0 auto !important;
+	max-width: 860px !important;
+}
+
+.siini-product-search__form label {
+	color: rgba(17, 17, 17, 0.56) !important;
+	display: block !important;
+	font-size: 0.76rem !important;
+	font-weight: 650 !important;
+	letter-spacing: 0 !important;
+	margin: 0 0 0.58rem !important;
+	text-transform: none !important;
+}
+
+.siini-product-search__row {
+	align-items: center;
+	display: grid !important;
+	gap: 0.58rem !important;
+	grid-template-columns: minmax(0, 1fr) auto auto !important;
+}
+
+.siini-product-search__row input[type="search"] {
+	appearance: none;
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.1) !important;
+	border-radius: 8px !important;
+	box-shadow: none !important;
+	color: #111 !important;
+	font: inherit;
+	font-size: 0.98rem !important;
+	font-weight: 560 !important;
+	min-height: 3rem !important;
+	min-width: 0 !important;
+	outline: 0 !important;
+	padding: 0.78rem 0.96rem !important;
+	width: 100% !important;
+}
+
+.siini-product-search__row input[type="search"]::placeholder {
+	color: rgba(17, 17, 17, 0.38);
+}
+
+.siini-product-search__row input[type="search"]:focus-visible {
+	border-color: rgba(17, 17, 17, 0.28) !important;
+	box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.045) !important;
+}
+
+.siini-product-search__row button[type="submit"] {
+	background: #111 !important;
+	border: 1px solid #111 !important;
+	border-radius: 8px !important;
+	color: #fff !important;
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.82rem !important;
+	font-weight: 720 !important;
+	min-height: 3rem !important;
+	padding: 0.78rem 1.28rem !important;
+	text-transform: none !important;
+	white-space: nowrap;
+}
+
+.siini-product-search__close {
+	align-items: center;
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.1) !important;
+	border-radius: 999px !important;
+	color: #111 !important;
+	cursor: pointer;
+	display: inline-flex !important;
+	font: inherit;
+	font-size: 1.05rem !important;
+	height: 3rem !important;
+	justify-content: center;
+	line-height: 1;
+	padding: 0 !important;
+	width: 3rem !important;
+}
+
+.siini-product-search__close:focus-visible,
+.siini-product-search__row button[type="submit"]:focus-visible {
+	outline: 1px solid rgba(17, 17, 17, 0.22) !important;
+	outline-offset: 2px !important;
+}
+
+@media (max-width: 900px) {
+	.siini-product-search {
+		z-index: 130 !important;
+	}
+
+	.siini-product-search__panel {
+		margin-top: calc(var(--siini-top-ticker-height, 24px) + var(--siini-header-height, 56px)) !important;
+		padding: 0.86rem max(0.78rem, env(safe-area-inset-left)) 0.92rem max(0.78rem, env(safe-area-inset-right)) !important;
+	}
+
+	.siini-product-search__form label {
+		margin-bottom: 0.5rem !important;
+	}
+
+	.siini-product-search__row {
+		gap: 0.5rem !important;
+		grid-template-columns: minmax(0, 1fr) 2.7rem !important;
+	}
+
+	.siini-product-search__row input[type="search"] {
+		font-size: 0.92rem !important;
+		min-height: 2.85rem !important;
+		padding: 0.72rem 0.82rem !important;
+	}
+
+	.siini-product-search__close {
+		grid-column: 2 !important;
+		grid-row: 1 !important;
+		height: 2.7rem !important;
+		width: 2.7rem !important;
+	}
+
+	.siini-product-search__row button[type="submit"] {
+		grid-column: 1 / -1 !important;
+		min-height: 2.8rem !important;
+		width: 100% !important;
+	}
+}
+
+/* Search results regression guard: the page must not inherit an open overlay lock. */
+html.siini-search-open,
+body.siini-product-search-page.siini-search-open {
+	overflow: auto !important;
+	position: static !important;
+}
+
+body.siini-product-search-page .siini-product-search[hidden] {
+	display: none !important;
+	pointer-events: none !important;
+}
+
+body.siini-product-search-page .siini-product-search[hidden] .siini-product-search__backdrop,
+body.siini-product-search-page .siini-product-search[hidden] .siini-product-search__panel {
+	display: none !important;
+	pointer-events: none !important;
+}
+
+body.siini-product-search-page .siini-site-main {
+	padding-top: calc(var(--siini-header-height, 64px) + clamp(1.1rem, 2.2vw, 2rem));
+}
+
+body.siini-product-search-page .siini-catalog-layout.alignwide {
+	margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+	body.siini-product-search-page .siini-site-main {
+		padding-top: clamp(0.92rem, 4vw, 1.35rem);
+	}
+
+	body.siini-product-search-page .siini-search-results-head {
+		margin-top: 0.24rem;
+	}
 }
 
 .siini-catalog-filters--professional .siini-size-chip input:checked + span::before,
@@ -18832,4 +19579,5365 @@ body.siini-filter-drawer-open {
 	border-color: #111 !important;
 	color: #fff !important;
 	outline: 0;
+}
+
+/* Header right cluster correction 2026-07-22: compact group, slightly pulled from the edge. */
+@media (min-width: 901px) {
+	.siini-site-header__actions {
+		gap: clamp(1rem, 1.2vw, 1.25rem) !important;
+		justify-content: flex-end;
+		justify-self: end;
+		margin-right: clamp(1rem, 2.35vw, 2rem) !important;
+		max-width: min(31rem, calc(50vw - 5.2rem)) !important;
+		width: auto !important;
+	}
+
+	.siini-site-header__actions > .siini-header-links {
+		flex: 0 1 auto;
+		gap: clamp(1.5rem, 2.05vw, 2.25rem) !important;
+		justify-content: flex-start;
+		max-width: 100%;
+	}
+
+	.siini-site-header__actions .wp-block-woocommerce-mini-cart {
+		flex: 0 0 auto;
+	}
+}
+
+@media (max-width: 1280px) and (min-width: 901px) {
+	.siini-site-header__actions {
+		margin-right: clamp(0.5rem, 1.35vw, 1rem) !important;
+		max-width: min(28rem, calc(50vw - 4.9rem)) !important;
+		width: 100% !important;
+	}
+
+	.siini-site-header__actions > .siini-header-links {
+		gap: clamp(0.72rem, 1.35vw, 1.25rem) !important;
+	}
+}
+
+@media (max-width: 1160px) and (min-width: 901px) {
+	.siini-site-header__actions {
+		margin-right: 0 !important;
+		width: auto !important;
+	}
+}
+
+/* Catalog filter professional pass 2026-07-23: compact ANKI-like ecommerce sidebar, scoped to archive filter UI. */
+@media (min-width: 901px) {
+	body:not(.siini-product-search-page) .siini-catalog-layout.alignwide {
+		gap: clamp(1.75rem, 2.4vw, 2.5rem) !important;
+		grid-template-columns: minmax(224px, 252px) minmax(0, 1fr) !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar {
+		max-width: 252px !important;
+		width: 100% !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-grid--catalog {
+		grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+	}
+}
+
+@media (min-width: 901px) and (max-width: 1240px) {
+	body:not(.siini-product-search-page) .siini-catalog-layout.alignwide {
+		grid-template-columns: minmax(216px, 244px) minmax(0, 1fr) !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-grid--catalog {
+		grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+	}
+}
+
+.siini-catalog-filters--professional {
+	--siini-filter-bg: #fbfaf7;
+	--siini-filter-ink: #111;
+	--siini-filter-muted: rgba(17, 17, 17, 0.48);
+	--siini-filter-line: rgba(17, 17, 17, 0.08);
+	--siini-filter-blue: #1f67ff;
+	--siini-filter-soft: #f3f1eb;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	outline: 0 !important;
+	width: 100%;
+}
+
+.siini-catalog-filters--professional:hover,
+.siini-catalog-filters--professional:focus,
+.siini-catalog-filters--professional:focus-within {
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__panel {
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	outline: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__head {
+	align-items: center !important;
+	border: 0 !important;
+	display: flex !important;
+	justify-content: space-between !important;
+	margin: 0 0 0.76rem !important;
+	padding: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__head h2 {
+	color: var(--siini-filter-ink) !important;
+	font-size: 0.98rem !important;
+	font-weight: 760 !important;
+	letter-spacing: 0 !important;
+	line-height: 1.1 !important;
+	margin: 0 !important;
+	text-transform: none !important;
+}
+
+@media (min-width: 901px) {
+	.siini-catalog-filters--professional .siini-catalog-filters__head button[data-siini-filter-close] {
+		display: none !important;
+	}
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__form {
+	align-items: stretch !important;
+	background: transparent !important;
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 0 !important;
+	overflow: visible !important;
+	padding: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-section {
+	border: 0 !important;
+	border-top: 1px solid var(--siini-filter-line) !important;
+	margin: 0 !important;
+	padding: 0.62rem 0 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-section + .siini-filter-section,
+.siini-catalog-layout .siini-catalog-filters--professional .siini-filter-section + .siini-filter-section {
+	margin-top: 0.58rem !important;
+	padding-top: 0.62rem !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-section > summary {
+	align-items: center !important;
+	color: var(--siini-filter-ink) !important;
+	cursor: pointer;
+	display: flex !important;
+	font-size: 0.88rem !important;
+	font-weight: 720 !important;
+	justify-content: space-between !important;
+	letter-spacing: 0 !important;
+	line-height: 1.15 !important;
+	min-height: 1.55rem !important;
+	outline: 0 !important;
+	padding: 0 !important;
+	text-transform: none !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-section > summary::-webkit-details-marker {
+	display: none;
+}
+
+.siini-catalog-filters--professional .siini-filter-section > summary::after {
+	color: var(--siini-filter-muted) !important;
+	content: "+" !important;
+	font-size: 1rem !important;
+	font-weight: 520 !important;
+	line-height: 1 !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-section[open] > summary::after {
+	content: "-" !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-section > summary:focus,
+.siini-catalog-filters--professional .siini-filter-section > summary:focus-visible {
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-section__body {
+	overflow: visible !important;
+	padding: 0.46rem 0 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-options,
+.siini-catalog-filters--professional .siini-catalog-size-group__chips {
+	display: grid !important;
+	gap: 0.3rem !important;
+	grid-template-columns: 1fr !important;
+	overflow: visible !important;
+	padding: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-size-group__chips {
+	grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-size-filter {
+	display: grid !important;
+	gap: 0.58rem !important;
+	overflow: visible !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-size-group {
+	border: 0 !important;
+	display: grid !important;
+	gap: 0.32rem !important;
+	margin: 0 !important;
+	min-width: 0 !important;
+	padding: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-size-group legend {
+	color: var(--siini-filter-muted) !important;
+	float: none !important;
+	font-size: 0.68rem !important;
+	font-weight: 720 !important;
+	letter-spacing: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-transform: none !important;
+	width: auto !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip,
+.siini-catalog-filters--professional .siini-filter-option {
+	cursor: pointer;
+	display: block !important;
+	min-width: 0 !important;
+	outline: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-switch input,
+.siini-catalog-filters--professional .siini-size-chip input,
+.siini-catalog-filters--professional .siini-filter-option input {
+	height: 1px !important;
+	opacity: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip span,
+.siini-catalog-filters--professional .siini-filter-option span,
+.siini-catalog-filters--professional .siini-size-chip input[type="checkbox"] + span,
+.siini-catalog-filters--professional .siini-filter-option input[type="checkbox"] + span {
+	align-items: center !important;
+	background: var(--siini-filter-soft) !important;
+	border: 1px solid transparent !important;
+	border-radius: 8px !important;
+	box-shadow: none !important;
+	color: var(--siini-filter-ink) !important;
+	display: grid !important;
+	font-size: 0.8rem !important;
+	font-weight: 620 !important;
+	gap: 0.38rem !important;
+	grid-template-columns: 0.92rem minmax(0, 1fr) auto !important;
+	line-height: 1.08 !important;
+	min-height: 2.02rem !important;
+	outline: 0 !important;
+	padding: 0.36rem 0.46rem !important;
+	transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+	width: 100% !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip b,
+.siini-catalog-filters--professional .siini-filter-option b {
+	font: inherit !important;
+	min-width: 0 !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.siini-catalog-filters--professional .siini-size-chip small,
+.siini-catalog-filters--professional .siini-filter-option small {
+	color: var(--siini-filter-muted) !important;
+	font-size: 0.68rem !important;
+	font-weight: 620 !important;
+	justify-self: end;
+	line-height: 1 !important;
+	min-width: 0.65rem !important;
+	text-align: right;
+}
+
+.siini-catalog-filters--professional .siini-size-chip span::before,
+.siini-catalog-filters--professional .siini-filter-option span::before {
+	align-items: center !important;
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.16) !important;
+	border-radius: 5px !important;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.68);
+	color: transparent !important;
+	content: "" !important;
+	display: inline-flex !important;
+	font-size: 0.72rem !important;
+	font-weight: 850 !important;
+	height: 0.9rem !important;
+	justify-content: center !important;
+	line-height: 1 !important;
+	width: 0.9rem !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip:hover span,
+.siini-catalog-filters--professional .siini-filter-option:hover span {
+	background: #fff !important;
+	border-color: rgba(31, 103, 255, 0.22) !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip input:checked + span,
+.siini-catalog-filters--professional .siini-filter-option input:checked + span,
+.siini-catalog-filters--professional .siini-size-chip.is-active span,
+.siini-catalog-filters--professional .siini-filter-option.is-active span {
+	background: #fff !important;
+	border-color: rgba(31, 103, 255, 0.28) !important;
+	color: var(--siini-filter-ink) !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip input:checked + span::before,
+.siini-catalog-filters--professional .siini-filter-option input:checked + span::before,
+.siini-catalog-filters--professional .siini-size-chip.is-active span::before,
+.siini-catalog-filters--professional .siini-filter-option.is-active span::before {
+	background: #fff !important;
+	border-color: rgba(31, 103, 255, 0.34) !important;
+	box-shadow: none !important;
+	color: var(--siini-filter-blue) !important;
+	content: "✓" !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip input:focus-visible + span,
+.siini-catalog-filters--professional .siini-filter-option input:focus-visible + span,
+.siini-catalog-filters--professional .siini-filter-switch input:focus-visible + span {
+	box-shadow: 0 0 0 2px rgba(31, 103, 255, 0.12) !important;
+	outline: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip.is-disabled {
+	cursor: default;
+}
+
+.siini-catalog-filters--professional .siini-size-chip.is-disabled span {
+	background: rgba(243, 241, 235, 0.58) !important;
+	color: rgba(17, 17, 17, 0.34) !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip.is-disabled span::before {
+	background: rgba(255, 255, 255, 0.58) !important;
+}
+
+.siini-catalog-filters--professional .siini-size-chip.is-disabled small {
+	color: rgba(17, 17, 17, 0.26) !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-price-range {
+	display: grid !important;
+	gap: 0.48rem !important;
+	grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	overflow: visible !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__field--price {
+	display: grid !important;
+	gap: 0.22rem !important;
+	min-width: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__field--price > span:first-child {
+	color: var(--siini-filter-muted) !important;
+	font-size: 0.66rem !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	margin: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-price-range__input,
+.siini-catalog-layout .siini-catalog-filters--professional .siini-catalog-price-range__input {
+	align-items: center !important;
+	background: var(--siini-filter-soft) !important;
+	border: 1px solid transparent !important;
+	border-radius: 9px !important;
+	box-shadow: none !important;
+	display: flex !important;
+	gap: 0.24rem !important;
+	min-height: 2.12rem !important;
+	overflow: hidden !important;
+	padding: 0 0.52rem !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-price-range__input input {
+	appearance: textfield;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	color: var(--siini-filter-ink) !important;
+	font: inherit !important;
+	font-size: 0.8rem !important;
+	font-weight: 680 !important;
+	min-height: 1.8rem !important;
+	min-width: 0 !important;
+	outline: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-price-range__input b {
+	background: transparent !important;
+	border: 0 !important;
+	color: var(--siini-filter-muted) !important;
+	font-size: 0.72rem !important;
+	font-weight: 650 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-price-range__input:focus-within {
+	border-color: rgba(31, 103, 255, 0.22) !important;
+	box-shadow: 0 0 0 2px rgba(31, 103, 255, 0.1) !important;
+	outline: 0 !important;
+}
+
+.siini-catalog-price-slider {
+	--siini-price-min: 0%;
+	--siini-price-max: 100%;
+	grid-column: 1 / -1;
+	height: 1.3rem;
+	margin-top: 0.04rem;
+	position: relative;
+}
+
+.siini-catalog-price-slider > span {
+	background: linear-gradient(
+		to right,
+		rgba(17, 17, 17, 0.12) 0%,
+		rgba(17, 17, 17, 0.12) var(--siini-price-min),
+		var(--siini-filter-blue) var(--siini-price-min),
+		var(--siini-filter-blue) var(--siini-price-max),
+		rgba(17, 17, 17, 0.12) var(--siini-price-max),
+		rgba(17, 17, 17, 0.12) 100%
+	);
+	border-radius: 999px;
+	height: 3px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0.58rem;
+}
+
+.siini-catalog-price-slider input[type="range"] {
+	appearance: none;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	height: 1.3rem !important;
+	left: 0;
+	margin: 0 !important;
+	min-height: 0 !important;
+	outline: 0 !important;
+	padding: 0 !important;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	width: 100% !important;
+}
+
+.siini-catalog-price-slider input[type="range"]:focus,
+.siini-catalog-price-slider input[type="range"]:focus-visible {
+	border: 0 !important;
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-price-slider input[type="range"],
+.siini-catalog-layout .siini-catalog-filters--professional .siini-catalog-price-slider input[type="range"] {
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	height: 1.3rem !important;
+	min-height: 0 !important;
+	padding: 0 !important;
+}
+
+.siini-catalog-price-slider input[type="range"]::-webkit-slider-runnable-track {
+	background: transparent;
+	border: 0;
+	height: 3px;
+}
+
+.siini-catalog-price-slider input[type="range"]::-webkit-slider-thumb {
+	appearance: none;
+	background: #fff;
+	border: 1px solid rgba(31, 103, 255, 0.42);
+	border-radius: 999px;
+	box-shadow: 0 0.16rem 0.48rem rgba(17, 17, 17, 0.12);
+	cursor: grab;
+	height: 0.9rem;
+	margin-top: -0.36rem;
+	pointer-events: auto;
+	width: 0.9rem;
+}
+
+.siini-catalog-price-slider input[type="range"]::-moz-range-track {
+	background: transparent;
+	border: 0;
+	height: 3px;
+}
+
+.siini-catalog-price-slider input[type="range"]::-moz-range-thumb {
+	background: #fff;
+	border: 1px solid rgba(31, 103, 255, 0.42);
+	border-radius: 999px;
+	box-shadow: 0 0.16rem 0.48rem rgba(17, 17, 17, 0.12);
+	cursor: grab;
+	height: 0.9rem;
+	pointer-events: auto;
+	width: 0.9rem;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__toggles {
+	border-top: 1px solid var(--siini-filter-line) !important;
+	display: grid !important;
+	gap: 0.22rem !important;
+	margin: 0.62rem 0 0 !important;
+	padding-top: 0.62rem !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-switch span {
+	background: transparent !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	color: var(--siini-filter-ink) !important;
+	font-size: 0.82rem !important;
+	font-weight: 650 !important;
+	min-height: 1.92rem !important;
+	padding: 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-switch span::after {
+	background: rgba(17, 17, 17, 0.12) !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	height: 1.16rem !important;
+	width: 2rem !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-switch span::before {
+	background: #fff !important;
+	box-shadow: 0 0.08rem 0.24rem rgba(17, 17, 17, 0.16) !important;
+	height: 0.86rem !important;
+	right: 1rem !important;
+	width: 0.86rem !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-switch input:checked + span::after {
+	background: rgba(31, 103, 255, 0.88) !important;
+}
+
+.siini-catalog-filters--professional .siini-filter-switch input:checked + span::before {
+	right: 0.18rem !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__actions {
+	background: transparent !important;
+	border: 0 !important;
+	display: grid !important;
+	gap: 0.42rem !important;
+	padding: 0.72rem 0 0 !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__actions button,
+.siini-catalog-filters--professional .siini-catalog-filters__actions a {
+	border-radius: 8px !important;
+	font-size: 0.78rem !important;
+	font-weight: 720 !important;
+	min-height: 2.36rem !important;
+	outline: 0 !important;
+	text-transform: none !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__actions button {
+	background: var(--siini-filter-ink) !important;
+	border-color: var(--siini-filter-ink) !important;
+	color: #fff !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__actions a {
+	background: transparent !important;
+	border: 0 !important;
+	color: var(--siini-filter-muted) !important;
+}
+
+.siini-catalog-filters--professional .siini-catalog-filters__actions button:focus-visible,
+.siini-catalog-filters--professional .siini-catalog-filters__actions a:focus-visible,
+.siini-catalog-filters--professional .siini-catalog-filters__open:focus-visible {
+	box-shadow: 0 0 0 2px rgba(31, 103, 255, 0.12) !important;
+	outline: 0 !important;
+}
+
+.siini-catalog-filters--professional *,
+.siini-catalog-filters--professional *::before,
+.siini-catalog-filters--professional *::after {
+	scrollbar-width: none;
+}
+
+.siini-catalog-filters--professional *::-webkit-scrollbar {
+	display: none;
+	height: 0;
+	width: 0;
+}
+
+@media (max-width: 900px) {
+	.siini-catalog-filters--professional .siini-catalog-filters__open {
+		align-items: center !important;
+		background: #fff !important;
+		border: 1px solid var(--siini-filter-line) !important;
+		border-radius: 8px !important;
+		box-shadow: none !important;
+		color: var(--siini-filter-ink) !important;
+		display: inline-flex !important;
+		font-size: 0.82rem !important;
+		font-weight: 720 !important;
+		min-height: 2.36rem !important;
+		outline: 0 !important;
+		padding: 0.5rem 0.82rem !important;
+	}
+
+	.siini-catalog-filters--professional .siini-catalog-filters__panel {
+		background: var(--siini-filter-bg) !important;
+		box-shadow: 0.8rem 0 2.4rem rgba(17, 17, 17, 0.14) !important;
+		display: flex !important;
+		flex-direction: column !important;
+		max-width: 380px !important;
+		overflow-x: hidden !important;
+		overflow-y: hidden !important;
+		padding: 0 !important;
+		width: min(92vw, 380px) !important;
+	}
+
+	.siini-catalog-filters--professional .siini-catalog-filters__head {
+		background: var(--siini-filter-bg) !important;
+		border-bottom: 1px solid var(--siini-filter-line) !important;
+		margin: 0 !important;
+		padding: 0.9rem 1rem !important;
+		position: sticky;
+		top: 0;
+		z-index: 2;
+	}
+
+	.siini-catalog-filters--professional .siini-catalog-filters__head button[data-siini-filter-close] {
+		align-items: center !important;
+		background: #fff !important;
+		border: 1px solid var(--siini-filter-line) !important;
+		border-radius: 999px !important;
+		color: var(--siini-filter-ink) !important;
+		display: inline-flex !important;
+		height: 2.25rem !important;
+		justify-content: center !important;
+		width: 2.25rem !important;
+	}
+
+	.siini-catalog-filters--professional .siini-catalog-filters__form {
+		flex: 1 1 auto !important;
+		min-height: 0 !important;
+		overflow-x: hidden !important;
+		overflow-y: auto !important;
+		padding: 0.82rem 1rem 0.86rem !important;
+	}
+
+	.siini-catalog-filters--professional .siini-catalog-filters__actions {
+		background: var(--siini-filter-bg) !important;
+		border-top: 1px solid var(--siini-filter-line) !important;
+		bottom: 0;
+		box-shadow: 0 -0.6rem 1.2rem rgba(251, 250, 247, 0.92) !important;
+		flex: 0 0 auto !important;
+		padding: 0.7rem 1rem calc(0.76rem + env(safe-area-inset-bottom)) !important;
+		position: relative !important;
+	}
+}
+
+/* Footer floor fix 2026-07-22: the space below the dark footer should stay dark. */
+html,
+body {
+	background: var(--siini-demo-footer, #0c0c0c) !important;
+}
+
+.wp-site-blocks {
+	background: var(--siini-demo-footer, #0c0c0c);
+}
+
+.wp-site-blocks > main {
+	background: var(--siini-demo-bg, #fafaf8);
+}
+
+/* Product cards carousel pass 2026-07-23: clean ecommerce card structure for review. */
+.siini-home-new-carousel {
+	--siini-new-edge-size: clamp(1.55rem, 2.6vw, 2.65rem);
+	--siini-new-fade-rgb: 250, 250, 248;
+	overflow: visible;
+	position: relative;
+}
+
+.siini-home-new-carousel__viewport {
+	overflow: hidden;
+	position: relative;
+}
+
+.siini-home-new-carousel__viewport::before,
+.siini-home-new-carousel__viewport::after {
+	background: linear-gradient(90deg, rgba(var(--siini-new-fade-rgb), 0), rgba(var(--siini-new-fade-rgb), 0.92));
+	bottom: auto;
+	content: "" !important;
+	display: block !important;
+	height: min(100%, clamp(15rem, 26vw, 24rem));
+	opacity: 1;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	transition: opacity 160ms ease;
+	width: var(--siini-new-edge-size);
+	z-index: 3;
+}
+
+.siini-home-new-carousel__viewport::before {
+	background: linear-gradient(90deg, rgba(var(--siini-new-fade-rgb), 0.92), rgba(var(--siini-new-fade-rgb), 0));
+	left: 0;
+}
+
+.siini-home-new-carousel__viewport::after {
+	right: 0;
+}
+
+.siini-home-new-carousel.is-at-start .siini-home-new-carousel__viewport::before,
+.siini-home-new-carousel.is-at-end .siini-home-new-carousel__viewport::after {
+	opacity: 0;
+}
+
+.siini-home-new-rotator {
+	cursor: grab;
+	padding: 0 var(--siini-new-edge-size) 0.5rem !important;
+	scroll-behavior: smooth;
+	scroll-padding-inline: var(--siini-new-snap-padding, var(--siini-new-edge-size));
+	touch-action: pan-y;
+	user-select: none;
+}
+
+.siini-home-new-rotator.is-pointer-down,
+.siini-home-new-rotator.is-dragging {
+	cursor: grabbing;
+	scroll-behavior: auto;
+}
+
+.siini-home-new-rotator__slot {
+	flex-basis: calc((100% - (4 * var(--siini-new-gap))) / 5) !important;
+}
+
+.siini-home-product-card--new-rotator .siini-home-product-card__media {
+	aspect-ratio: 3 / 3.32 !important;
+}
+
+.siini-home-product-card {
+	display: flex !important;
+	flex-direction: column;
+	gap: 0 !important;
+	height: 100%;
+	min-height: 100%;
+	overflow: visible;
+}
+
+.siini-home-product-card__media-wrap {
+	flex: 0 0 auto;
+	margin-bottom: 0.72rem !important;
+}
+
+.siini-home-product-card__media,
+.siini-home-product-card--new-rotator .siini-home-product-card__media,
+.siini-home-product-card--catalog .siini-home-product-card__media {
+	appearance: none;
+	background: #fbfbfa !important;
+	border: 1px solid rgba(17, 17, 17, 0.07) !important;
+	cursor: pointer;
+	display: block;
+	font: inherit;
+	isolation: isolate;
+	padding: 0;
+	text-align: inherit;
+	width: 100%;
+}
+
+.siini-home-product-card__media::before,
+.siini-home-product-card__badge {
+	display: none !important;
+}
+
+.siini-home-product-card__image,
+.siini-home-product-card--new-rotator .siini-home-product-card__media img,
+.siini-home-product-card--catalog .siini-home-product-card__media img {
+	-webkit-user-drag: none;
+	object-fit: cover !important;
+	pointer-events: none;
+	transition: opacity 180ms ease, transform 520ms cubic-bezier(0.22, 0.7, 0.3, 1) !important;
+	user-select: none;
+}
+
+.siini-home-product-card__image--alt {
+	inset: 0;
+	opacity: 0;
+	position: absolute;
+}
+
+.siini-home-product-card.has-alt-image:hover .siini-home-product-card__image:first-of-type,
+.siini-home-product-card.has-alt-image:focus-within .siini-home-product-card__image:first-of-type {
+	opacity: 0;
+}
+
+.siini-home-product-card.has-alt-image:hover .siini-home-product-card__image--alt,
+.siini-home-product-card.has-alt-image:focus-within .siini-home-product-card__image--alt {
+	opacity: 1;
+}
+
+.siini-home-product-card__image-dots {
+	align-items: center;
+	bottom: 0.58rem;
+	display: inline-flex;
+	gap: 0.28rem;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+	z-index: 4;
+}
+
+.siini-home-product-card__image-dots i {
+	background: rgba(17, 17, 17, 0.34);
+	border-radius: 999px;
+	display: block;
+	height: 0.28rem;
+	width: 0.28rem;
+}
+
+.siini-home-product-card.has-alt-image:hover .siini-home-product-card__image-dots i:first-child,
+.siini-home-product-card.has-alt-image:focus-within .siini-home-product-card__image-dots i:first-child {
+	background: rgba(17, 17, 17, 0.34);
+}
+
+.siini-home-product-card__image-dots i:first-child,
+.siini-home-product-card.has-alt-image:hover .siini-home-product-card__image-dots i:last-child,
+.siini-home-product-card.has-alt-image:focus-within .siini-home-product-card__image-dots i:last-child {
+	background: #111;
+}
+
+.siini-home-product-card__quick {
+	display: none !important;
+}
+
+.siini-home-product-card__body,
+.siini-home-product-card--new-rotator .siini-home-product-card__body,
+.siini-home-product-card--catalog .siini-home-product-card__body {
+	display: flex !important;
+	flex: 1 1 auto;
+	flex-direction: column;
+	gap: 0.42rem !important;
+	min-width: 0;
+}
+
+.siini-home-product-card__brand,
+.siini-home-product-card--catalog .siini-home-product-card__brand,
+.siini-home-product-card--new-rotator .siini-home-product-card__brand {
+	align-items: center;
+	display: flex !important;
+	min-height: 0.88rem;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.siini-home-product-card h3,
+.siini-home-product-card--catalog h3,
+.siini-home-product-card--new-rotator h3 {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	display: -webkit-box !important;
+	line-height: 1.28 !important;
+	margin-bottom: 0 !important;
+	overflow-wrap: anywhere;
+	overflow: hidden;
+	min-height: 2.56em;
+}
+
+.siini-home-product-card__price,
+.siini-home-product-card--catalog .siini-home-product-card__price,
+.siini-home-product-card--new-rotator .siini-home-product-card__price {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.38rem;
+	margin-top: 0 !important;
+	min-height: 1.32rem;
+}
+
+.siini-home-product-card__price-old,
+.siini-product-card__price-old,
+.siini-product-card__old-price,
+.siini-card-old-price,
+.siini-home-product-card__price del {
+	color: rgba(17, 17, 17, 0.46) !important;
+	font-size: 0.83rem !important;
+	font-weight: 650 !important;
+	margin: 0 !important;
+	text-decoration: line-through;
+}
+
+.siini-home-product-card__sizes {
+	align-content: flex-start;
+	align-items: flex-start;
+	display: flex !important;
+	flex-wrap: wrap;
+	gap: 0.34rem !important;
+	margin-top: 0.08rem !important;
+	max-height: 4.1rem;
+	min-height: 4.1rem;
+	overflow: hidden;
+}
+
+.siini-home-product-card__sizes-overlay {
+	display: none !important;
+}
+
+.siini-home-product-card__size {
+	align-items: center;
+	align-self: flex-start;
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.14) !important;
+	color: #111 !important;
+	cursor: pointer;
+	display: inline-flex !important;
+	flex: 0 0 auto;
+	height: 2.12rem;
+	justify-content: center;
+	line-height: 1 !important;
+	min-height: 0;
+	min-width: 2.42rem;
+	padding: 0.48rem 0.58rem !important;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.siini-home-product-card__size:hover,
+.siini-home-product-card__size:focus-visible,
+.siini-home-product-card__size.is-selected {
+	background: #111 !important;
+	border-color: #111 !important;
+	color: #fff !important;
+	outline: 0;
+}
+
+.siini-home-product-card__size.is-disabled,
+.siini-home-product-card__size[aria-disabled="true"] {
+	background: #f4f4f2 !important;
+	border-color: rgba(17, 17, 17, 0.08) !important;
+	color: rgba(17, 17, 17, 0.32) !important;
+	cursor: default;
+	text-decoration: line-through;
+}
+
+.siini-home-product-card__size.is-disabled:hover,
+.siini-home-product-card__size.is-disabled:focus-visible,
+.siini-home-product-card__size[aria-disabled="true"]:hover,
+.siini-home-product-card__size[aria-disabled="true"]:focus-visible {
+	background: #f4f4f2 !important;
+	border-color: rgba(17, 17, 17, 0.08) !important;
+	color: rgba(17, 17, 17, 0.32) !important;
+}
+
+.siini-home-product-card__action {
+	display: block !important;
+	margin-top: auto !important;
+	position: relative;
+}
+
+.siini-home-product-card__button {
+	background: #111 !important;
+	border-color: #111 !important;
+	color: #fff !important;
+	min-height: 2.48rem;
+	width: 100%;
+}
+
+.siini-home-product-card__button[hidden],
+.siini-home-product-card__action > .added_to_cart.wc-forward {
+	display: none !important;
+}
+
+.siini-home-product-card__button[aria-disabled="true"] {
+	cursor: pointer;
+}
+
+.siini-home-product-card__button.is-loading {
+	opacity: 0.68;
+	pointer-events: none;
+}
+
+.siini-home-product-card__button:hover,
+.siini-home-product-card__button:focus-visible {
+	background: #fff !important;
+	color: #111 !important;
+}
+
+.siini-home-product-card__added {
+	display: grid;
+	gap: 0.44rem;
+	grid-template-columns: minmax(6.7rem, 0.48fr) minmax(0, 1fr);
+	min-height: 2.48rem;
+	width: 100%;
+}
+
+.siini-home-product-card__added[hidden] {
+	display: none !important;
+}
+
+.siini-home-product-card__added-count,
+.siini-home-product-card__cart-link {
+	align-items: center;
+	border: 1px solid #111;
+	display: inline-flex;
+	font-size: 0.72rem;
+	font-weight: 900;
+	justify-content: center;
+	line-height: 1;
+	min-height: 2.48rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.siini-home-product-card__added-count {
+	background: #fff;
+	border-radius: 0;
+	color: #111;
+	display: grid;
+	grid-template-columns: minmax(2.2rem, 1fr) minmax(2rem, 0.86fr) minmax(2.2rem, 1fr);
+	min-width: 6.7rem;
+	padding: 0;
+	place-items: center;
+	overflow: hidden;
+}
+
+.siini-home-product-card__qty-button {
+	align-items: center;
+	appearance: none;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	color: inherit;
+	cursor: pointer;
+	display: inline-flex;
+	font: inherit;
+	font-size: 1rem;
+	font-weight: 760;
+	height: 100%;
+	justify-content: center;
+	line-height: 1;
+	padding: 0;
+	touch-action: manipulation;
+	width: 100%;
+}
+
+.siini-home-product-card__qty-button:hover,
+.siini-home-product-card__qty-button:focus-visible {
+	background: #111;
+	color: #fff;
+	outline: 0;
+}
+
+.siini-home-product-card__qty-button:disabled,
+.siini-home-product-card__qty-button[aria-disabled="true"] {
+	background: transparent;
+	color: rgba(17, 17, 17, 0.28);
+	cursor: default;
+	pointer-events: none;
+}
+
+.siini-home-product-card__qty-value {
+	align-items: center;
+	border-left: 1px solid rgba(17, 17, 17, 0.12);
+	border-right: 1px solid rgba(17, 17, 17, 0.12);
+	color: #111;
+	display: inline-flex;
+	font-size: 0.78rem;
+	font-weight: 900;
+	height: 100%;
+	justify-content: center;
+	line-height: 1;
+	min-width: 1.6rem;
+}
+
+.siini-home-product-card.is-quantity-loading .siini-home-product-card__added {
+	opacity: 0.72;
+}
+
+.siini-home-product-card__cart-link {
+	background: #111;
+	color: #fff;
+	min-width: 0;
+	overflow: hidden;
+	padding-inline: 0.64rem;
+	text-overflow: ellipsis;
+}
+
+.siini-home-product-card__message {
+	bottom: -1.05rem;
+	color: rgba(17, 17, 17, 0.58);
+	display: block;
+	font-size: 0.64rem;
+	font-weight: 750;
+	left: 0;
+	line-height: 1.1;
+	max-width: 100%;
+	overflow: hidden;
+	position: absolute;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.siini-home-product-card__message:empty {
+	display: none;
+}
+
+.siini-home-product-card__message.is-error {
+	color: #9b1c1c;
+}
+
+/* Product card white photo well cleanup 2026-07-24: remove beige haze from ecommerce thumbnails. */
+.siini-home-product-card .siini-home-product-card__media,
+.siini-home-product-card--new-rotator .siini-home-product-card__media,
+.siini-home-product-card--catalog .siini-home-product-card__media,
+.siini-home-new .siini-home-product-card__media,
+.siini-catalog-layout .siini-home-product-card__media {
+	background: #fff !important;
+	background-color: #fff !important;
+	background-image: none !important;
+	overflow: hidden;
+}
+
+.siini-home-product-card .siini-home-product-card__media::before,
+.siini-home-product-card .siini-home-product-card__media::after {
+	background: none !important;
+	content: none !important;
+	display: none !important;
+}
+
+.siini-home-product-card .siini-home-product-card__image,
+.siini-home-product-card--new-rotator .siini-home-product-card__media img,
+.siini-home-product-card--catalog .siini-home-product-card__media img,
+.siini-home-new .siini-home-product-card__media img,
+.siini-catalog-layout .siini-home-product-card__media img {
+	background: #fff !important;
+	object-fit: contain !important;
+	object-position: center center !important;
+	transform: scale(var(--siini-card-img-scale, 1.08)) !important;
+	transform-origin: center center;
+}
+
+.siini-home-product-card:hover .siini-home-product-card__image,
+.siini-home-product-card:focus-within .siini-home-product-card__image {
+	transform: scale(var(--siini-card-img-hover-scale, 1.12)) !important;
+}
+
+.siini-home-product-card--footwear,
+.siini-home-product-card--cat-sneakers {
+	--siini-card-img-hover-scale: 1.08;
+	--siini-card-img-scale: 1.05;
+}
+
+.siini-home-product-card--brand-new-balance.siini-home-product-card--cat-sneakers {
+	--siini-card-img-hover-scale: 1.13;
+	--siini-card-img-scale: 1.1;
+}
+
+.siini-home-product-card--apparel {
+	--siini-card-img-hover-scale: 1.12;
+	--siini-card-img-scale: 1.08;
+}
+
+.siini-home-product-card--cat-hoodies-sweatshirts,
+.siini-home-product-card--cat-outerwear {
+	--siini-card-img-hover-scale: 1.1;
+	--siini-card-img-scale: 1.07;
+}
+
+.siini-home-product-card--cat-tshirts {
+	--siini-card-img-hover-scale: 1.16;
+	--siini-card-img-scale: 1.13;
+}
+
+.siini-home-product-card--cat-pants-shorts {
+	--siini-card-img-hover-scale: 1.46;
+	--siini-card-img-scale: 1.42;
+}
+
+.siini-home-product-card--catalog.siini-home-product-card--footwear,
+.siini-home-product-card--catalog.siini-home-product-card--cat-sneakers {
+	--siini-card-img-hover-scale: 1.08;
+	--siini-card-img-scale: 1.05;
+}
+
+.siini-home-product-card--catalog.siini-home-product-card--brand-new-balance.siini-home-product-card--cat-sneakers {
+	--siini-card-img-hover-scale: 1.13;
+	--siini-card-img-scale: 1.1;
+}
+
+.siini-home-product-card--catalog.siini-home-product-card--apparel {
+	--siini-card-img-hover-scale: 1.12;
+	--siini-card-img-scale: 1.08;
+}
+
+.siini-home-product-card--catalog.siini-home-product-card--cat-hoodies-sweatshirts,
+.siini-home-product-card--catalog.siini-home-product-card--cat-outerwear {
+	--siini-card-img-hover-scale: 1.1;
+	--siini-card-img-scale: 1.07;
+}
+
+.siini-home-product-card--catalog.siini-home-product-card--cat-tshirts {
+	--siini-card-img-hover-scale: 1.16;
+	--siini-card-img-scale: 1.13;
+}
+
+.siini-home-product-card--catalog.siini-home-product-card--cat-pants-shorts {
+	--siini-card-img-hover-scale: 1.46;
+	--siini-card-img-scale: 1.42;
+}
+
+/* Pants cards use tall product photos; keep the whole item visible instead of zooming into the legs. */
+.siini-home-product-card--cat-pants-shorts {
+	--siini-card-img-hover-scale: 1.03 !important;
+	--siini-card-img-scale: 1 !important;
+}
+
+.siini-home-product-card--cat-pants-shorts .siini-home-product-card__image,
+.siini-home-product-card--cat-pants-shorts .siini-home-product-card__media img {
+	height: 94% !important;
+	max-height: 94% !important;
+	max-width: 72% !important;
+	object-fit: contain !important;
+	width: auto !important;
+}
+
+.siini-home-product-card h3 a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.siini-home-product-card h3 a:hover,
+.siini-home-product-card h3 a:focus-visible {
+	text-decoration: underline;
+	text-decoration-thickness: 0.08em;
+	text-underline-offset: 0.18em;
+}
+
+.siini-lightbox-open {
+	overflow: hidden !important;
+}
+
+.siini-product-lightbox {
+	align-items: center;
+	background: rgba(8, 8, 8, 0.78);
+	display: flex;
+	inset: 0;
+	justify-content: center;
+	padding: clamp(1rem, 4vw, 3rem);
+	position: fixed;
+	z-index: 9999;
+}
+
+.siini-product-lightbox[hidden] {
+	display: none !important;
+}
+
+.siini-product-lightbox__dialog {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	max-height: 100%;
+	max-width: 100%;
+	position: relative;
+}
+
+.siini-product-lightbox__image {
+	background: #fff;
+	display: block;
+	height: auto;
+	max-height: min(86vh, 980px);
+	max-width: min(92vw, 1180px);
+	object-fit: contain;
+	width: auto;
+}
+
+.siini-product-lightbox__close {
+	align-items: center;
+	appearance: none;
+	background: #fff;
+	border: 1px solid rgba(17, 17, 17, 0.14);
+	border-radius: 999px;
+	color: #111;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 1.3rem;
+	font-weight: 500;
+	height: 2.5rem;
+	justify-content: center;
+	line-height: 1;
+	position: absolute;
+	right: -0.8rem;
+	top: -0.8rem;
+	width: 2.5rem;
+	z-index: 2;
+}
+
+.siini-product-lightbox__close:hover,
+.siini-product-lightbox__close:focus-visible {
+	background: #111;
+	color: #fff;
+	outline: 0;
+}
+
+/* Catalog six-column density pass 2026-07-23: use more desktop width without changing mobile flow. */
+@media (min-width: 1400px) {
+	body:not(.siini-product-search-page) .siini-catalog-layout.alignwide {
+		gap: clamp(1.25rem, 1.7vw, 1.9rem) !important;
+		grid-template-columns: minmax(190px, 218px) minmax(0, 1fr) !important;
+		max-width: none !important;
+		width: min(calc(100vw - 2rem), 1720px) !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar {
+		max-width: 218px !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-grid--catalog {
+		gap: 1.55rem 0.86rem !important;
+		grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-card--catalog .siini-home-product-card__body {
+		gap: 0.34rem !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-card--catalog .siini-home-product-card__media {
+		aspect-ratio: 1 / 1.2 !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-card--catalog h3 {
+		font-size: 0.82rem !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-card--catalog .siini-home-product-card__button {
+		font-size: 0.66rem !important;
+		min-height: 2.32rem;
+	}
+}
+
+@media (min-width: 1241px) and (max-width: 1399px) {
+	body:not(.siini-product-search-page) .siini-catalog-layout.alignwide {
+		gap: clamp(1.12rem, 1.55vw, 1.55rem) !important;
+		grid-template-columns: minmax(188px, 214px) minmax(0, 1fr) !important;
+		max-width: none !important;
+		width: min(calc(100vw - 1.5rem), 1380px) !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar {
+		max-width: 214px !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout .siini-home-product-grid--catalog {
+		gap: 1.45rem 0.86rem !important;
+		grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+	}
+}
+
+@media (max-width: 1240px) {
+	.siini-home-new-rotator__slot {
+		flex-basis: calc((100% - (3 * var(--siini-new-gap))) / 4.35) !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.siini-home-new-carousel {
+		--siini-new-edge-size: clamp(1.15rem, 5vw, 1.45rem);
+	}
+
+	.siini-home-new-rotator__slot {
+		flex-basis: min(76vw, 20rem) !important;
+	}
+
+	.siini-catalog-layout .siini-home-product-grid--catalog {
+		gap: 1rem 0.72rem !important;
+	}
+}
+
+@media (max-width: 430px) {
+	.siini-product-lightbox {
+		padding: 0.8rem;
+	}
+
+	.siini-product-lightbox__image {
+		max-height: 82vh;
+		max-width: 94vw;
+	}
+
+	.siini-product-lightbox__close {
+		right: 0.35rem;
+		top: 0.35rem;
+	}
+
+	.siini-home-product-card__media-wrap {
+		margin-bottom: 0.52rem !important;
+	}
+
+	.siini-home-product-card__body,
+	.siini-home-product-card--new-rotator .siini-home-product-card__body,
+	.siini-home-product-card--catalog .siini-home-product-card__body {
+		gap: 0.34rem !important;
+	}
+
+	.siini-home-product-card__sizes {
+		display: flex !important;
+		gap: 0.25rem !important;
+		max-height: 3.68rem;
+		min-height: 3.68rem;
+	}
+
+	.siini-home-product-card__size {
+		font-size: 0.66rem !important;
+		height: 2rem;
+		min-height: 0;
+		min-width: 2.08rem;
+		padding: 0.42rem 0.44rem !important;
+	}
+
+	.siini-home-product-card__button {
+		font-size: 0.66rem !important;
+		min-height: 2.24rem;
+		padding-inline: 0.45rem !important;
+	}
+
+	.siini-home-product-card__added {
+		gap: 0.32rem;
+		grid-template-columns: minmax(4.35rem, 0.42fr) minmax(0, 1fr);
+		min-height: 2.24rem;
+	}
+
+	.siini-home-product-card__added-count,
+	.siini-home-product-card__cart-link {
+		font-size: 0.62rem;
+		min-height: 2.24rem;
+	}
+
+	.siini-home-product-card__added-count {
+		grid-template-columns: minmax(1.34rem, 1fr) minmax(1.18rem, 0.86fr) minmax(1.34rem, 1fr);
+		min-width: 4.35rem;
+	}
+
+	.siini-home-product-card__qty-button {
+		font-size: 0.92rem;
+	}
+
+	.siini-home-product-card__qty-value {
+		font-size: 0.7rem;
+	}
+
+	.siini-home-product-card__cart-link {
+		font-size: clamp(0.48rem, 1.7vw, 0.56rem) !important;
+		padding-inline: 0.42rem;
+	}
+}
+
+@media (max-width: 390px) {
+	.siini-home-new-rotator {
+		--siini-new-gap: 0.72rem;
+	}
+
+	.siini-home-new-rotator__slot {
+		flex-basis: min(78vw, 18rem) !important;
+	}
+
+	.siini-catalog-layout .siini-home-product-grid--catalog {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	}
+}
+
+@media (max-width: 360px) {
+	.siini-home-new-rotator__slot {
+		flex-basis: min(80vw, 17rem) !important;
+	}
+}
+
+/* Sitewide visual old price pass 2026-07-23: demo markdown only, WooCommerce prices stay unchanged. */
+.siini-visual-price,
+.siini-visual-price__current,
+.siini-visual-price__old {
+	min-width: 0;
+}
+
+.siini-visual-price {
+	align-items: baseline;
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.34em;
+	max-width: 100%;
+	vertical-align: baseline;
+}
+
+.siini-visual-price__current {
+	color: inherit;
+	font-weight: inherit;
+}
+
+.siini-visual-price__current .amount {
+	font-weight: inherit;
+}
+
+.siini-visual-price__old {
+	color: rgba(17, 17, 17, 0.45);
+	font-size: 0.78em;
+	font-weight: 650;
+	line-height: 1.1;
+	text-decoration: line-through;
+	white-space: nowrap;
+}
+
+.siini-promo-card__price .siini-visual-price,
+.siini-product-summary-column .siini-visual-price,
+.siini-product-summary-column .wc-block-components-product-price .siini-visual-price,
+.siini-product-summary-column .wp-block-woocommerce-product-price .siini-visual-price,
+.siini-product-summary-column .price .siini-visual-price {
+	display: inline-flex;
+}
+
+.siini-product-summary-column .siini-visual-price {
+	gap: 0.42em;
+	line-height: 1.08;
+}
+
+.siini-product-summary-column .siini-visual-price__current {
+	color: #f7f5ef;
+	font-size: 1em;
+	font-weight: 950;
+}
+
+.siini-product-summary-column .siini-visual-price__old {
+	color: var(--siini-demo-muted, #87817a);
+	font-size: 0.62em;
+	font-weight: 650;
+}
+
+.siini-home-product-card__price-current,
+.siini-product-card__price-current,
+.siini-home-product-card__price-old,
+.siini-product-card__price-old,
+.siini-product-card__old-price,
+.siini-card-old-price {
+	white-space: nowrap;
+}
+
+@media (max-width: 430px) {
+	.siini-visual-price {
+		gap: 0.28em;
+	}
+
+	.siini-visual-price__old {
+		font-size: 0.76em;
+	}
+
+	.siini-product-summary-column .siini-visual-price {
+		display: flex;
+	}
+}
+
+/* Product card NEW badge kill switch 2026-07-23: headings/ticker remain untouched. */
+.siini-home-product-card :is(
+	.siini-home-product-card__badge,
+	.siini-product-card__badge,
+	.product-card__badge,
+	.wc-block-components-product-badge,
+	.wc-block-components-product-sale-badge,
+	.woocommerce-loop-product__badge
+),
+.siini-catalog-product-grid :is(
+	.siini-home-product-card__badge,
+	.siini-product-card__badge,
+	.product-card__badge,
+	.wc-block-components-product-badge,
+	.wc-block-components-product-sale-badge,
+	.woocommerce-loop-product__badge
+),
+.siini-home-new :is(
+	.siini-home-product-card__badge,
+	.siini-product-card__badge,
+	.product-card__badge,
+	.wc-block-components-product-badge,
+	.wc-block-components-product-sale-badge,
+	.woocommerce-loop-product__badge
+),
+.related :is(
+	.siini-home-product-card__badge,
+	.siini-product-card__badge,
+	.product-card__badge,
+	.wc-block-components-product-badge,
+	.wc-block-components-product-sale-badge,
+	.woocommerce-loop-product__badge
+) {
+	display: none !important;
+}
+
+/* Homepage new arrivals five-card slider pass 2026-07-23. */
+.siini-home-new .siini-home-new-carousel {
+	--siini-new-gap: clamp(0.72rem, 1vw, 0.92rem);
+	overflow: clip;
+	padding-inline: 0 !important;
+}
+
+.siini-home-new .siini-home-new-carousel__viewport {
+	overflow: hidden;
+}
+
+.siini-home-new .siini-home-new-rotator {
+	cursor: grab;
+	display: flex !important;
+	gap: var(--siini-new-gap) !important;
+	overflow-x: auto !important;
+	overflow-y: hidden;
+	overscroll-behavior-x: contain;
+	padding: 0 0 0.55rem !important;
+	scroll-behavior: smooth;
+	scroll-padding-inline: 0;
+	scroll-snap-type: none !important;
+	scrollbar-width: none;
+	touch-action: pan-y;
+	user-select: none;
+	-webkit-overflow-scrolling: touch;
+}
+
+.siini-home-new .siini-home-new-rotator.is-pointer-down,
+.siini-home-new .siini-home-new-rotator.is-dragging {
+	cursor: grabbing;
+	scroll-behavior: auto;
+	scroll-snap-type: none;
+}
+
+.siini-home-new .siini-home-new-rotator__slot {
+	flex: 0 0 calc((100% - (4 * var(--siini-new-gap))) / 5.08) !important;
+	min-width: 0;
+	scroll-snap-align: start;
+}
+
+.siini-home-new .siini-home-product-card {
+	min-width: 0;
+}
+
+.siini-home-new .siini-home-product-card__media,
+.siini-home-new .siini-home-product-card--new-rotator .siini-home-product-card__media {
+	aspect-ratio: 3 / 3.65 !important;
+	height: auto !important;
+	min-height: 0 !important;
+}
+
+.siini-home-new .siini-home-product-card__image,
+.siini-home-new .siini-home-product-card--new-rotator .siini-home-product-card__media img {
+	-webkit-user-drag: none;
+	pointer-events: none;
+	user-select: none;
+}
+
+.siini-home-new .siini-home-product-card__body,
+.siini-home-new .siini-home-product-card--new-rotator .siini-home-product-card__body {
+	display: flex !important;
+	gap: 0.36rem !important;
+	padding: 0 !important;
+}
+
+.siini-home-new .siini-home-product-card__brand,
+.siini-home-new .siini-home-product-card--new-rotator .siini-home-product-card__brand {
+	font-size: 0.66rem !important;
+}
+
+.siini-home-new .siini-home-product-card h3,
+.siini-home-new .siini-home-product-card--new-rotator h3 {
+	font-size: 0.84rem !important;
+	line-height: 1.28 !important;
+}
+
+.siini-home-new .siini-home-product-card__price,
+.siini-home-new .siini-home-product-card--new-rotator .siini-home-product-card__price {
+	font-size: 0.88rem !important;
+	margin-top: 0.12rem !important;
+}
+
+.siini-home-new .siini-home-product-card__sizes {
+	align-content: flex-start;
+	align-items: flex-start;
+	display: flex !important;
+	gap: 0.28rem !important;
+	margin-top: 0.08rem !important;
+	max-height: 3.72rem;
+	min-height: 3.72rem;
+}
+
+.siini-home-new .siini-home-product-card__size {
+	font-size: 0.66rem !important;
+	height: 2rem;
+	min-height: 0;
+	min-width: 2.08rem;
+	padding: 0.42rem 0.44rem !important;
+}
+
+.siini-home-new .siini-home-product-card__action {
+	display: block !important;
+	margin-top: auto !important;
+}
+
+.siini-home-new .siini-home-product-card__button {
+	display: inline-flex !important;
+	font-size: 0.68rem !important;
+	min-height: 2.22rem;
+	padding: 0.62rem 0.58rem !important;
+	width: 100%;
+}
+
+.siini-home-new .siini-home-product-card__added {
+	min-height: 2.22rem;
+}
+
+.siini-home-new .siini-home-product-card__added-count,
+.siini-home-new .siini-home-product-card__cart-link {
+	font-size: 0.64rem;
+	min-height: 2.22rem;
+}
+
+.siini-home-new .siini-home-product-card__button[hidden],
+.siini-home-product-card__button[hidden] {
+	display: none !important;
+}
+
+.siini-home-new .siini-home-new-carousel__arrow {
+	background: rgba(255, 255, 255, 0.88) !important;
+	box-shadow: 0 4px 14px rgba(16, 16, 16, 0.08);
+	display: inline-flex !important;
+	height: 2.35rem;
+	opacity: 1 !important;
+	top: 33% !important;
+	visibility: visible !important;
+	width: 2.35rem;
+}
+
+.siini-home-new .siini-home-new-carousel__arrow--prev {
+	left: 0.34rem !important;
+}
+
+.siini-home-new .siini-home-new-carousel__arrow--next {
+	right: 0.34rem !important;
+}
+
+@media (max-width: 1280px) {
+	.siini-home-new .siini-home-new-rotator__slot {
+		flex-basis: calc((100% - (3 * var(--siini-new-gap))) / 4.12) !important;
+	}
+}
+
+@media (max-width: 1100px) {
+	.siini-home-new .siini-home-new-rotator__slot {
+		flex-basis: calc((100% - (2 * var(--siini-new-gap))) / 3.05) !important;
+	}
+}
+
+@media (max-width: 760px) {
+	.siini-home-new .siini-home-new-carousel {
+		--siini-new-gap: 0.72rem;
+		overflow: hidden;
+	}
+
+	.siini-home-new .siini-home-new-rotator__slot {
+		flex-basis: calc((100% - var(--siini-new-gap)) / 1.18) !important;
+	}
+
+	.siini-home-new .siini-home-new-carousel__arrow {
+		height: 2.12rem;
+		width: 2.12rem;
+	}
+}
+
+@media (max-width: 430px) {
+	.siini-home-new .siini-home-new-rotator__slot {
+		flex-basis: 84.5% !important;
+	}
+
+	.siini-home-new .siini-home-product-card__media,
+	.siini-home-new .siini-home-product-card--new-rotator .siini-home-product-card__media {
+		aspect-ratio: 3 / 3.45 !important;
+	}
+
+	.siini-home-new .siini-home-product-card__body,
+	.siini-home-new .siini-home-product-card--new-rotator .siini-home-product-card__body {
+		gap: 0.34rem !important;
+	}
+
+	.siini-home-new .siini-home-product-card__sizes {
+		max-height: 3.68rem;
+		min-height: 3.68rem;
+	}
+}
+
+@media (max-width: 360px) {
+	.siini-home-new .siini-home-new-rotator__slot {
+		flex-basis: 83.5% !important;
+	}
+}
+
+/* Single product contrast/readability recovery 2026-07-23. */
+body.single-product {
+	--siini-demo-bg: #faf9f6;
+	--siini-demo-ink: #111;
+	--siini-demo-muted: #69635d;
+	--siini-demo-line: #e3ded6;
+	--siini-demo-panel: #fffdfa;
+	--siini-demo-soft: #fff;
+	background: var(--siini-demo-bg) !important;
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-single-product-page {
+	background: var(--siini-demo-bg) !important;
+	color: var(--siini-demo-ink) !important;
+	overflow-x: clip;
+}
+
+.single-product .woocommerce-breadcrumb,
+.single-product .wp-block-woocommerce-breadcrumbs,
+.single-product .woocommerce-breadcrumb a,
+.single-product .wp-block-woocommerce-breadcrumbs a,
+.single-product .siini-product-backline a {
+	color: var(--siini-demo-muted) !important;
+}
+
+.single-product .woocommerce-breadcrumb a:hover,
+.single-product .woocommerce-breadcrumb a:focus-visible,
+.single-product .wp-block-woocommerce-breadcrumbs a:hover,
+.single-product .wp-block-woocommerce-breadcrumbs a:focus-visible,
+.single-product .siini-product-backline a:hover,
+.single-product .siini-product-backline a:focus-visible {
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-gallery-column .woocommerce-product-gallery {
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.06) !important;
+	box-shadow: none !important;
+}
+
+.single-product .siini-product-gallery-column .wp-block-woocommerce-product-image-gallery,
+.single-product .siini-product-gallery-column .woocommerce-product-gallery__wrapper,
+.single-product .siini-product-gallery-column .flex-viewport,
+.single-product .siini-product-gallery-column .woocommerce-product-gallery__image,
+.single-product .siini-product-gallery-column .woocommerce-product-gallery__image a,
+.single-product .siini-product-gallery-column .woocommerce-product-gallery__image div {
+	background: #fff !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+.single-product .siini-product-gallery-column .woocommerce-product-gallery__image img,
+.single-product .siini-product-gallery-column .woocommerce-product-gallery__image img.wp-post-image {
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	clip-path: inset(2px);
+	outline: 0 !important;
+	transform: scale(1.006);
+}
+
+.single-product .siini-product-summary-column {
+	background: var(--siini-demo-panel) !important;
+	border: 1px solid var(--siini-demo-line) !important;
+	color: var(--siini-demo-ink) !important;
+	padding: clamp(1.1rem, 2.4vw, 2rem) !important;
+}
+
+.single-product .siini-product-summary-column h1,
+.single-product .siini-product-summary-column .product_title {
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-summary-column .wc-block-components-product-price,
+.single-product .siini-product-summary-column .wp-block-woocommerce-product-price,
+.single-product .siini-product-summary-column .price,
+.single-product .siini-product-summary-column .amount,
+.single-product .siini-product-summary-column .siini-visual-price,
+.single-product .siini-product-summary-column .siini-visual-price__current,
+.single-product .siini-product-summary-column .siini-visual-price__current .amount {
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-summary-column .price del,
+.single-product .siini-product-summary-column .siini-visual-price__old,
+.single-product .siini-product-summary-column .siini-visual-price__old .amount {
+	color: #736d66 !important;
+}
+
+.single-product .siini-product-summary-column .wp-block-post-excerpt,
+.single-product .siini-product-summary-column .wp-block-post-excerpt p,
+.single-product .siini-product-summary-column .woocommerce-variation,
+.single-product .siini-product-size-picker__hint,
+.single-product .siini-product-accordion__content {
+	color: var(--siini-demo-muted) !important;
+}
+
+.single-product .siini-product-size-picker,
+.single-product .siini-product-size-picker strong,
+.single-product .siini-product-fact strong,
+.single-product .siini-product-accordion__item summary,
+.single-product .siini-product-summary-column .variations label {
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-size-system {
+	color: var(--siini-demo-muted) !important;
+}
+
+.single-product .siini-product-size-system.is-active,
+.single-product .siini-product-size-option.is-active {
+	background: var(--siini-demo-ink) !important;
+	border-color: var(--siini-demo-ink) !important;
+	color: #fffdfa !important;
+}
+
+.single-product .siini-product-size-option {
+	background: #fff !important;
+	border-color: var(--siini-demo-line) !important;
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-size-option:not(:disabled):hover,
+.single-product .siini-product-size-option:not(:disabled):focus-visible {
+	border-color: var(--siini-demo-ink) !important;
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-size-option:disabled,
+.single-product .siini-product-size-option.is-unavailable {
+	background: #f3f0eb !important;
+	border-color: #d9d2c8 !important;
+	color: #7d766d !important;
+	cursor: not-allowed;
+	opacity: 1 !important;
+	text-decoration: line-through;
+}
+
+.single-product .siini-product-size-option:disabled .siini-product-size-option__meta,
+.single-product .siini-product-size-option.is-unavailable .siini-product-size-option__meta {
+	color: #7d766d !important;
+	opacity: 0.88 !important;
+	text-decoration: none;
+}
+
+.single-product .siini-product-fact span {
+	color: var(--siini-demo-muted) !important;
+}
+
+.single-product .siini-product-summary-column .quantity .qty {
+	background: #fff !important;
+	border-color: var(--siini-demo-line) !important;
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-summary-column .single_add_to_cart_button {
+	background: var(--siini-demo-ink) !important;
+	border-color: var(--siini-demo-ink) !important;
+	color: #fffdfa !important;
+	opacity: 1 !important;
+}
+
+.single-product .siini-product-summary-column .single_add_to_cart_button.disabled,
+.single-product .siini-product-summary-column .single_add_to_cart_button:disabled,
+.single-product .siini-product-summary-column .single_add_to_cart_button.wc-variation-selection-needed,
+.single-product .siini-product-summary-column .woocommerce-variation-add-to-cart-disabled .single_add_to_cart_button {
+	background: #e1dcd3 !important;
+	border-color: #d2cabe !important;
+	color: #514b45 !important;
+	cursor: not-allowed;
+	opacity: 1 !important;
+}
+
+.single-product .siini-product-mobile-cta {
+	background: rgba(255, 253, 250, 0.98) !important;
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-mobile-cta__label {
+	color: var(--siini-demo-muted) !important;
+}
+
+.single-product .siini-product-mobile-cta__price,
+.single-product .siini-product-mobile-cta__price .amount,
+.single-product .siini-product-mobile-cta__price .siini-visual-price__current {
+	color: var(--siini-demo-ink) !important;
+}
+
+.single-product .siini-product-mobile-cta__button.is-disabled {
+	background: #e1dcd3 !important;
+	border-color: #d2cabe !important;
+	color: #514b45 !important;
+	opacity: 1 !important;
+}
+
+@media (max-width: 980px) {
+	.single-product .siini-product-summary-column {
+		position: static !important;
+	}
+}
+
+@media (max-width: 760px) {
+	.single-product .siini-product-summary-column {
+		padding: 1rem !important;
+	}
+
+	.single-product .siini-product-summary-column h1,
+	.single-product .siini-product-summary-column .product_title {
+		font-size: clamp(1.22rem, 5.7vw, 1.55rem) !important;
+		line-height: 1.05 !important;
+	}
+}
+
+/* Header search icon refinement 2026-07-23: inline SVG replaces the CSS-drawn magnifier. */
+.siini-header-search-link span,
+.siini-header-search-link span::before,
+.siini-header-search-link span::after,
+.siini-header-search-link--mobile::before,
+.siini-header-search-link--mobile::after {
+	background: none !important;
+	border: 0 !important;
+	content: none !important;
+	display: none !important;
+	height: 0 !important;
+	margin: 0 !important;
+	width: 0 !important;
+}
+
+.siini-header-search-icon {
+	display: block;
+	fill: none;
+	height: 1.42rem;
+	pointer-events: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.85;
+	width: 1.42rem;
+}
+
+@media (max-width: 900px) {
+	.siini-header-search-icon {
+		height: 1.34rem;
+		width: 1.34rem;
+	}
+}
+
+/* SINI Abril typography direction 2026-07-23: brand/accent type first, body readability preserved. */
+:root {
+	--siini-abril-stack: "Abril Fatface", Georgia, "Times New Roman", serif;
+	--siini-readable-stack: "Golos Text", system-ui, sans-serif;
+}
+
+.siini-site-header .wp-block-site-title,
+.siini-site-header .wp-block-site-title a,
+.siini-demo-footer__logo,
+.siini-site-footer .wp-block-site-title,
+.siini-site-footer .wp-block-site-title a,
+.siini-site-header :where(.siini-mega-nav__trigger, .siini-mega-nav__link, .siini-header-links a),
+.siini-mega-panel :where(a, span),
+.siini-feature-hero :where(.siini-feature-hero__kicker, h1),
+.siini-simple-hero :where(.siini-simple-hero__eyebrow, h1),
+.siini-hero :where(h1, h2),
+.siini-hero-tile__meta,
+.siini-prototype-hero__caption span,
+.siini-section__header :where(h1, h2, h3, .wp-block-heading),
+.siini-home-new .siini-section__header h2,
+.siini-category-section .siini-section__header h2,
+.siini-category-card :where(strong, em),
+.siini-home-brand-rail__header h2,
+.siini-home-store-bottom :where(h2, h3),
+.siini-promo-rotator__header h2,
+.siini-promo-card :where(h2, h3, .siini-promo-card__price),
+.siini-home-product-card :where(.siini-home-product-card__brand, h3, .siini-home-product-card__price, .siini-home-product-card__button, .siini-home-product-card__added-count, .siini-home-product-card__cart-link),
+.siini-catalog-layout :where(.siini-brand-catalog-banner__logo, .siini-brand-catalog-banner__logo span, .siini-brand-catalog-banner h1, .siini-catalog-toolbar, .woocommerce-result-count),
+.siini-catalog-filters--professional :where(.siini-catalog-filters__title, .siini-filter-section > summary, .siini-catalog-size-group legend, .siini-catalog-filters__field-title, .siini-catalog-filters__actions button, .siini-catalog-filters__actions a, .siini-catalog-filters__open),
+.siini-catalog-grid ul.products li.product :where(.woocommerce-loop-product__title, .price, .button),
+.single-product .siini-product-summary-column :where(h1, .product_title, .price, .wp-block-woocommerce-product-price, .wc-block-components-product-price, .siini-visual-price, .siini-product-size-picker__header, .siini-product-accordion__item summary, .single_add_to_cart_button),
+.single-product .siini-product-mobile-cta :where(.siini-product-mobile-cta__price, .siini-product-mobile-cta__button),
+.siini-concierge-page :where(h1, h2, h3, .siini-eyebrow, .siini-concierge-button, .siini-concierge-service-hero__facts span, .siini-concierge-process__grid strong, .siini-concierge-brief__list strong),
+.siini-about-page :where(h1, h2, h3, .siini-eyebrow, .siini-about-intro__lead, .siini-about-intro__cards strong, .siini-about-map__button, .siini-about-map__telegram, .siini-about-contact__button),
+.siini-site-footer :where(h2, h3, .siini-demo-footer__logo, .siini-demo-footer__subscribe button) {
+	font-family: var(--siini-abril-stack) !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+	letter-spacing: 0 !important;
+	word-break: normal;
+	overflow-wrap: normal;
+	hyphens: none;
+}
+
+.siini-site-header :where(.siini-mega-nav__trigger, .siini-mega-nav__link, .siini-header-links a),
+.siini-mega-panel :where(a, span) {
+	line-height: 1.05 !important;
+}
+
+.siini-section__header :where(h1, h2, h3, .wp-block-heading),
+.siini-home-new .siini-section__header h2,
+.siini-category-section .siini-section__header h2,
+.siini-home-brand-rail__header h2,
+.siini-promo-rotator__header h2,
+.siini-feature-hero h1,
+.siini-simple-hero h1,
+.siini-hero :where(h1, h2),
+.siini-catalog-layout :where(.siini-brand-catalog-banner h1, .siini-brand-catalog-banner__logo span),
+.single-product .siini-product-summary-column :where(h1, .product_title),
+.siini-concierge-page :where(h1, h2),
+.siini-about-page :where(h1, h2) {
+	line-height: 0.96 !important;
+}
+
+.siini-home-product-card :where(h3, .siini-home-product-card__brand),
+.siini-catalog-grid ul.products li.product .woocommerce-loop-product__title,
+.single-product .siini-product-accordion__item summary,
+.siini-catalog-filters--professional :where(.siini-filter-section > summary, .siini-catalog-size-group legend) {
+	line-height: 1.08 !important;
+}
+
+.siini-home-product-card :where(.siini-home-product-card__price, .siini-home-product-card__button, .siini-home-product-card__added-count, .siini-home-product-card__cart-link),
+.siini-catalog-grid ul.products li.product :where(.price, .button),
+.single-product .siini-product-summary-column :where(.price, .wp-block-woocommerce-product-price, .wc-block-components-product-price, .siini-visual-price, .single_add_to_cart_button),
+.siini-catalog-filters--professional :where(.siini-catalog-filters__actions button, .siini-catalog-filters__actions a, .siini-catalog-filters__open),
+.siini-concierge-page .siini-concierge-button,
+.siini-about-page :where(.siini-about-map__button, .siini-about-map__telegram, .siini-about-contact__button) {
+	line-height: 1 !important;
+}
+
+body,
+.siini-site-main :where(p, li, small, input, select, textarea, label),
+.siini-product-search,
+.siini-catalog-filters--professional :where(.siini-size-chip span, .siini-filter-option span, .siini-filter-switch span, input, select),
+.siini-home-product-card :where(.siini-home-product-card__message, .siini-home-product-card__sizes, .siini-home-product-card__sizes-overlay),
+.single-product .siini-product-summary-column :where(.woocommerce-product-details__short-description, .siini-product-accordion__content, .variations label, .reset_variations),
+.siini-concierge-page :where(p, li, input, textarea, label),
+.siini-about-page :where(p, li, a:not(.siini-about-map__button):not(.siini-about-map__telegram):not(.siini-about-contact__button)),
+.siini-site-footer :where(p, li, a, input) {
+	font-family: var(--siini-readable-stack);
+}
+
+@media (max-width: 900px) {
+	.siini-site-header :where(.siini-mega-nav__trigger, .siini-mega-nav__link, .siini-header-links a),
+	.siini-mobile-menu :where(summary, nav a) {
+		font-family: var(--siini-readable-stack) !important;
+	}
+
+	.siini-feature-hero h1,
+	.siini-simple-hero h1,
+	.siini-hero :where(h1, h2),
+	.siini-section__header :where(h1, h2, h3, .wp-block-heading),
+	.siini-catalog-layout :where(.siini-brand-catalog-banner h1, .siini-brand-catalog-banner__logo span),
+	.single-product .siini-product-summary-column :where(h1, .product_title),
+	.siini-concierge-page :where(h1, h2),
+	.siini-about-page :where(h1, h2) {
+		overflow-wrap: normal;
+		word-break: normal;
+	}
+}
+
+body .siini-site-header .siini-mega-nav__trigger,
+body .siini-site-header .siini-mega-nav__link,
+body .siini-site-header .siini-header-links a,
+body .siini-mega-panel a,
+body .siini-mega-panel span,
+body .siini-feature-hero__slide h1,
+body .siini-feature-hero h1,
+body .siini-feature-hero__kicker,
+body .siini-home-new .siini-section__header h2,
+body .siini-section__header h2,
+body .siini-section__header .wp-block-heading,
+body .siini-demo-tile strong,
+body .siini-demo-promo h2,
+body .siini-telegram-cta h2,
+body .siini-demo-map h2,
+body .siini-demo-gallery h2,
+body .siini-home-product-card__brand,
+body .siini-home-product-card h3,
+body .siini-home-product-card__price,
+body .siini-home-product-card__button,
+body .siini-catalog-grid ul.products li.product .woocommerce-loop-product__title,
+body .siini-catalog-grid ul.products li.product .price,
+body .siini-catalog-grid ul.products li.product .button,
+body .siini-brand-catalog-banner__logo,
+body .siini-catalog-layout .siini-brand-catalog-banner--shop h1.siini-brand-catalog-banner__logo,
+body .siini-catalog-layout .siini-brand-catalog-banner:is(.siini-brand-catalog-banner--brand, .siini-brand-catalog-banner--category) h1.siini-brand-catalog-banner__logo,
+body .siini-brand-catalog-banner__logo span,
+body .siini-catalog-layout .siini-brand-catalog-banner:is(.siini-brand-catalog-banner--brand, .siini-brand-catalog-banner--category) .siini-brand-catalog-banner__logo span,
+body .siini-brand-catalog-banner h1,
+body .siini-catalog-filters--professional .siini-filter-section > summary,
+body .siini-catalog-filters--professional .siini-catalog-size-group legend,
+body .siini-catalog-filters--professional .siini-catalog-filters__actions button,
+body .siini-catalog-filters--professional .siini-catalog-filters__actions a,
+body.single-product .siini-product-summary-column h1,
+body.single-product .siini-product-summary-column .product_title,
+body.single-product .siini-product-summary-column .price,
+body.single-product .siini-product-summary-column .single_add_to_cart_button,
+body.single-product .siini-product-accordion__item summary,
+body .siini-concierge-page h1,
+body .siini-concierge-page h2,
+body .siini-concierge-page h3,
+body .siini-concierge-page .siini-eyebrow,
+body .siini-concierge-page .siini-concierge-button,
+body .siini-about-page h1,
+body .siini-about-page h2,
+body .siini-about-page h3,
+body .siini-about-page .siini-eyebrow,
+body .siini-site-footer h2,
+body .siini-site-footer h3,
+body .siini-demo-footer__logo {
+	font-family: var(--siini-abril-stack) !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+	letter-spacing: 0 !important;
+	hyphens: none;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+body .siini-feature-hero__slide h1,
+body .siini-feature-hero h1,
+body .siini-home-new .siini-section__header h2,
+body .siini-section__header h2,
+body .siini-section__header .wp-block-heading,
+body .siini-brand-catalog-banner__logo span,
+body .siini-catalog-layout .siini-brand-catalog-banner:is(.siini-brand-catalog-banner--brand, .siini-brand-catalog-banner--category) .siini-brand-catalog-banner__logo span,
+body .siini-brand-catalog-banner h1,
+body .siini-concierge-page h1,
+body .siini-concierge-page h2,
+body .siini-about-page h1,
+body .siini-about-page h2 {
+	line-height: 1.04 !important;
+}
+
+@media (max-width: 900px) {
+	body .siini-site-header .siini-mega-nav__trigger,
+	body .siini-site-header .siini-mega-nav__link,
+	body .siini-site-header .siini-header-links a,
+	body .siini-mobile-menu summary,
+	body .siini-mobile-menu nav a {
+		font-family: var(--siini-readable-stack) !important;
+	}
+
+	body .siini-home-new .siini-section__header h2,
+	body .siini-section__header h2,
+	body .siini-section__header .wp-block-heading {
+		line-height: 1.12 !important;
+	}
+}
+
+/* SINI typography hierarchy correction 2026-07-24: Abril stays as a brand accent; ecommerce UI returns to readable sans. */
+:root {
+	--siini-ui-stack: "Golos Text", system-ui, sans-serif;
+}
+
+body,
+body button,
+body input,
+body select,
+body textarea,
+body .siini-site-main,
+body .siini-site-main :where(p, li, small, label, input, select, textarea),
+body .siini-product-search {
+	font-family: var(--siini-ui-stack) !important;
+	font-style: normal !important;
+	letter-spacing: 0 !important;
+}
+
+body .siini-site-header .siini-mega-nav__trigger,
+body .siini-site-header .siini-mega-nav__link,
+body .siini-site-header .siini-header-links a,
+body .siini-mega-panel a,
+body .siini-mega-panel span,
+body .siini-mobile-menu summary,
+body .siini-mobile-menu nav a {
+	font-family: var(--siini-ui-stack) !important;
+	font-style: normal !important;
+	font-weight: 600 !important;
+	letter-spacing: 0 !important;
+	line-height: 1.15 !important;
+	text-transform: none;
+}
+
+body .siini-feature-hero__slide h1,
+body .siini-feature-hero h1,
+body .siini-feature-hero__kicker,
+body .siini-simple-hero h1,
+body .siini-simple-hero__eyebrow,
+body .siini-hero h1,
+body .siini-hero h2,
+body .siini-home-new .siini-section__header h2,
+body .siini-section__header h1,
+body .siini-section__header h2,
+body .siini-section__header h3,
+body .siini-section__header .wp-block-heading,
+body .siini-demo-tile strong,
+body .siini-demo-promo h2,
+body .siini-telegram-cta h2,
+body .siini-demo-map h2,
+body .siini-demo-gallery h2,
+body .siini-category-card strong,
+body .siini-category-card em,
+body .siini-home-brand-rail__header h2,
+body .siini-home-store-bottom h2,
+body .siini-home-store-bottom h3,
+body .siini-promo-rotator__header h2,
+body .siini-promo-card h2,
+body .siini-promo-card h3,
+body .siini-promo-card__price {
+	font-family: var(--siini-ui-stack) !important;
+	font-style: normal !important;
+	font-weight: 700 !important;
+	letter-spacing: 0 !important;
+	line-height: 1.08 !important;
+	hyphens: none;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+body .siini-home-product-card__brand,
+body .siini-home-product-card h3,
+body .siini-home-product-card__price,
+body .siini-home-product-card__button,
+body .siini-home-product-card__added-count,
+body .siini-home-product-card__cart-link,
+body .siini-home-product-card__message,
+body .siini-home-product-card__sizes,
+body .siini-home-product-card__sizes-overlay,
+body .siini-catalog-grid ul.products li.product .woocommerce-loop-product__title,
+body .siini-catalog-grid ul.products li.product .price,
+body .siini-catalog-grid ul.products li.product .button,
+body .siini-catalog-grid ul.products li.product .added_to_cart {
+	font-family: var(--siini-ui-stack) !important;
+	font-style: normal !important;
+	letter-spacing: 0 !important;
+	hyphens: none;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+body .siini-home-product-card__brand,
+body .siini-home-product-card h3,
+body .siini-catalog-grid ul.products li.product .woocommerce-loop-product__title {
+	font-weight: 600 !important;
+	line-height: 1.18 !important;
+}
+
+body .siini-home-product-card__price,
+body .siini-catalog-grid ul.products li.product .price {
+	font-weight: 600 !important;
+	line-height: 1.2 !important;
+}
+
+body .siini-home-product-card__button,
+body .siini-catalog-grid ul.products li.product .button,
+body .siini-catalog-grid ul.products li.product .added_to_cart {
+	font-weight: 700 !important;
+	line-height: 1 !important;
+}
+
+body .siini-brand-catalog-banner__logo,
+body .siini-brand-catalog-banner__logo span,
+body .siini-brand-catalog-banner h1,
+body .siini-catalog-layout .siini-brand-catalog-banner--shop h1.siini-brand-catalog-banner__logo,
+body .siini-catalog-layout .siini-brand-catalog-banner:is(.siini-brand-catalog-banner--brand, .siini-brand-catalog-banner--category) h1.siini-brand-catalog-banner__logo,
+body .siini-catalog-layout .siini-brand-catalog-banner:is(.siini-brand-catalog-banner--brand, .siini-brand-catalog-banner--category) .siini-brand-catalog-banner__logo span,
+body .siini-catalog-toolbar,
+body .woocommerce-result-count,
+body .woocommerce-ordering,
+body .siini-catalog-filters--professional .siini-catalog-filters__title,
+body .siini-catalog-filters--professional .siini-filter-section > summary,
+body .siini-catalog-filters--professional .siini-catalog-size-group legend,
+body .siini-catalog-filters--professional .siini-catalog-filters__field-title,
+body .siini-catalog-filters--professional .siini-catalog-filters__actions button,
+body .siini-catalog-filters--professional .siini-catalog-filters__actions a,
+body .siini-catalog-filters--professional .siini-catalog-filters__open,
+body .siini-catalog-filters--professional .siini-size-chip span,
+body .siini-catalog-filters--professional .siini-filter-option span,
+body .siini-catalog-filters--professional .siini-filter-switch span {
+	font-family: var(--siini-ui-stack) !important;
+	font-style: normal !important;
+	letter-spacing: 0 !important;
+	hyphens: none;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+body .siini-brand-catalog-banner__logo,
+body .siini-brand-catalog-banner__logo span,
+body .siini-brand-catalog-banner h1,
+body .siini-catalog-layout .siini-brand-catalog-banner--shop h1.siini-brand-catalog-banner__logo,
+body .siini-catalog-layout .siini-brand-catalog-banner:is(.siini-brand-catalog-banner--brand, .siini-brand-catalog-banner--category) h1.siini-brand-catalog-banner__logo {
+	font-weight: 700 !important;
+	line-height: 1.08 !important;
+}
+
+body.single-product .siini-product-summary-column h1,
+body.single-product .siini-product-summary-column .product_title,
+body.single-product .siini-product-summary-column .price,
+body.single-product .siini-product-summary-column .wp-block-woocommerce-product-price,
+body.single-product .siini-product-summary-column .wc-block-components-product-price,
+body.single-product .siini-product-summary-column .siini-visual-price,
+body.single-product .siini-product-summary-column .siini-product-size-picker__header,
+body.single-product .siini-product-summary-column .single_add_to_cart_button,
+body.single-product .siini-product-accordion__item summary,
+body.single-product .siini-product-accordion__content,
+body.single-product .woocommerce-product-details__short-description,
+body.single-product .variations label,
+body.single-product .reset_variations,
+body.single-product .siini-product-mobile-cta__price,
+body.single-product .siini-product-mobile-cta__button {
+	font-family: var(--siini-ui-stack) !important;
+	font-style: normal !important;
+	letter-spacing: 0 !important;
+	hyphens: none;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+body.single-product .siini-product-summary-column h1,
+body.single-product .siini-product-summary-column .product_title {
+	font-weight: 700 !important;
+	line-height: 1.08 !important;
+}
+
+body.single-product .siini-product-summary-column .price,
+body.single-product .siini-product-summary-column .siini-visual-price,
+body.single-product .siini-product-mobile-cta__price {
+	font-weight: 600 !important;
+	line-height: 1.15 !important;
+}
+
+body.single-product .siini-product-summary-column .single_add_to_cart_button,
+body.single-product .siini-product-mobile-cta__button,
+body.single-product .siini-product-accordion__item summary {
+	font-weight: 700 !important;
+	line-height: 1 !important;
+}
+
+body .siini-concierge-page h1,
+body .siini-concierge-page h2,
+body .siini-concierge-page h3,
+body .siini-concierge-page .siini-eyebrow,
+body .siini-concierge-page .siini-concierge-button,
+body .siini-concierge-page .siini-concierge-service-hero__facts span,
+body .siini-concierge-page .siini-concierge-process__grid strong,
+body .siini-concierge-page .siini-concierge-brief__list strong,
+body .siini-concierge-page p,
+body .siini-concierge-page li,
+body .siini-concierge-page label,
+body .siini-about-page h1,
+body .siini-about-page h2,
+body .siini-about-page h3,
+body .siini-about-page .siini-eyebrow,
+body .siini-about-page .siini-about-intro__lead,
+body .siini-about-page .siini-about-intro__cards strong,
+body .siini-about-page .siini-about-map__button,
+body .siini-about-page .siini-about-map__telegram,
+body .siini-about-page .siini-about-contact__button,
+body .siini-about-page p,
+body .siini-about-page li,
+body .siini-about-page a,
+body .siini-site-footer h2,
+body .siini-site-footer h3,
+body .siini-site-footer p,
+body .siini-site-footer li,
+body .siini-site-footer a,
+body .siini-site-footer input,
+body .siini-site-footer .siini-demo-footer__subscribe button {
+	font-family: var(--siini-ui-stack) !important;
+	font-style: normal !important;
+	letter-spacing: 0 !important;
+	hyphens: none;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+body .siini-concierge-page h1,
+body .siini-concierge-page h2,
+body .siini-about-page h1,
+body .siini-about-page h2,
+body .siini-site-footer h2 {
+	font-weight: 700 !important;
+	line-height: 1.1 !important;
+}
+
+body .siini-concierge-page .siini-eyebrow,
+body .siini-about-page .siini-eyebrow,
+body .siini-feature-hero__kicker,
+body .siini-simple-hero__eyebrow {
+	font-weight: 700 !important;
+	letter-spacing: 0.04em !important;
+}
+
+body .siini-site-header .wp-block-site-title,
+body .siini-site-header .wp-block-site-title a,
+body .siini-site-footer .wp-block-site-title,
+body .siini-site-footer .wp-block-site-title a,
+body .siini-demo-footer__logo {
+	font-family: var(--siini-abril-stack) !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+	letter-spacing: 0 !important;
+	line-height: 1 !important;
+	text-transform: lowercase !important;
+}
+
+@media (max-width: 760px) {
+	body .siini-feature-hero__slide h1,
+	body .siini-feature-hero h1,
+	body .siini-simple-hero h1,
+	body .siini-hero h1,
+	body .siini-hero h2,
+	body .siini-section__header h1,
+	body .siini-section__header h2,
+	body .siini-section__header h3,
+	body .siini-section__header .wp-block-heading,
+	body .siini-brand-catalog-banner__logo,
+	body .siini-brand-catalog-banner__logo span,
+	body .siini-brand-catalog-banner h1,
+	body.single-product .siini-product-summary-column h1,
+	body.single-product .siini-product-summary-column .product_title,
+	body .siini-concierge-page h1,
+	body .siini-concierge-page h2,
+	body .siini-about-page h1,
+	body .siini-about-page h2 {
+		line-height: 1.12 !important;
+	}
+}
+
+/* SINI mini-cart drawer readability 2026-07-24: keep the Woo offcanvas scoped and light. */
+.wc-block-mini-cart__drawer {
+	color: #111 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-style: normal !important;
+	letter-spacing: 0 !important;
+}
+
+.wc-block-mini-cart__drawer *,
+.wc-block-mini-cart__drawer *::before,
+.wc-block-mini-cart__drawer *::after {
+	box-sizing: border-box;
+}
+
+.wc-block-components-drawer__screen-overlay {
+	background: rgba(17, 17, 17, 0.44) !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-drawer__content,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__template-part,
+.wc-block-mini-cart__drawer .wp-block-woocommerce-mini-cart-contents,
+.wc-block-mini-cart__drawer .wp-block-woocommerce-filled-mini-cart-contents-block,
+.wc-block-mini-cart__drawer .wp-block-woocommerce-empty-mini-cart-contents-block {
+	background: #f7f6f2 !important;
+	color: #111 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-drawer__content {
+	border-left: 1px solid #ded8ce;
+	box-shadow: -1.2rem 0 2.8rem rgba(17, 17, 17, 0.18);
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close-wrapper {
+	background: #f7f6f2 !important;
+	border-bottom: 1px solid #ded8ce;
+	color: #111 !important;
+	padding: 1rem 1rem 0.35rem;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close {
+	align-items: center;
+	background: #fff !important;
+	border: 1px solid #d9d3ca !important;
+	border-radius: 50% !important;
+	color: #111 !important;
+	display: inline-flex;
+	height: 2.55rem;
+	justify-content: center;
+	min-height: 2.55rem;
+	min-width: 2.55rem;
+	opacity: 1 !important;
+	padding: 0 !important;
+	width: 2.55rem;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close:hover,
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close:focus-visible {
+	background: #111 !important;
+	border-color: #111 !important;
+	color: #fff !important;
+	outline: 0;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close svg,
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close path {
+	fill: currentColor !important;
+	stroke: currentColor !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__title {
+	background: #f7f6f2 !important;
+	border-bottom: 1px solid #ded8ce;
+	color: #111 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-size: clamp(1.25rem, 1.8vw, 1.7rem) !important;
+	font-style: normal !important;
+	font-weight: 700 !important;
+	letter-spacing: 0 !important;
+	line-height: 1.15 !important;
+	margin: 0 !important;
+	padding: 0.65rem 1.25rem 1rem !important;
+}
+
+.wc-block-mini-cart__drawer .wp-block-woocommerce-mini-cart-title-label-block,
+.wc-block-mini-cart__drawer .wp-block-woocommerce-mini-cart-title-items-counter-block {
+	color: #111 !important;
+	font-family: inherit !important;
+	font-weight: inherit !important;
+	letter-spacing: 0 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__items,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__products-table,
+.wc-block-mini-cart__drawer .wc-block-cart-items,
+.wc-block-mini-cart__drawer .wc-block-cart-items tbody {
+	background: #f7f6f2 !important;
+	color: #111 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-cart-items__row,
+.wc-block-mini-cart__drawer .wc-block-cart-item,
+.wc-block-mini-cart__drawer .wc-block-components-order-summary-item {
+	background: #fff !important;
+	border-bottom: 1px solid #e3ded5 !important;
+	color: #111 !important;
+}
+
+.wc-block-mini-cart__drawer [hidden],
+.wc-block-mini-cart__drawer img[hidden] {
+	display: none !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-cart-item__image img:not([hidden]),
+.wc-block-mini-cart__drawer .wc-block-components-order-summary-item__image img:not([hidden]) {
+	background: #efede7;
+	border: 1px solid #e3ded5;
+	display: block;
+}
+
+.wc-block-mini-cart__drawer a,
+.wc-block-mini-cart__drawer .wc-block-components-product-name,
+.wc-block-mini-cart__drawer .wc-block-cart-item__product a,
+.wc-block-mini-cart__drawer .wc-block-components-order-summary-item__description a {
+	color: #111 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-style: normal !important;
+	font-weight: 700 !important;
+	letter-spacing: 0 !important;
+	line-height: 1.18 !important;
+	text-decoration: none !important;
+}
+
+.wc-block-mini-cart__drawer a:hover,
+.wc-block-mini-cart__drawer a:focus-visible {
+	color: #111 !important;
+	text-decoration: underline !important;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-product-price,
+.wc-block-mini-cart__drawer .wc-block-components-formatted-money-amount,
+.wc-block-mini-cart__drawer .wc-block-cart-item__total,
+.wc-block-mini-cart__drawer .wc-block-components-product-metadata,
+.wc-block-mini-cart__drawer .wc-block-components-product-metadata__description,
+.wc-block-mini-cart__drawer .wc-block-components-product-details,
+.wc-block-mini-cart__drawer .wc-block-components-product-details__name,
+.wc-block-mini-cart__drawer .wc-block-components-product-details__value,
+.wc-block-mini-cart__drawer .wc-block-cart-item__quantity,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__empty-cart-wrapper,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__empty-cart-wrapper p {
+	color: #2b2925 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-style: normal !important;
+	letter-spacing: 0 !important;
+	line-height: 1.35 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-product-badge,
+.wc-block-mini-cart__drawer .wc-block-components-sale-badge {
+	background: #efede7 !important;
+	border: 1px solid #ded8ce !important;
+	color: #111 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-quantity-selector {
+	background: #fff !important;
+	border: 1px solid #d9d3ca !important;
+	border-radius: 0 !important;
+	color: #111 !important;
+	height: 2.4rem;
+	min-width: 7.5rem;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-quantity-selector__button,
+.wc-block-mini-cart__drawer .wc-block-components-quantity-selector__input {
+	background: transparent !important;
+	border: 0 !important;
+	color: #111 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-weight: 700 !important;
+	opacity: 1 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-quantity-selector__button:hover,
+.wc-block-mini-cart__drawer .wc-block-components-quantity-selector__button:focus-visible {
+	background: #efede7 !important;
+	color: #111 !important;
+	outline: 1px solid #111;
+	outline-offset: -1px;
+}
+
+.wc-block-mini-cart__drawer .wc-block-cart-item__remove-link,
+.wc-block-mini-cart__drawer .wc-block-components-order-summary-item__remove-link {
+	color: #6f675e !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-size: 0.78rem !important;
+	font-weight: 600 !important;
+	opacity: 1 !important;
+	text-decoration: underline !important;
+	text-underline-offset: 0.18em;
+}
+
+.wc-block-mini-cart__drawer .wc-block-cart-item__remove-link:hover,
+.wc-block-mini-cart__drawer .wc-block-cart-item__remove-link:focus-visible,
+.wc-block-mini-cart__drawer .wc-block-components-order-summary-item__remove-link:hover,
+.wc-block-mini-cart__drawer .wc-block-components-order-summary-item__remove-link:focus-visible {
+	color: #111 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer {
+	background: #f7f6f2 !important;
+	border-top: 1px solid #ded8ce !important;
+	color: #111 !important;
+	padding: 1rem 1.25rem 1.25rem !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-subtotal,
+.wc-block-mini-cart__drawer .wc-block-components-totals-item,
+.wc-block-mini-cart__drawer .wc-block-components-totals-item__label,
+.wc-block-mini-cart__drawer .wc-block-components-totals-item__value,
+.wc-block-mini-cart__drawer .wc-block-components-totals-item__description {
+	color: #111 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	letter-spacing: 0 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-totals-item__label,
+.wc-block-mini-cart__drawer .wc-block-components-totals-item__value {
+	font-size: 1rem !important;
+	font-weight: 700 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-totals-item__description {
+	color: #6f675e !important;
+	font-size: 0.82rem !important;
+	line-height: 1.35 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-actions {
+	display: grid !important;
+	gap: 0.65rem !important;
+	margin-top: 1rem !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-button,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-cart,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-checkout,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__shopping-button {
+	align-items: center;
+	border-radius: 0 !important;
+	display: inline-flex !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-size: 0.82rem !important;
+	font-style: normal !important;
+	font-weight: 700 !important;
+	justify-content: center;
+	letter-spacing: 0 !important;
+	line-height: 1 !important;
+	min-height: 3rem !important;
+	opacity: 1 !important;
+	padding: 0.95rem 1rem !important;
+	text-decoration: none !important;
+	text-transform: none !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-cart,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__shopping-button {
+	background: #fff !important;
+	border: 1px solid #111 !important;
+	color: #111 !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-checkout {
+	background: #111 !important;
+	border: 1px solid #111 !important;
+	color: #fff !important;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-cart:hover,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-cart:focus-visible,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__shopping-button:hover,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__shopping-button:focus-visible {
+	background: #efede7 !important;
+	color: #111 !important;
+	outline: 0;
+}
+
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-checkout:hover,
+.wc-block-mini-cart__drawer .wc-block-mini-cart__footer-checkout:focus-visible {
+	background: #2b2925 !important;
+	border-color: #2b2925 !important;
+	color: #fff !important;
+	outline: 0;
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-button__text {
+	color: inherit !important;
+	font-family: inherit !important;
+	font-weight: inherit !important;
+	letter-spacing: 0 !important;
+}
+
+@media (max-width: 600px) {
+	.wc-block-mini-cart__drawer .wc-block-components-drawer__content {
+		border-left: 0;
+	}
+
+	.wc-block-mini-cart__drawer .wc-block-mini-cart__title {
+		font-size: 1.2rem !important;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+	}
+
+	.wc-block-mini-cart__drawer .wc-block-mini-cart__footer {
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+	}
+}
+
+/* Favorites MVP 2026-07-24: localStorage drawer and product-card heart state. */
+.siini-home-product-card__favorite.is-active,
+.siini-home-product-card__favorite[aria-pressed="true"] {
+	background: #111 !important;
+	border-color: #111 !important;
+	color: #fff !important;
+}
+
+.siini-home-product-card__favorite[data-siini-favorite-toggle] {
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+.siini-header-favorites-link {
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	position: relative;
+}
+
+.siini-header-favorites-icon {
+	display: block !important;
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 1;
+	pointer-events: none;
+}
+
+.siini-header-favorites-count {
+	align-items: center;
+	background: #111;
+	border: 1px solid #fff;
+	border-radius: 999px;
+	box-sizing: border-box;
+	color: #fff;
+	display: inline-flex;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif);
+	font-size: 0.62rem;
+	font-weight: 800;
+	height: 1.05rem;
+	justify-content: center;
+	line-height: 1;
+	min-width: 1.05rem;
+	padding: 0 0.24rem;
+	position: absolute;
+	right: -0.28rem;
+	top: -0.28rem;
+}
+
+.siini-header-favorites-count[hidden] {
+	display: none !important;
+}
+
+.siini-favorites-drawer {
+	inset: 0;
+	position: fixed;
+	z-index: 1002;
+}
+
+.siini-favorites-drawer[hidden] {
+	display: none;
+}
+
+.siini-favorites-drawer__backdrop {
+	background: rgba(17, 17, 17, 0.22);
+	inset: 0;
+	position: absolute;
+}
+
+.siini-favorites-drawer__panel {
+	background: #fff;
+	border-left: 1px solid #ded8ce;
+	box-shadow: -1.4rem 0 4rem rgba(17, 17, 17, 0.13);
+	box-sizing: border-box;
+	color: #111;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin-left: auto;
+	max-width: 100vw;
+	outline: 0;
+	position: relative;
+	width: min(26rem, 100vw);
+}
+
+.siini-favorites-drawer__head {
+	align-items: center;
+	border-bottom: 1px solid #e5e0d8;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	padding: 1.1rem 1.2rem;
+}
+
+.siini-favorites-drawer__head h2 {
+	color: #111;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif);
+	font-size: 1.05rem;
+	font-weight: 800;
+	letter-spacing: 0;
+	line-height: 1.1;
+	margin: 0;
+	text-transform: none;
+}
+
+.siini-favorites-drawer__close,
+.siini-favorites-drawer__remove {
+	appearance: none;
+	background: #fff;
+	border: 1px solid #d8d2c8;
+	color: #111;
+	cursor: pointer;
+	font: inherit;
+	line-height: 1;
+}
+
+.siini-favorites-drawer__close {
+	align-items: center;
+	display: inline-flex;
+	font-size: 1.25rem;
+	height: 2.35rem;
+	justify-content: center;
+	width: 2.35rem;
+}
+
+.siini-favorites-drawer__close:hover,
+.siini-favorites-drawer__close:focus-visible,
+.siini-favorites-drawer__remove:hover,
+.siini-favorites-drawer__remove:focus-visible {
+	background: #111;
+	border-color: #111;
+	color: #fff;
+	outline: 0;
+}
+
+.siini-favorites-drawer__content {
+	display: grid;
+	gap: 0.9rem;
+	overflow: auto;
+	padding: 1rem 1.2rem 1.25rem;
+}
+
+.siini-favorites-drawer__empty {
+	align-content: center;
+	display: grid;
+	gap: 1rem;
+	min-height: 14rem;
+	text-align: center;
+}
+
+.siini-favorites-drawer__empty-text {
+	color: #6f675e;
+	font-size: 0.95rem;
+	margin: 0;
+}
+
+.siini-favorites-drawer__catalog,
+.siini-favorites-drawer__open {
+	align-items: center;
+	border: 1px solid #111;
+	color: #111;
+	display: inline-flex;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif);
+	font-size: 0.78rem;
+	font-weight: 800;
+	justify-content: center;
+	letter-spacing: 0;
+	line-height: 1;
+	min-height: 2.45rem;
+	padding: 0.8rem 0.95rem;
+	text-decoration: none;
+}
+
+.siini-favorites-drawer__catalog {
+	justify-self: center;
+}
+
+.siini-favorites-drawer__catalog:hover,
+.siini-favorites-drawer__catalog:focus-visible,
+.siini-favorites-drawer__open:hover,
+.siini-favorites-drawer__open:focus-visible {
+	background: #111;
+	color: #fff;
+	outline: 0;
+}
+
+.siini-favorites-drawer__item {
+	align-items: start;
+	border-bottom: 1px solid #e8e2da;
+	display: grid;
+	gap: 0.85rem;
+	grid-template-columns: 4.8rem minmax(0, 1fr) 2.35rem;
+	padding-bottom: 0.9rem;
+}
+
+.siini-favorites-drawer__media {
+	background: #fff;
+	border: 1px solid #eee8de;
+	display: block;
+	min-height: 6rem;
+	overflow: hidden;
+}
+
+.siini-favorites-drawer__media img {
+	display: block;
+	height: 6rem;
+	object-fit: contain;
+	width: 100%;
+}
+
+.siini-favorites-drawer__body {
+	display: grid;
+	gap: 0.38rem;
+	min-width: 0;
+}
+
+.siini-favorites-drawer__brand {
+	color: #6f675e;
+	font-size: 0.66rem;
+	font-weight: 800;
+	letter-spacing: 0;
+	line-height: 1;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.siini-favorites-drawer__title {
+	color: #111;
+	display: -webkit-box;
+	font-size: 0.9rem;
+	font-weight: 800;
+	letter-spacing: 0;
+	line-height: 1.18;
+	overflow: hidden;
+	text-decoration: none;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.siini-favorites-drawer__price {
+	align-items: baseline;
+	color: #111;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.86rem;
+	font-weight: 800;
+	gap: 0.45rem;
+	line-height: 1.15;
+	margin: 0;
+}
+
+.siini-favorites-drawer__price-old {
+	color: #8a837a;
+	font-size: 0.78rem;
+	font-weight: 600;
+}
+
+.siini-favorites-drawer__open {
+	justify-self: start;
+	min-height: 2.1rem;
+	padding: 0.66rem 0.75rem;
+}
+
+.siini-favorites-drawer__remove {
+	align-items: center;
+	display: inline-flex;
+	font-size: 1rem;
+	height: 2.35rem;
+	justify-content: center;
+	width: 2.35rem;
+}
+
+html.siini-favorites-open,
+body.siini-favorites-open {
+	overflow: hidden !important;
+}
+
+@media (max-width: 600px) {
+	.siini-favorites-drawer__panel {
+		border-left: 0;
+		width: 100vw;
+	}
+
+	.siini-favorites-drawer__head,
+	.siini-favorites-drawer__content {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.siini-favorites-drawer__item {
+		grid-template-columns: 4.4rem minmax(0, 1fr) 2.25rem;
+	}
+}
+
+/* Concierge review screenshot carousel 2026-07-24: live-feeling proof block without dry grid. */
+.siini-concierge-review-carousel {
+	background: #f6f4ef;
+	border: 1px solid var(--siini-concierge-line, #ded9cf);
+	box-sizing: border-box;
+	color: var(--siini-concierge-ink, #101010);
+	padding: clamp(1rem, 2.4vw, 1.55rem);
+	scroll-margin-top: calc(var(--siini-top-ticker-height, 28px) + var(--siini-header-height, 64px) + 1.25rem);
+}
+
+.siini-concierge-review-carousel,
+.siini-concierge-review-carousel * {
+	list-style: none !important;
+}
+
+body .siini-concierge-page .siini-concierge-review-carousel,
+body .siini-concierge-page .siini-concierge-review-carousel :where(p, span, small, strong, a, button) {
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+}
+
+body .siini-concierge-page .siini-concierge-review-carousel h2 {
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-size: clamp(2rem, 4vw, 4.35rem);
+	font-weight: 800 !important;
+	letter-spacing: -0.01em !important;
+	line-height: 0.96 !important;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.siini-concierge-review-carousel__header {
+	align-items: end;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: minmax(0, 1fr) auto;
+	margin-bottom: clamp(1rem, 2vw, 1.4rem);
+}
+
+.siini-concierge-review-carousel__header .siini-eyebrow {
+	margin-bottom: 0.5rem;
+}
+
+.siini-concierge-review-carousel__meta {
+	align-items: end;
+	display: grid;
+	gap: 0.55rem;
+	justify-items: end;
+}
+
+.siini-concierge-review-carousel__meta span {
+	background: #fff;
+	border: 1px solid rgba(16, 16, 16, 0.12);
+	color: var(--siini-concierge-ink, #101010);
+	display: inline-flex;
+	font-size: 0.74rem;
+	font-weight: 800;
+	justify-content: center;
+	line-height: 1;
+	padding: 0.48rem 0.62rem;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.siini-concierge-review-carousel__meta a {
+	color: var(--siini-concierge-ink, #101010);
+	font-size: 0.78rem;
+	font-weight: 800;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.siini-concierge-review-carousel__meta a:hover,
+.siini-concierge-review-carousel__meta a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.24em;
+}
+
+.siini-concierge-review-carousel__viewport {
+	background: #ebe7df;
+	border: 1px solid rgba(16, 16, 16, 0.1);
+	min-height: clamp(28rem, 39vw, 35rem);
+	overflow: hidden;
+	position: relative;
+}
+
+.siini-concierge-review-carousel__track {
+	height: 100%;
+	min-height: inherit;
+	position: relative;
+}
+
+.siini-concierge-review-card {
+	background: #fff;
+	border: 1px solid rgba(16, 16, 16, 0.1);
+	border-radius: 8px;
+	box-shadow: 0 26px 70px rgba(16, 16, 16, 0.12);
+	display: grid;
+	gap: clamp(0.8rem, 1.4vw, 1rem);
+	left: 50%;
+	max-width: min(44rem, calc(100% - 9rem));
+	opacity: 0;
+	padding: clamp(1.1rem, 2vw, 1.55rem);
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0.94);
+	transition: opacity 360ms ease, transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+	width: min(44rem, 68%);
+	z-index: 1;
+}
+
+.siini-concierge-review-card.is-active {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+	z-index: 3;
+}
+
+.siini-concierge-review-card.is-prev,
+.siini-concierge-review-card.is-next {
+	opacity: 0.38;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.siini-concierge-review-card.is-prev {
+	transform: translate(calc(-50% - min(28vw, 23rem)), -50%) scale(0.9);
+}
+
+.siini-concierge-review-card.is-next {
+	transform: translate(calc(-50% + min(28vw, 23rem)), -50%) scale(0.9);
+}
+
+.siini-concierge-review-card__head {
+	align-items: center;
+	display: flex;
+	gap: 0.75rem;
+	min-width: 0;
+}
+
+.siini-concierge-review-card__avatar {
+	align-items: center;
+	background: #f0ede7;
+	border-radius: 999px;
+	color: #141414;
+	display: inline-flex;
+	flex: 0 0 auto;
+	font-size: 0.95rem;
+	font-weight: 800;
+	height: 2.8rem;
+	justify-content: center;
+	width: 2.8rem;
+}
+
+.siini-concierge-review-card__head strong {
+	color: #141414;
+	display: block;
+	font-size: 1rem;
+	font-weight: 800;
+	line-height: 1.15;
+}
+
+.siini-concierge-review-card__head small,
+.siini-concierge-review-card__rating small {
+	color: rgba(20, 20, 20, 0.52);
+	display: block;
+	font-size: 0.78rem;
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+.siini-concierge-review-card__rating {
+	align-items: center;
+	display: flex;
+	gap: 0.7rem;
+}
+
+.siini-concierge-review-card__rating span {
+	color: #f6bd16;
+	font-size: 1.05rem;
+	letter-spacing: 0.08em;
+	line-height: 1;
+}
+
+.siini-concierge-review-card > p {
+	color: #151515;
+	font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+	font-weight: 600;
+	line-height: 1.45;
+	margin: 0;
+	max-width: 34rem;
+}
+
+.siini-concierge-review-card__photos {
+	display: flex;
+	gap: 0.45rem;
+}
+
+.siini-concierge-review-card__photos span {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.04)),
+		#e8e4dc;
+	border: 1px solid rgba(16, 16, 16, 0.08);
+	border-radius: 6px;
+	display: block;
+	height: clamp(3.6rem, 5.4vw, 5rem);
+	width: clamp(3.6rem, 5.4vw, 5rem);
+}
+
+.siini-concierge-review-card__photos span:nth-child(2) {
+	background-color: #ddd8cf;
+}
+
+.siini-concierge-review-card__photos span:nth-child(3) {
+	background-color: #f2efe9;
+}
+
+.siini-concierge-review-card__answer {
+	background: #f7f5f0;
+	border-left: 3px solid #141414;
+	display: grid;
+	gap: 0.32rem;
+	padding: 0.8rem 0.9rem;
+}
+
+.siini-concierge-review-card__answer strong {
+	color: #141414;
+	font-size: 0.78rem;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.siini-concierge-review-card__answer p {
+	color: rgba(20, 20, 20, 0.66);
+	font-size: 0.9rem;
+	font-weight: 600;
+	line-height: 1.35;
+	margin: 0;
+}
+
+.siini-concierge-review-carousel__arrow {
+	align-items: center;
+	background: #fff;
+	border: 1px solid rgba(16, 16, 16, 0.16);
+	border-radius: 999px;
+	color: #141414;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 1rem;
+	font-weight: 800;
+	height: 3rem;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+	width: 3rem;
+	z-index: 5;
+}
+
+.siini-concierge-review-carousel__arrow--prev {
+	left: clamp(0.7rem, 2vw, 1.25rem);
+}
+
+.siini-concierge-review-carousel__arrow--next {
+	right: clamp(0.7rem, 2vw, 1.25rem);
+}
+
+.siini-concierge-review-carousel__arrow:hover,
+.siini-concierge-review-carousel__arrow:focus-visible {
+	background: #141414;
+	border-color: #141414;
+	color: #fff;
+	outline: 0;
+}
+
+.siini-concierge-review-carousel__dots {
+	display: flex;
+	gap: 0.42rem;
+	justify-content: center;
+	margin-top: 0.9rem;
+}
+
+.siini-concierge-review-carousel__dots button {
+	background: rgba(20, 20, 20, 0.18);
+	border: 0;
+	border-radius: 999px;
+	cursor: pointer;
+	height: 0.42rem;
+	padding: 0;
+	width: 0.42rem;
+}
+
+.siini-concierge-review-carousel__dots button.is-active {
+	background: #141414;
+	width: 1.45rem;
+}
+
+.siini-concierge-review-carousel__strip {
+	align-items: center;
+	background: #141414;
+	color: #fff;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	margin-top: clamp(0.9rem, 1.4vw, 1.1rem);
+	min-height: 3.8rem;
+	padding: 0.9rem clamp(1rem, 2vw, 1.35rem);
+}
+
+.siini-concierge-review-carousel__strip p {
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 0.95rem;
+	font-weight: 600;
+	line-height: 1.35;
+	margin: 0;
+	max-width: 48rem;
+}
+
+.siini-concierge-review-carousel__strip a {
+	color: #fff;
+	flex: 0 0 auto;
+	font-size: 0.78rem;
+	font-weight: 800;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.siini-concierge-review-carousel__strip a:hover,
+.siini-concierge-review-carousel__strip a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.24em;
+}
+
+@media (max-width: 760px) {
+	.siini-concierge-review-carousel {
+		padding: calc(var(--siini-header-height, 56px) + 1rem) 0.85rem 0.85rem;
+		scroll-margin-top: calc(var(--siini-top-ticker-height, 28px) + var(--siini-header-height, 56px) + 0.9rem);
+	}
+
+	.siini-concierge-review-carousel__header {
+		align-items: start;
+		grid-template-columns: 1fr;
+	}
+
+	body .siini-concierge-page .siini-concierge-review-carousel h2 {
+		font-size: clamp(1.75rem, 8vw, 2.35rem);
+		line-height: 1 !important;
+	}
+
+	.siini-concierge-review-carousel__meta {
+		align-items: start;
+		justify-items: start;
+	}
+
+	.siini-concierge-review-carousel__viewport {
+		min-height: 31rem;
+	}
+
+	.siini-concierge-review-card {
+		border-radius: 6px;
+		max-width: calc(100% - 2rem);
+		padding: 1rem;
+		width: calc(100% - 2rem);
+	}
+
+	.siini-concierge-review-card.is-prev,
+	.siini-concierge-review-card.is-next {
+		opacity: 0;
+	}
+
+	.siini-concierge-review-card > p {
+		font-size: 1rem;
+		line-height: 1.42;
+	}
+
+	.siini-concierge-review-carousel__arrow {
+		height: 2.55rem;
+		top: auto;
+		transform: none;
+		width: 2.55rem;
+	}
+
+	.siini-concierge-review-carousel__arrow--prev {
+		bottom: 0.75rem;
+		left: 0.75rem;
+	}
+
+	.siini-concierge-review-carousel__arrow--next {
+		bottom: 0.75rem;
+		right: 0.75rem;
+	}
+
+	.siini-concierge-review-carousel__strip {
+		align-items: stretch;
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.siini-concierge-review-carousel__strip a {
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		display: inline-flex;
+		justify-content: center;
+		min-height: 3rem;
+		padding: 1rem;
+		width: 100%;
+	}
+}
+
+/* Concierge Yandex-like review rail polish 2026-07-24: less staged, more real-review rhythm. */
+.siini-concierge-review-carousel {
+	overflow: hidden;
+}
+
+.siini-concierge-review-carousel__viewport {
+	background: #f0ede7;
+	min-height: clamp(21rem, 30vw, 27rem);
+}
+
+.siini-concierge-review-carousel__track {
+	overflow: hidden;
+}
+
+.siini-concierge-review-card {
+	border-color: rgba(16, 16, 16, 0.12);
+	box-shadow: 0 14px 34px rgba(16, 16, 16, 0.08);
+	gap: 0.85rem;
+	left: clamp(1rem, 2vw, 1.45rem);
+	max-width: none;
+	min-height: clamp(15.5rem, 23vw, 19rem);
+	opacity: 0;
+	padding: clamp(1rem, 1.7vw, 1.35rem);
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	width: min(43vw, 34rem);
+}
+
+.siini-concierge-review-card.is-active {
+	opacity: 1;
+	transform: translate3d(0, -50%, 0);
+}
+
+.siini-concierge-review-card.is-next {
+	opacity: 1;
+	transform: translate3d(calc(100% + clamp(0.85rem, 1.6vw, 1.25rem)), -50%, 0);
+}
+
+.siini-concierge-review-card.is-next-two {
+	opacity: 0.72;
+	pointer-events: none;
+	transform: translate3d(calc(200% + clamp(1.7rem, 3.2vw, 2.5rem)), -50%, 0);
+}
+
+.siini-concierge-review-card.is-prev {
+	opacity: 0.36;
+	pointer-events: none;
+	transform: translate3d(calc(-100% - clamp(0.85rem, 1.6vw, 1.25rem)), -50%, 0);
+}
+
+.siini-concierge-review-card.is-prev-two {
+	opacity: 0;
+	pointer-events: none;
+	transform: translate3d(calc(-200% - clamp(1.7rem, 3.2vw, 2.5rem)), -50%, 0);
+}
+
+.siini-concierge-review-card__head strong {
+	font-size: 0.95rem;
+}
+
+.siini-concierge-review-card > p {
+	font-size: clamp(0.98rem, 1.18vw, 1.12rem);
+	font-weight: 560;
+	line-height: 1.48;
+	max-width: none;
+}
+
+.siini-concierge-review-card__rating span {
+	font-size: 0.96rem;
+}
+
+.siini-concierge-review-card__answer {
+	margin-top: 0.1rem;
+}
+
+.siini-concierge-review-carousel__arrow {
+	box-shadow: 0 8px 26px rgba(16, 16, 16, 0.1);
+}
+
+.siini-concierge-review-carousel__strip {
+	min-height: 3.25rem;
+}
+
+@media (min-width: 1280px) {
+	.siini-concierge-review-card {
+		width: min(36vw, 34rem);
+	}
+}
+
+@media (max-width: 760px) {
+	.siini-concierge-review-carousel__viewport {
+		min-height: 25rem;
+	}
+
+	.siini-concierge-review-card {
+		left: 0.75rem;
+		min-height: 18.4rem;
+		padding: 1rem;
+		width: calc(100% - 4.3rem);
+	}
+
+	.siini-concierge-review-card.is-next {
+		opacity: 0.5;
+		transform: translate3d(calc(100% + 0.65rem), -50%, 0);
+	}
+
+	.siini-concierge-review-card.is-next-two,
+	.siini-concierge-review-card.is-prev,
+	.siini-concierge-review-card.is-prev-two {
+		opacity: 0;
+	}
+
+	.siini-concierge-review-card > p {
+		font-size: 0.96rem;
+		line-height: 1.42;
+	}
+
+	.siini-concierge-review-card__answer p {
+		font-size: 0.84rem;
+	}
+}
+
+/* Concierge reviews safe redesign 2026-07-24: replace clipped multi-card rail with one readable active card. */
+.siini-concierge-review-carousel {
+	background: #f7f5f0 !important;
+	border: 1px solid rgba(17, 17, 17, 0.08) !important;
+	box-shadow: none !important;
+	margin-top: clamp(2.5rem, 5vw, 4.5rem) !important;
+	overflow: visible !important;
+	padding: clamp(1.05rem, 2vw, 1.55rem) !important;
+}
+
+.siini-concierge-review-carousel__header {
+	align-items: center !important;
+	display: grid !important;
+	gap: 1rem !important;
+	grid-template-columns: minmax(0, 1fr) auto !important;
+	margin-bottom: clamp(1rem, 2vw, 1.4rem) !important;
+}
+
+.siini-concierge-review-carousel__header .siini-eyebrow {
+	color: rgba(17, 17, 17, 0.52) !important;
+	font-size: 0.72rem !important;
+	font-weight: 800 !important;
+	margin: 0 0 0.35rem !important;
+	text-transform: none !important;
+}
+
+body .siini-concierge-page .siini-concierge-review-carousel h2 {
+	color: #111 !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-size: clamp(1.24rem, 1.7vw, 1.72rem) !important;
+	font-weight: 760 !important;
+	letter-spacing: 0 !important;
+	line-height: 1.12 !important;
+	margin: 0 !important;
+	text-transform: none !important;
+}
+
+.siini-concierge-review-carousel__meta {
+	align-items: center !important;
+	display: flex !important;
+	flex-wrap: wrap;
+	gap: 0.55rem !important;
+	justify-content: flex-end !important;
+	justify-items: end !important;
+}
+
+.siini-concierge-review-carousel__meta span {
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.1) !important;
+	border-radius: 999px !important;
+	box-shadow: none !important;
+	font-size: 0.76rem !important;
+	font-weight: 760 !important;
+	letter-spacing: 0 !important;
+	min-height: 2rem;
+	padding: 0.5rem 0.72rem !important;
+	text-transform: none !important;
+}
+
+.siini-concierge-review-carousel__meta a {
+	align-items: center;
+	background: transparent !important;
+	border: 0 !important;
+	color: #111 !important;
+	display: inline-flex;
+	font-size: 0.78rem !important;
+	font-weight: 760 !important;
+	min-height: 2rem;
+	padding: 0 !important;
+	text-decoration: underline !important;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.24em;
+	text-transform: none !important;
+}
+
+.siini-concierge-review-carousel__viewport {
+	background: transparent !important;
+	border: 0 !important;
+	display: grid !important;
+	gap: 0.9rem !important;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	justify-content: center !important;
+	min-height: 0 !important;
+	overflow: visible !important;
+	padding: 0 !important;
+	position: relative !important;
+}
+
+.siini-concierge-review-carousel__track {
+	display: block !important;
+	grid-column: 1 / -1;
+	height: auto !important;
+	min-height: 0 !important;
+	overflow: visible !important;
+	position: static !important;
+	width: 100% !important;
+}
+
+.siini-concierge-review-card,
+.siini-concierge-review-card.is-prev,
+.siini-concierge-review-card.is-next,
+.siini-concierge-review-card.is-prev-two,
+.siini-concierge-review-card.is-next-two {
+	display: none !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+.siini-concierge-review-card.is-active {
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.1) !important;
+	border-radius: 12px !important;
+	box-shadow: 0 18px 44px rgba(17, 17, 17, 0.06) !important;
+	box-sizing: border-box !important;
+	display: grid !important;
+	gap: 0.82rem !important;
+	left: auto !important;
+	margin: 0 auto !important;
+	max-width: min(42rem, 100%) !important;
+	min-height: 0 !important;
+	opacity: 1 !important;
+	padding: clamp(1rem, 2vw, 1.35rem) !important;
+	pointer-events: auto !important;
+	position: static !important;
+	top: auto !important;
+	transform: none !important;
+	width: min(42rem, 100%) !important;
+	z-index: auto !important;
+}
+
+.siini-concierge-review-card__head {
+	gap: 0.7rem !important;
+}
+
+.siini-concierge-review-card__avatar {
+	background: #f3f1eb !important;
+	border: 1px solid rgba(17, 17, 17, 0.06) !important;
+	font-size: 0.86rem !important;
+	height: 2.35rem !important;
+	width: 2.35rem !important;
+}
+
+.siini-concierge-review-card__head strong {
+	font-size: 0.94rem !important;
+	font-weight: 760 !important;
+}
+
+.siini-concierge-review-card__head small,
+.siini-concierge-review-card__rating small {
+	font-size: 0.74rem !important;
+	font-weight: 560 !important;
+}
+
+.siini-concierge-review-card__rating {
+	gap: 0.55rem !important;
+}
+
+.siini-concierge-review-card__rating span {
+	color: #f2b705 !important;
+	font-size: 0.92rem !important;
+	letter-spacing: 0.04em !important;
+}
+
+.siini-concierge-review-card > p {
+	color: #161616 !important;
+	font-size: clamp(0.96rem, 1.05vw, 1.08rem) !important;
+	font-weight: 520 !important;
+	line-height: 1.5 !important;
+	margin: 0 !important;
+	max-width: none !important;
+	overflow-wrap: anywhere;
+}
+
+.siini-concierge-review-card__answer {
+	background: #f7f5f0 !important;
+	border: 0 !important;
+	border-radius: 9px !important;
+	gap: 0.28rem !important;
+	margin-top: 0.1rem !important;
+	padding: 0.72rem 0.82rem !important;
+}
+
+.siini-concierge-review-card__answer strong {
+	font-size: 0.72rem !important;
+	font-weight: 760 !important;
+	text-transform: none !important;
+}
+
+.siini-concierge-review-card__answer p {
+	font-size: 0.84rem !important;
+	font-weight: 520 !important;
+	line-height: 1.42 !important;
+}
+
+.siini-concierge-review-carousel__arrow {
+	background: #fff !important;
+	border: 1px solid rgba(17, 17, 17, 0.12) !important;
+	border-radius: 999px !important;
+	box-shadow: none !important;
+	color: #111 !important;
+	font-size: 1rem !important;
+	height: 2.6rem !important;
+	position: static !important;
+	transform: none !important;
+	width: 2.6rem !important;
+}
+
+.siini-concierge-review-carousel__arrow--prev {
+	justify-self: end !important;
+}
+
+.siini-concierge-review-carousel__arrow--next {
+	justify-self: start !important;
+}
+
+.siini-concierge-review-carousel__arrow:hover,
+.siini-concierge-review-carousel__arrow:focus-visible {
+	background: #111 !important;
+	border-color: #111 !important;
+	color: #fff !important;
+	outline: 0 !important;
+}
+
+.siini-concierge-review-carousel__dots {
+	gap: 0.45rem !important;
+	margin-top: 0.85rem !important;
+}
+
+.siini-concierge-review-carousel__dots button {
+	background: rgba(17, 17, 17, 0.18) !important;
+	border: 0 !important;
+	height: 0.42rem !important;
+	width: 0.42rem !important;
+}
+
+.siini-concierge-review-carousel__dots button.is-active {
+	background: #111 !important;
+	width: 1.3rem !important;
+}
+
+.siini-concierge-review-carousel__strip {
+	background: transparent !important;
+	border-top: 1px solid rgba(17, 17, 17, 0.08) !important;
+	color: #111 !important;
+	margin-top: 1rem !important;
+	min-height: 0 !important;
+	padding: 0.9rem 0 0 !important;
+}
+
+.siini-concierge-review-carousel__strip p {
+	color: rgba(17, 17, 17, 0.58) !important;
+	font-size: 0.86rem !important;
+	font-weight: 520 !important;
+}
+
+.siini-concierge-review-carousel__strip a {
+	color: #111 !important;
+	font-size: 0.78rem !important;
+	text-transform: none !important;
+	text-decoration: underline !important;
+	text-underline-offset: 0.24em;
+}
+
+@media (max-width: 760px) {
+	.siini-concierge-review-carousel {
+		margin-top: 2rem !important;
+		padding: 1rem !important;
+	}
+
+	.siini-concierge-review-carousel__header {
+		align-items: start !important;
+		grid-template-columns: 1fr !important;
+	}
+
+	.siini-concierge-review-carousel__meta {
+		justify-content: flex-start !important;
+	}
+
+	body .siini-concierge-page .siini-concierge-review-carousel h2 {
+		font-size: clamp(1.18rem, 5.8vw, 1.45rem) !important;
+	}
+
+	.siini-concierge-review-card.is-active {
+		border-radius: 10px !important;
+		padding: 0.95rem !important;
+		width: 100% !important;
+	}
+
+	.siini-concierge-review-card > p {
+		font-size: 0.95rem !important;
+		line-height: 1.45 !important;
+	}
+
+	.siini-concierge-review-carousel__viewport {
+		gap: 0.72rem !important;
+	}
+
+	.siini-concierge-review-carousel__strip {
+		align-items: stretch !important;
+		display: grid !important;
+		gap: 0.7rem !important;
+		grid-template-columns: 1fr !important;
+	}
+
+	.siini-concierge-review-carousel__strip a {
+		border: 1px solid rgba(17, 17, 17, 0.12) !important;
+		border-radius: 8px !important;
+		justify-content: center !important;
+		min-height: 2.6rem !important;
+		padding: 0.8rem !important;
+		width: 100% !important;
+	}
+}
+
+/* Favorites header/drawer safety fix 2026-07-24: one heart per breakpoint, real offcanvas overlay. */
+.siini-site-header .siini-header-search-link,
+.siini-site-header .siini-header-favorites-link {
+	align-items: center !important;
+	appearance: none !important;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	color: #111 !important;
+	cursor: pointer;
+	display: inline-flex !important;
+	flex: 0 0 auto !important;
+	height: 2.25rem !important;
+	justify-content: center !important;
+	min-height: 2.25rem !important;
+	min-width: 2.25rem !important;
+	padding: 0 !important;
+	position: relative !important;
+	text-decoration: none !important;
+	width: 2.25rem !important;
+}
+
+.siini-site-header .siini-header-search-icon {
+	display: block !important;
+	height: 1.38rem !important;
+	opacity: 1 !important;
+	stroke: currentColor !important;
+	width: 1.38rem !important;
+}
+
+.siini-site-header .siini-header-favorites-icon {
+	color: currentColor !important;
+	display: block !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-size: 1.35rem !important;
+	font-style: normal !important;
+	font-weight: 500 !important;
+	line-height: 1 !important;
+	pointer-events: none;
+}
+
+@media (min-width: 901px) {
+	.siini-site-header .siini-site-header__actions {
+		column-gap: 0.55rem !important;
+	}
+
+	.siini-site-header .siini-header-links {
+		column-gap: 0.55rem !important;
+	}
+
+	.siini-site-header .siini-header-search-link--mobile,
+	.siini-site-header .siini-header-favorites-link--mobile {
+		display: none !important;
+	}
+}
+
+@media (max-width: 900px) {
+	.siini-site-header .siini-header-links .siini-header-search-link,
+	.siini-site-header .siini-header-links .siini-header-favorites-link {
+		display: none !important;
+	}
+
+	.siini-site-header .siini-header-search-link--mobile,
+	.siini-site-header .siini-header-favorites-link--mobile {
+		display: inline-flex !important;
+	}
+}
+
+.siini-favorites-drawer {
+	background: transparent !important;
+	bottom: 0 !important;
+	display: block !important;
+	height: 100dvh !important;
+	left: 0 !important;
+	margin: 0 !important;
+	max-height: none !important;
+	max-width: none !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: fixed !important;
+	right: 0 !important;
+	top: 0 !important;
+	transform: none !important;
+	width: 100vw !important;
+	z-index: 100000 !important;
+}
+
+.siini-favorites-drawer[hidden] {
+	display: none !important;
+}
+
+.siini-favorites-drawer__backdrop {
+	background: rgba(17, 17, 17, 0.36) !important;
+	bottom: 0 !important;
+	height: 100% !important;
+	left: 0 !important;
+	position: absolute !important;
+	right: 0 !important;
+	top: 0 !important;
+	width: 100% !important;
+}
+
+.siini-favorites-drawer__panel {
+	background: #fff !important;
+	border-left: 1px solid #ded8ce !important;
+	box-shadow: -1.25rem 0 3.5rem rgba(17, 17, 17, 0.16) !important;
+	box-sizing: border-box !important;
+	display: flex !important;
+	flex-direction: column !important;
+	height: 100% !important;
+	margin: 0 0 0 auto !important;
+	max-height: none !important;
+	max-width: min(28rem, 100vw) !important;
+	min-height: 0 !important;
+	overflow: hidden !important;
+	position: relative !important;
+	transform: none !important;
+	width: min(28rem, 100vw) !important;
+}
+
+.siini-site-header .siini-header-favorites-count {
+	display: inline-flex !important;
+}
+
+.siini-site-header .siini-header-favorites-count[hidden] {
+	display: none !important;
+}
+
+.siini-site-header .siini-header-favorites-link:hover,
+.siini-site-header .siini-header-favorites-link:focus-visible {
+	color: #d71920 !important;
+	outline: 0;
+}
+
+.siini-site-header .siini-header-favorites-link:hover .siini-header-favorites-icon,
+.siini-site-header .siini-header-favorites-link:focus-visible .siini-header-favorites-icon {
+	color: #d71920 !important;
+}
+
+/* Header icon collision fix 2026-07-24: keep Woo cart badge attached to cart, not over favorites. */
+.siini-site-header__actions .wp-block-woocommerce-mini-cart,
+.siini-site-header__actions .wc-block-mini-cart {
+	flex: 0 0 auto !important;
+	margin-left: 0.45rem !important;
+	position: relative !important;
+	z-index: 2;
+}
+
+.siini-site-header__actions .wc-block-mini-cart__button {
+	align-items: center !important;
+	display: inline-flex !important;
+	height: 2.25rem !important;
+	justify-content: center !important;
+	min-height: 2.25rem !important;
+	min-width: 2.25rem !important;
+	position: relative !important;
+	width: 2.25rem !important;
+}
+
+.siini-site-header__actions .wc-block-mini-cart__quantity-badge {
+	position: relative !important;
+	z-index: 3 !important;
+}
+
+@media (min-width: 901px) {
+	.siini-site-header .siini-header-links {
+		gap: 1rem !important;
+	}
+
+	.siini-site-header__actions .wp-block-woocommerce-mini-cart,
+	.siini-site-header__actions .wc-block-mini-cart {
+		margin-left: 0.85rem !important;
+	}
+}
+
+.siini-site-header .siini-header-favorites-icon {
+	-webkit-text-stroke: 0.035em currentColor;
+	color: #080808 !important;
+	font-weight: 700 !important;
+}
+
+.siini-site-header .siini-header-favorites-link:hover .siini-header-favorites-icon,
+.siini-site-header .siini-header-favorites-link:focus-visible .siini-header-favorites-icon {
+	color: #d71920 !important;
+}
+
+/* Product card quick copy link action 2026-07-24. */
+.siini-home-product-card__copy-link {
+	align-items: center !important;
+	background: rgba(255, 255, 255, 0.88) !important;
+	border: 0 !important;
+	border-radius: 50% !important;
+	color: #080808 !important;
+	cursor: pointer;
+	display: inline-flex !important;
+	height: 2.12rem !important;
+	justify-content: center !important;
+	opacity: 1 !important;
+	padding: 0 !important;
+	position: absolute !important;
+	right: 3rem !important;
+	top: 0.5rem !important;
+	transform: none !important;
+	transition: background 160ms ease, color 160ms ease, transform 160ms ease !important;
+	width: 2.12rem !important;
+	z-index: 5 !important;
+}
+
+.siini-home-product-card__copy-link svg {
+	display: block;
+	fill: none;
+	height: 1.08rem;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 2.1;
+	width: 1.08rem;
+}
+
+.siini-home-product-card__copy-link:hover,
+.siini-home-product-card__copy-link:focus-visible,
+.siini-home-product-card__copy-link.is-copied {
+	background: #111 !important;
+	color: #fff !important;
+	outline: 0;
+	transform: translateY(-1px) !important;
+}
+
+/* Pants product-card packshot alignment: tall images should sit centered and fill the white well calmly. */
+.siini-home-product-card--cat-pants-shorts .siini-home-product-card__media {
+	align-items: center !important;
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.siini-home-product-card--cat-pants-shorts .siini-home-product-card__image,
+.siini-home-product-card--cat-pants-shorts .siini-home-product-card__media img {
+	display: block !important;
+	height: 100% !important;
+	margin: auto !important;
+	max-height: none !important;
+	max-width: 82% !important;
+	object-fit: contain !important;
+	object-position: center center !important;
+	transform: scale(1) !important;
+	width: auto !important;
+}
+
+.siini-home-product-card--cat-pants-shorts:hover .siini-home-product-card__image,
+.siini-home-product-card--cat-pants-shorts:focus-within .siini-home-product-card__image {
+	transform: scale(1.02) !important;
+}
+
+/* Footwear product-card packshot fit: local sneaker uploads should sit centered with white air around them. */
+.siini-home-product-card--footwear,
+.siini-home-product-card--cat-sneakers,
+.siini-home-product-card--brand-new-balance.siini-home-product-card--cat-sneakers,
+.siini-home-product-card--catalog.siini-home-product-card--footwear,
+.siini-home-product-card--catalog.siini-home-product-card--cat-sneakers,
+.siini-home-product-card--catalog.siini-home-product-card--brand-new-balance.siini-home-product-card--cat-sneakers {
+	--siini-card-img-hover-scale: 0.98 !important;
+	--siini-card-img-scale: 0.94 !important;
+}
+
+.siini-home-product-card--footwear .siini-home-product-card__media,
+.siini-home-product-card--cat-sneakers .siini-home-product-card__media {
+	align-items: center !important;
+	background: #fff !important;
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.siini-home-product-card--footwear .siini-home-product-card__image,
+.siini-home-product-card--footwear .siini-home-product-card__media img,
+.siini-home-product-card--cat-sneakers .siini-home-product-card__image,
+.siini-home-product-card--cat-sneakers .siini-home-product-card__media img {
+	display: block !important;
+	height: 100% !important;
+	margin: auto !important;
+	max-height: none !important;
+	max-width: none !important;
+	object-fit: contain !important;
+	object-position: center center !important;
+	transform: scale(var(--siini-card-img-scale, 0.94)) !important;
+	transform-origin: center center !important;
+	width: 100% !important;
+}
+
+.siini-home-product-card--footwear:hover .siini-home-product-card__image,
+.siini-home-product-card--footwear:focus-within .siini-home-product-card__image,
+.siini-home-product-card--cat-sneakers:hover .siini-home-product-card__image,
+.siini-home-product-card--cat-sneakers:focus-within .siini-home-product-card__image {
+	transform: scale(var(--siini-card-img-hover-scale, 0.98)) !important;
+}
+
+/* Catalog sticky sidebar 2026-07-24: keep desktop filters available under the fixed ticker/header. */
+@supports (overflow-x: clip) {
+	html:has(.siini-catalog-layout),
+	body:has(.siini-catalog-layout) {
+		overflow-x: clip !important;
+	}
+}
+
+@media (min-width: 901px) {
+	body:not(.siini-product-search-page) .siini-site-main:has(.siini-catalog-layout) {
+		overflow: visible !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout.alignwide {
+		align-items: start !important;
+		overflow: visible !important;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar {
+		align-self: start !important;
+		max-height: none !important;
+		overflow: visible !important;
+		overscroll-behavior: contain;
+		position: sticky !important;
+		top: calc(var(--siini-top-ticker-height, 31px) + var(--siini-header-height, 64px) + 0.72rem) !important;
+		z-index: 4;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar .siini-catalog-filters__panel {
+		max-height: min(38rem, calc(100dvh - var(--siini-top-ticker-height, 31px) - var(--siini-header-height, 64px) - 1.25rem)) !important;
+		overflow-x: hidden !important;
+		overflow-y: auto !important;
+		scrollbar-color: rgba(17, 17, 17, 0.22) transparent;
+		scrollbar-width: thin;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar .siini-catalog-filters__panel::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar .siini-catalog-filters__panel::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar .siini-catalog-filters__panel::-webkit-scrollbar-thumb {
+		background: rgba(17, 17, 17, 0.18);
+		border-radius: 999px;
+	}
+
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar .siini-catalog-filters__form {
+		max-height: none !important;
+		overflow: visible !important;
+	}
+}
+
+@media (max-width: 900px) {
+	body:not(.siini-product-search-page) .siini-catalog-layout__sidebar {
+		max-height: none !important;
+		overflow: visible !important;
+		overscroll-behavior: auto;
+		position: static !important;
+		top: auto !important;
+	}
+}
+
+/* SINI cart and checkout polish 2026-07-24: classic WooCommerce flow for stable client demos. */
+body.woocommerce-cart .siini-site-main,
+body.woocommerce-checkout .siini-site-main {
+	background: #f7f6f2;
+	color: #111;
+	padding-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+body.woocommerce-cart .siini-site-main > h1,
+body.woocommerce-checkout .siini-site-main > h1,
+body.woocommerce-cart .siini-site-main .wp-block-post-title,
+body.woocommerce-checkout .siini-site-main .wp-block-post-title {
+	color: #111;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif);
+	font-size: clamp(2.35rem, 5.6vw, 5.2rem);
+	font-weight: 850;
+	letter-spacing: 0;
+	line-height: 0.95;
+	margin: clamp(1.5rem, 4vw, 3rem) auto clamp(1.2rem, 2.6vw, 2rem);
+	text-transform: uppercase;
+}
+
+.siini-commerce-flow,
+.siini-commerce-flow * {
+	box-sizing: border-box;
+}
+
+.siini-commerce-flow {
+	--siini-commerce-border: #ded8ce;
+	--siini-commerce-muted: #726b62;
+	--siini-commerce-panel: #fff;
+	--siini-commerce-soft: #efece5;
+	color: #111;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif);
+	font-style: normal;
+	letter-spacing: 0;
+	margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.siini-commerce-flow :where(a, button, input, select, textarea, label, p, th, td, strong, span, h2, h3) {
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	letter-spacing: 0 !important;
+}
+
+.siini-commerce-flow a {
+	color: #111;
+	text-decoration: none;
+}
+
+.siini-commerce-flow a:hover,
+.siini-commerce-flow a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.22em;
+}
+
+.siini-commerce-flow .woocommerce-notices-wrapper,
+.siini-commerce-flow .woocommerce-message,
+.siini-commerce-flow .woocommerce-info,
+.siini-commerce-flow .woocommerce-error {
+	border: 1px solid var(--siini-commerce-border);
+	border-radius: 0;
+	color: #111;
+	font-size: 0.92rem;
+	font-weight: 650;
+	line-height: 1.45;
+	margin: 0 0 1rem;
+	padding: 1rem 1.1rem;
+}
+
+.siini-commerce-flow .woocommerce-message,
+.siini-commerce-flow .woocommerce-info {
+	background: #fff;
+}
+
+.siini-commerce-flow .woocommerce-error {
+	background: #fff6f4;
+	border-color: #d9aaa2;
+	list-style: none;
+}
+
+.siini-commerce-flow .coupon,
+.siini-commerce-flow .woocommerce-form-coupon-toggle,
+.siini-commerce-flow .woocommerce-form-coupon,
+.siini-commerce-flow .woocommerce-form-login-toggle,
+.siini-commerce-flow .woocommerce-form-login {
+	display: none !important;
+}
+
+.siini-commerce-flow--cart .woocommerce {
+	align-items: start;
+	display: grid;
+	gap: clamp(1rem, 2vw, 1.4rem);
+	grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.36fr);
+}
+
+.siini-commerce-flow--cart .woocommerce-notices-wrapper,
+.siini-commerce-flow--cart .woocommerce-message,
+.siini-commerce-flow--cart .woocommerce-info,
+.siini-commerce-flow--cart .woocommerce-error,
+.siini-commerce-flow--cart .cart-empty,
+.siini-commerce-flow--cart .return-to-shop {
+	grid-column: 1 / -1;
+}
+
+.siini-commerce-flow--cart .woocommerce-cart-form,
+.siini-commerce-flow--cart .cart-collaterals,
+.siini-commerce-flow--checkout form.checkout #customer_details,
+.siini-commerce-flow--checkout form.checkout #order_review {
+	background: var(--siini-commerce-panel);
+	border: 1px solid var(--siini-commerce-border);
+}
+
+.siini-commerce-flow--cart table.shop_table {
+	border: 0 !important;
+	border-collapse: collapse;
+	margin: 0 !important;
+	width: 100%;
+}
+
+.siini-commerce-flow--cart table.shop_table th {
+	background: #f2efe9;
+	border: 0 !important;
+	border-bottom: 1px solid var(--siini-commerce-border) !important;
+	color: var(--siini-commerce-muted);
+	font-size: 0.72rem;
+	font-weight: 850;
+	padding: 0.9rem 1rem !important;
+	text-align: left;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.siini-commerce-flow--cart table.shop_table td {
+	border: 0 !important;
+	border-bottom: 1px solid #ebe6dd !important;
+	color: #111;
+	font-size: 0.94rem;
+	font-weight: 650;
+	line-height: 1.35;
+	padding: 1rem !important;
+	vertical-align: middle;
+}
+
+.siini-commerce-flow--cart table.shop_table tr:last-child td {
+	border-bottom: 0 !important;
+}
+
+.siini-commerce-flow--cart .product-remove {
+	width: 3.2rem;
+}
+
+.siini-commerce-flow--cart .product-remove a.remove {
+	align-items: center;
+	background: #fff;
+	border: 1px solid #d8d1c6;
+	border-radius: 0;
+	color: #111 !important;
+	display: inline-flex;
+	font-size: 1.2rem;
+	font-weight: 500;
+	height: 2.35rem;
+	justify-content: center;
+	line-height: 1;
+	width: 2.35rem;
+}
+
+.siini-commerce-flow--cart .product-remove a.remove:hover,
+.siini-commerce-flow--cart .product-remove a.remove:focus-visible {
+	background: #111;
+	border-color: #111;
+	color: #fff !important;
+	outline: 0;
+	text-decoration: none;
+}
+
+.siini-commerce-flow--cart .product-thumbnail {
+	width: 7.2rem;
+}
+
+.siini-commerce-flow--cart .product-thumbnail img {
+	background: #f5f2ec;
+	border: 1px solid #e5ded4;
+	display: block !important;
+	height: 6rem;
+	max-width: none !important;
+	object-fit: contain;
+	width: 6rem;
+}
+
+.siini-commerce-flow--cart .product-name a,
+.siini-commerce-flow--checkout .product-name {
+	color: #111;
+	font-size: 0.98rem;
+	font-weight: 800;
+	line-height: 1.22;
+}
+
+.siini-commerce-flow--cart .product-name .variation,
+.siini-commerce-flow--checkout .product-name .variation {
+	color: var(--siini-commerce-muted);
+	display: grid;
+	font-size: 0.78rem;
+	font-weight: 650;
+	gap: 0.25rem;
+	margin: 0.45rem 0 0;
+}
+
+.siini-commerce-flow--cart .product-name .variation dt,
+.siini-commerce-flow--cart .product-name .variation dd,
+.siini-commerce-flow--checkout .product-name .variation dt,
+.siini-commerce-flow--checkout .product-name .variation dd {
+	display: inline;
+	margin: 0;
+}
+
+.siini-commerce-flow--cart .product-price,
+.siini-commerce-flow--cart .product-subtotal,
+.siini-commerce-flow--checkout .product-total,
+.siini-commerce-flow--checkout tfoot td {
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+.siini-commerce-flow .siini-quantity-stepper {
+	align-items: center;
+	background: #fff;
+	border: 1px solid #d8d1c6;
+	display: inline-flex;
+	height: 2.65rem;
+	justify-content: center;
+	min-width: 8rem;
+	width: auto;
+}
+
+.siini-commerce-flow .siini-quantity-stepper__button,
+.siini-commerce-flow .quantity .qty {
+	appearance: textfield;
+	background: transparent !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	color: #111 !important;
+	font-size: 0.95rem !important;
+	font-weight: 800 !important;
+	height: 100% !important;
+	line-height: 1 !important;
+	margin: 0 !important;
+	min-height: 0 !important;
+	padding: 0 !important;
+	text-align: center;
+	width: 2.55rem !important;
+}
+
+.siini-commerce-flow .quantity .qty::-webkit-inner-spin-button,
+.siini-commerce-flow .quantity .qty::-webkit-outer-spin-button {
+	appearance: none;
+	margin: 0;
+}
+
+.siini-commerce-flow .siini-quantity-stepper__button {
+	cursor: pointer;
+}
+
+.siini-commerce-flow .siini-quantity-stepper__button:hover,
+.siini-commerce-flow .siini-quantity-stepper__button:focus-visible {
+	background: #f0ede7 !important;
+	outline: 1px solid #111;
+	outline-offset: -1px;
+}
+
+.siini-commerce-flow .siini-quantity-stepper__button:disabled {
+	color: #a39b91 !important;
+	cursor: default;
+}
+
+.siini-commerce-flow--cart .actions {
+	background: #f8f6f1;
+	padding: 1rem !important;
+	text-align: right;
+}
+
+.siini-commerce-flow--cart .actions .button {
+	background: #fff !important;
+	border: 1px solid #111 !important;
+	color: #111 !important;
+}
+
+.siini-commerce-flow--cart .cart-collaterals {
+	padding: clamp(1rem, 2vw, 1.25rem);
+	position: sticky;
+	top: calc(var(--siini-top-ticker-height, 31px) + var(--siini-header-height, 64px) + 1rem);
+}
+
+.siini-commerce-flow--cart .cart-collaterals .cart_totals {
+	float: none;
+	width: 100%;
+}
+
+.siini-commerce-flow--cart .cart_totals h2,
+.siini-commerce-flow--checkout #order_review_heading,
+.siini-commerce-flow--checkout .woocommerce-billing-fields h3,
+.siini-commerce-flow--checkout .woocommerce-additional-fields h3 {
+	color: #111;
+	font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+	font-weight: 850;
+	line-height: 1.1;
+	margin: 0 0 1rem;
+	text-transform: uppercase;
+}
+
+.siini-commerce-flow--checkout .woocommerce-additional-fields h3 {
+	display: none;
+}
+
+.siini-commerce-flow--cart .cart_totals table th,
+.siini-commerce-flow--cart .cart_totals table td {
+	border-bottom: 1px solid #e6e0d8 !important;
+	padding: 0.85rem 0 !important;
+}
+
+.siini-commerce-flow .button,
+.siini-commerce-flow button.button,
+.siini-commerce-flow a.button,
+.siini-commerce-flow input.button,
+.siini-commerce-flow #place_order {
+	align-items: center;
+	background: #111 !important;
+	border: 1px solid #111 !important;
+	border-radius: 0 !important;
+	color: #fff !important;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 0.82rem !important;
+	font-weight: 850 !important;
+	justify-content: center;
+	line-height: 1 !important;
+	min-height: 3.15rem;
+	padding: 1rem 1.1rem !important;
+	text-align: center;
+	text-decoration: none !important;
+	text-transform: none !important;
+	width: auto;
+}
+
+.siini-commerce-flow .button:hover,
+.siini-commerce-flow .button:focus-visible,
+.siini-commerce-flow #place_order:hover,
+.siini-commerce-flow #place_order:focus-visible {
+	background: #2b2925 !important;
+	border-color: #2b2925 !important;
+	color: #fff !important;
+	outline: 0;
+}
+
+.siini-commerce-flow--cart .wc-proceed-to-checkout {
+	padding: 1rem 0 0 !important;
+}
+
+.siini-commerce-flow--cart .checkout-button {
+	width: 100%;
+}
+
+.siini-commerce-flow--cart .return-to-shop .button {
+	background: #fff !important;
+	color: #111 !important;
+}
+
+.siini-commerce-flow--cart .cart-empty {
+	background: #fff;
+	border: 1px solid var(--siini-commerce-border);
+	color: #111;
+	font-size: clamp(1.1rem, 2vw, 1.45rem);
+	font-weight: 800;
+	margin: 0;
+	padding: clamp(1.5rem, 4vw, 2.5rem);
+	text-align: center;
+}
+
+.siini-commerce-flow--cart .return-to-shop {
+	margin: 1rem 0 0;
+	text-align: center;
+}
+
+.siini-commerce-flow--checkout form.checkout {
+	align-items: start;
+	display: grid;
+	gap: clamp(1rem, 2vw, 1.4rem);
+	grid-template-columns: minmax(0, 1fr) minmax(24rem, 0.38fr);
+}
+
+.siini-commerce-flow--checkout form.checkout #customer_details {
+	grid-column: 1;
+	min-width: 0;
+	padding: clamp(1rem, 2.2vw, 1.45rem);
+}
+
+.siini-commerce-flow--checkout form.checkout #order_review_heading {
+	background: #fff;
+	border: 1px solid var(--siini-commerce-border);
+	border-bottom: 0;
+	grid-column: 2;
+	margin: 0;
+	padding: clamp(1rem, 2vw, 1.25rem) clamp(1rem, 2vw, 1.25rem) 0;
+}
+
+.siini-commerce-flow--checkout form.checkout #order_review {
+	grid-column: 2;
+	max-width: 100%;
+	min-width: 0;
+	padding: 0 clamp(1rem, 2vw, 1.25rem) clamp(1rem, 2vw, 1.25rem);
+	position: sticky;
+	top: calc(var(--siini-top-ticker-height, 31px) + var(--siini-header-height, 64px) + 1rem);
+}
+
+.siini-commerce-flow--checkout .col2-set {
+	float: none;
+	width: 100%;
+}
+
+.siini-commerce-flow--checkout .col2-set .col-1,
+.siini-commerce-flow--checkout .col2-set .col-2 {
+	float: none;
+	width: 100%;
+}
+
+.siini-commerce-flow--checkout .woocommerce-billing-fields__field-wrapper,
+.siini-commerce-flow--checkout .woocommerce-additional-fields__field-wrapper {
+	display: grid;
+	gap: 0.9rem;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.siini-commerce-flow--checkout .form-row {
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+}
+
+.siini-commerce-flow--checkout .form-row-wide,
+.siini-commerce-flow--checkout #billing_country_field,
+.siini-commerce-flow--checkout #billing_address_1_field,
+.siini-commerce-flow--checkout #order_comments_field {
+	grid-column: 1 / -1;
+}
+
+.siini-commerce-flow--checkout label {
+	color: #111;
+	display: block;
+	font-size: 0.76rem;
+	font-weight: 850;
+	line-height: 1.2;
+	margin: 0 0 0.35rem;
+	text-transform: uppercase;
+}
+
+.siini-commerce-flow--checkout .required {
+	color: #111;
+	text-decoration: none;
+}
+
+.siini-commerce-flow--checkout .optional {
+	font-size: 0;
+}
+
+.siini-commerce-flow--checkout .optional::after {
+	content: "(необязательно)";
+	font-size: 0.76rem;
+}
+
+.siini-commerce-flow--checkout input.input-text,
+.siini-commerce-flow--checkout textarea,
+.siini-commerce-flow--checkout select {
+	background: #fff !important;
+	border: 1px solid #d8d1c6 !important;
+	border-radius: 0 !important;
+	color: #111 !important;
+	font-size: 1rem !important;
+	font-weight: 600 !important;
+	min-height: 3rem;
+	padding: 0.82rem 0.9rem !important;
+	width: 100%;
+}
+
+.siini-commerce-flow--checkout textarea {
+	min-height: 7rem;
+	resize: vertical;
+}
+
+.siini-commerce-flow--checkout input:focus,
+.siini-commerce-flow--checkout textarea:focus,
+.siini-commerce-flow--checkout select:focus {
+	border-color: #111 !important;
+	box-shadow: none !important;
+	outline: 1px solid #111;
+	outline-offset: -1px;
+}
+
+.siini-commerce-flow--checkout ::placeholder {
+	color: #8a837a;
+	opacity: 1;
+}
+
+.siini-commerce-flow--checkout table.shop_table {
+	border: 0 !important;
+	border-collapse: collapse;
+	margin: 0 !important;
+	width: 100%;
+}
+
+.siini-commerce-flow--checkout table.shop_table th,
+.siini-commerce-flow--checkout table.shop_table td {
+	border: 0 !important;
+	border-bottom: 1px solid #e6e0d8 !important;
+	color: #111;
+	font-size: 0.9rem;
+	padding: 0.85rem 0 !important;
+}
+
+.siini-commerce-flow--checkout table.shop_table thead th {
+	color: var(--siini-commerce-muted);
+	font-size: 0.72rem;
+	font-weight: 850;
+	text-transform: uppercase;
+}
+
+.siini-commerce-flow--checkout table.shop_table tfoot tr:last-child th,
+.siini-commerce-flow--checkout table.shop_table tfoot tr:last-child td {
+	font-size: 1.05rem;
+}
+
+.siini-checkout-note,
+.siini-commerce-flow--checkout .woocommerce-checkout-payment {
+	background: #f7f5f0 !important;
+	border: 1px solid #e1dbd1 !important;
+	color: #111 !important;
+	margin: 1rem 0 0 !important;
+	padding: 1rem !important;
+}
+
+.siini-checkout-note strong {
+	display: block;
+	font-size: 0.8rem;
+	font-weight: 850;
+	margin-bottom: 0.35rem;
+	text-transform: uppercase;
+}
+
+.siini-checkout-note p,
+.siini-commerce-flow--checkout .woocommerce-checkout-payment p {
+	color: var(--siini-commerce-muted) !important;
+	font-size: 0.9rem;
+	font-weight: 600;
+	line-height: 1.45;
+	margin: 0;
+}
+
+.siini-commerce-flow--checkout .woocommerce-checkout-payment ul.payment_methods {
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.siini-commerce-flow--checkout .woocommerce-checkout-payment li {
+	list-style: none !important;
+	margin: 0 !important;
+}
+
+.siini-commerce-flow--checkout .payment_box {
+	background: transparent !important;
+	color: var(--siini-commerce-muted) !important;
+	margin: 0.65rem 0 0 !important;
+	padding: 0 !important;
+}
+
+.siini-commerce-flow--checkout .payment_box::before {
+	display: none !important;
+}
+
+.siini-commerce-flow--checkout .place-order {
+	display: grid;
+	gap: 0.8rem;
+	margin: 1rem 0 0 !important;
+	padding: 0 !important;
+}
+
+.siini-commerce-flow--checkout .woocommerce-terms-and-conditions-wrapper,
+.siini-commerce-flow--checkout .woocommerce-privacy-policy-text {
+	color: var(--siini-commerce-muted);
+	font-size: 0.8rem;
+	font-weight: 600;
+	line-height: 1.45;
+}
+
+.siini-commerce-flow--checkout .woocommerce-terms-and-conditions-wrapper a,
+.siini-commerce-flow--checkout .woocommerce-privacy-policy-text a {
+	font-weight: 800;
+}
+
+.siini-commerce-flow--checkout .woocommerce-form__label-for-checkbox,
+.siini-commerce-flow--checkout .form-row .checkbox {
+	align-items: start;
+	display: flex !important;
+	gap: 0.6rem;
+	text-transform: none;
+}
+
+.siini-commerce-flow--checkout .woocommerce-form__input-checkbox {
+	accent-color: #111;
+	flex: 0 0 auto;
+	margin-top: 0.18rem;
+}
+
+.siini-commerce-flow--checkout #place_order {
+	width: 100%;
+}
+
+@media (max-width: 900px) {
+	.siini-commerce-flow--cart .woocommerce,
+	.siini-commerce-flow--checkout form.checkout {
+		grid-template-columns: 1fr;
+	}
+
+	.siini-commerce-flow--cart .cart-collaterals,
+	.siini-commerce-flow--checkout form.checkout #order_review {
+		position: static;
+	}
+
+	.siini-commerce-flow--checkout form.checkout #customer_details,
+	.siini-commerce-flow--checkout form.checkout #order_review_heading,
+	.siini-commerce-flow--checkout form.checkout #order_review {
+		grid-column: 1;
+	}
+}
+
+@media (max-width: 640px) {
+	body.woocommerce-cart .siini-site-main > h1,
+	body.woocommerce-checkout .siini-site-main > h1,
+	body.woocommerce-cart .siini-site-main .wp-block-post-title,
+	body.woocommerce-checkout .siini-site-main .wp-block-post-title {
+		font-size: clamp(2rem, 13vw, 3.1rem);
+		margin-top: 1.25rem;
+	}
+
+	.siini-commerce-flow--cart table.shop_table,
+	.siini-commerce-flow--cart table.shop_table tbody,
+	.siini-commerce-flow--cart table.shop_table tr,
+	.siini-commerce-flow--cart table.shop_table td {
+		display: block;
+		width: 100%;
+	}
+
+	.siini-commerce-flow--cart table.shop_table thead {
+		display: none;
+	}
+
+	.siini-commerce-flow--cart table.shop_table tr.cart_item {
+		display: grid;
+		gap: 0.75rem;
+		grid-template-columns: 2.4rem 5.6rem minmax(0, 1fr);
+		padding: 1rem;
+	}
+
+	.siini-commerce-flow--cart table.shop_table tr.cart_item td {
+		border: 0 !important;
+		padding: 0 !important;
+	}
+
+	.siini-commerce-flow--cart .product-remove {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.siini-commerce-flow--cart .product-thumbnail {
+		grid-column: 2;
+		grid-row: 1 / span 3;
+		display: block !important;
+		width: auto;
+	}
+
+	.siini-commerce-flow--cart .product-thumbnail img {
+		display: block !important;
+		height: 5.4rem;
+		max-width: none !important;
+		width: 5.4rem;
+	}
+
+	.siini-commerce-flow--cart .product-name {
+		grid-column: 3;
+		grid-row: 1;
+		min-width: 0;
+	}
+
+	.siini-commerce-flow--cart .product-price,
+	.siini-commerce-flow--cart .product-quantity,
+	.siini-commerce-flow--cart .product-subtotal {
+		grid-column: 3;
+	}
+
+	.siini-commerce-flow--cart .product-price::before {
+		content: "Цена: ";
+		color: var(--siini-commerce-muted);
+		font-weight: 700;
+	}
+
+	.siini-commerce-flow--cart .product-subtotal::before {
+		content: "Сумма: ";
+		color: var(--siini-commerce-muted);
+		font-weight: 700;
+	}
+
+	.siini-commerce-flow--cart .actions {
+		text-align: stretch;
+	}
+
+	.siini-commerce-flow--cart .actions .button {
+		width: 100%;
+	}
+
+	.siini-commerce-flow--checkout .woocommerce-billing-fields__field-wrapper,
+	.siini-commerce-flow--checkout .woocommerce-additional-fields__field-wrapper {
+		grid-template-columns: 1fr;
+	}
+
+	.siini-commerce-flow--checkout table.shop_table th,
+	.siini-commerce-flow--checkout table.shop_table td {
+		font-size: 0.86rem;
+	}
+}
+
+/* Header actions alignment 2026-07-24: equal icon slots and contained badges. */
+.siini-site-header .siini-site-header__actions {
+	align-items: center !important;
+	column-gap: 0.55rem !important;
+	row-gap: 0 !important;
+}
+
+.siini-site-header .siini-header-links {
+	align-items: center !important;
+	column-gap: 1.05rem !important;
+}
+
+.siini-site-header .siini-header-search-link,
+.siini-site-header .siini-header-favorites-link,
+.siini-site-header__actions .wc-block-mini-cart__button {
+	align-items: center !important;
+	box-sizing: border-box !important;
+	display: inline-flex !important;
+	height: 2.5rem !important;
+	justify-content: center !important;
+	min-height: 2.5rem !important;
+	min-width: 2.5rem !important;
+	overflow: visible !important;
+	position: relative !important;
+	width: 2.5rem !important;
+}
+
+.siini-site-header .siini-header-search-icon,
+.siini-site-header__actions .wc-block-mini-cart__icon {
+	display: block !important;
+	height: 1.5rem !important;
+	width: 1.5rem !important;
+}
+
+.siini-site-header .siini-header-search-icon {
+	fill: none !important;
+}
+
+.siini-site-header__actions .wc-block-mini-cart__icon {
+	fill: currentColor !important;
+}
+
+.siini-site-header .siini-site-header__actions .wc-block-mini-cart__button svg.wc-block-mini-cart__icon,
+.siini-site-header .siini-site-header__actions .wc-block-mini-cart__icon {
+	display: block !important;
+}
+
+.siini-site-header__actions .wc-block-mini-cart__button::before,
+.siini-site-header__actions .wc-block-mini-cart__button::after {
+	content: none !important;
+	display: none !important;
+}
+
+.siini-site-header .siini-header-favorites-icon {
+	align-items: center !important;
+	display: inline-flex !important;
+	font-size: 0 !important;
+	height: 1.5rem !important;
+	justify-content: center !important;
+	line-height: 1 !important;
+	width: 1.5rem !important;
+}
+
+.siini-site-header .siini-header-heart-icon {
+	display: block !important;
+	fill: none !important;
+	height: 1.5rem !important;
+	stroke: currentColor !important;
+	stroke-linecap: round !important;
+	stroke-linejoin: round !important;
+	stroke-width: 1.85 !important;
+	width: 1.5rem !important;
+}
+
+.siini-site-header__actions .wp-block-woocommerce-mini-cart,
+.siini-site-header__actions .wc-block-mini-cart {
+	align-items: center !important;
+	display: inline-flex !important;
+	flex: 0 0 auto !important;
+	margin-left: 0 !important;
+}
+
+.siini-site-header__actions .wc-block-mini-cart__quantity-badge {
+	align-items: center !important;
+	display: inline-flex !important;
+	height: 100% !important;
+	justify-content: center !important;
+	position: relative !important;
+	width: 100% !important;
+}
+
+.siini-site-header .siini-header-favorites-count,
+.siini-site-header__actions .wc-block-mini-cart__badge {
+	align-items: center !important;
+	background: #101010 !important;
+	border-radius: 999px !important;
+	color: #fafaf8 !important;
+	display: inline-flex !important;
+	font-family: var(--siini-ui-stack, "Golos Text", system-ui, sans-serif) !important;
+	font-size: 0.68rem !important;
+	font-weight: 800 !important;
+	height: 1.12rem !important;
+	justify-content: center !important;
+	line-height: 1 !important;
+	min-width: 1.12rem !important;
+	padding: 0 0.22rem !important;
+	position: absolute !important;
+	right: 0.28rem !important;
+	top: 0.08rem !important;
+	transform: none !important;
+	z-index: 4 !important;
+}
+
+.siini-site-header .siini-header-favorites-count[hidden],
+.siini-site-header__actions .wc-block-mini-cart__badge[hidden] {
+	display: none !important;
+}
+
+/* Header icon notification dots 2026-07-24: show presence, not item counts. */
+.siini-site-header .siini-header-favorites-count,
+.siini-site-header__actions .wc-block-mini-cart__badge {
+	color: transparent !important;
+	font-size: 0 !important;
+	height: 0.5rem !important;
+	min-width: 0 !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	right: 0.42rem !important;
+	text-indent: -999px !important;
+	top: 0.42rem !important;
+	width: 0.5rem !important;
+}
+
+@media (max-width: 900px) {
+	.siini-site-header .siini-site-header__actions {
+		column-gap: 0.5rem !important;
+	}
+
+	.siini-site-header .siini-header-search-link,
+	.siini-site-header .siini-header-favorites-link,
+	.siini-site-header__actions .wc-block-mini-cart__button {
+		height: 2.35rem !important;
+		min-height: 2.35rem !important;
+		min-width: 2.35rem !important;
+		width: 2.35rem !important;
+	}
+
+	.siini-site-header .siini-header-search-icon,
+	.siini-site-header__actions .wc-block-mini-cart__icon {
+		height: 1.42rem !important;
+		width: 1.42rem !important;
+	}
+
+	.siini-site-header .siini-header-favorites-icon {
+		height: 1.42rem !important;
+		width: 1.42rem !important;
+	}
+
+	.siini-site-header .siini-header-heart-icon {
+		height: 1.42rem !important;
+		width: 1.42rem !important;
+	}
+}
+
+/* Header duplicate icon guard 2026-07-24: desktop and mobile icon sets must never render together. */
+@media (min-width: 901px) {
+	.siini-site-header .siini-header-search-link--mobile,
+	.siini-site-header .siini-header-favorites-link--mobile {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	.siini-site-header .siini-header-links .siini-header-search-link,
+	.siini-site-header .siini-header-links .siini-header-favorites-link {
+		display: inline-flex !important;
+		visibility: visible !important;
+	}
+}
+
+@media (max-width: 900px) {
+	.siini-site-header .siini-header-links .siini-header-search-link,
+	.siini-site-header .siini-header-links .siini-header-favorites-link {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	.siini-site-header .siini-header-search-link--mobile,
+	.siini-site-header .siini-header-favorites-link--mobile {
+		display: inline-flex !important;
+		visibility: visible !important;
+	}
+}
+
+/* Header icon final spacing guard 2026-07-24: keep search, favorites and cart evenly spaced. */
+@media (min-width: 901px) {
+	body .siini-site-header .siini-site-header__actions,
+	body .siini-site-header .siini-header-links {
+		column-gap: 0.55rem !important;
+		gap: 0.55rem !important;
+	}
+}
+
+/* Checkout column alignment 2026-07-24: keep order summary top-aligned with contact form. */
+@media (min-width: 901px) {
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout {
+		align-items: start !important;
+		display: grid !important;
+		grid-auto-flow: row !important;
+		grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.42fr) !important;
+		column-gap: clamp(1.25rem, 3vw, 3rem) !important;
+		row-gap: 0 !important;
+	}
+
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #customer_details {
+		align-self: start !important;
+		grid-column: 1 !important;
+		grid-row: 1 / span 4 !important;
+		min-width: 0 !important;
+	}
+
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #order_review_heading,
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #order_review {
+		align-self: start !important;
+		grid-column: 2 !important;
+		min-width: 0 !important;
+	}
+
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #order_review_heading {
+		grid-row: 1 !important;
+		margin: 0 !important;
+	}
+
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #order_review {
+		grid-row: 2 !important;
+		margin: 0 !important;
+		position: sticky !important;
+		top: calc(var(--siini-top-ticker-height, 31px) + var(--siini-header-height, 64px) + 1rem) !important;
+	}
+}
+
+@media (max-width: 900px) {
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout {
+		display: grid !important;
+		grid-template-columns: 1fr !important;
+		row-gap: 1rem !important;
+	}
+
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #customer_details,
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #order_review_heading,
+	body.woocommerce-checkout .siini-commerce-flow--checkout form.checkout #order_review {
+		grid-column: 1 !important;
+		grid-row: auto !important;
+	}
+}
+
+@media (max-width: 640px) {
+	body.woocommerce-checkout .siini-site-main > h1,
+	body.woocommerce-checkout .siini-site-main .wp-block-post-title {
+		font-size: clamp(2rem, 10.5vw, 2.55rem) !important;
+		hyphens: none !important;
+		overflow-wrap: normal !important;
+		word-break: normal !important;
+	}
 }
