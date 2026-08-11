@@ -21,3 +21,9 @@
   opacity: 1;
   transform: translate(-50%, 0);
 }
+
+/* Keep the header mini-cart control usable while the dynamic drawer is unavailable on Pages. */
+.wc-block-mini-cart__drawer,
+.wc-block-components-drawer__screen-overlay {
+  display: none !important;
+}

@@ -32538,3 +32538,52 @@ body.single-product .siini-product-accordion__item {
 		width: 100% !important;
 	}
 }
+
+/* Keep the purchase controls together: CTA left, WooCommerce quantity stepper right. */
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form form.cart:not(.variations_form),
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form .woocommerce-variation-add-to-cart {
+	align-items: stretch !important;
+	box-sizing: border-box !important;
+	display: grid !important;
+	gap: clamp(0.45rem, 1.4vw, 0.75rem) !important;
+	grid-template-columns: minmax(0, 1fr) minmax(8.25rem, 8.25rem) !important;
+	max-width: 100% !important;
+	min-width: 0 !important;
+	width: 100% !important;
+}
+
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form,
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form .single_variation_wrap {
+	box-sizing: border-box !important;
+	max-width: 100% !important;
+	min-width: 0 !important;
+	width: 100% !important;
+}
+
+body.single-product .siini-product-summary-purchase {
+	box-sizing: border-box !important;
+	max-width: calc(100vw - 1.5rem) !important;
+	min-width: 0 !important;
+	width: min(100%, calc(100vw - 1.5rem)) !important;
+}
+
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form,
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form form.cart,
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form .single_variation_wrap,
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form .woocommerce-variation-add-to-cart {
+	width: min(100%, calc(100vw - 1.5rem)) !important;
+}
+
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form .single_add_to_cart_button {
+	grid-column: 1 !important;
+	grid-row: 1 !important;
+	min-width: 0 !important;
+	width: 100% !important;
+}
+
+body.single-product .siini-product-summary-purchase .wp-block-woocommerce-add-to-cart-form .quantity {
+	grid-column: 2 !important;
+	grid-row: 1 !important;
+	min-width: 0 !important;
+	width: 100% !important;
+}

@@ -1,5 +1,5 @@
 (function () {
-  var message = 'В демо-версии оформление заказа недоступно';
+  var message = 'Это действие доступно на рабочем сайте.';
 
   function showNotice() {
     var existing = document.querySelector('.siini-static-demo-notice');
@@ -21,16 +21,16 @@
     }, 2600);
   }
 
+  window.siiniStaticDemoNotice = showNotice;
+
   function blockUrl(url) {
     if (!url) return false;
     var adminPath = 'wp' + '-admin';
     var apiPath = 'wp' + '-json';
-    return /\/checkout\/?$/.test(url) ||
-      /\?wc-ajax=/.test(url) ||
+    return /\?wc-ajax=/.test(url) ||
       url.indexOf('/' + adminPath + '/') !== -1 ||
       url.indexOf('/' + apiPath + '/') !== -1 ||
-      /add-to-cart=/.test(url) ||
-      /\/\?s=/.test(url);
+      /add-to-cart=/.test(url);
   }
 
   function toggleFavorite(trigger) {
@@ -49,6 +49,38 @@
     });
   }
 
+  function submitStaticSearch(form) {
+    var query = form.querySelector('[name="s"]');
+    var value = query ? query.value.trim() : '';
+    if (!value) {
+      if (query) query.focus();
+      return;
+    }
+
+    var target = new URL(form.getAttribute('action') || window.location.href, window.location.href);
+    target.searchParams.set('s', value);
+    window.location.assign(target.href);
+  }
+
+  function applyStaticSearchResults() {
+    var query;
+    var normalized;
+    var matched = 0;
+
+    if (!/\/shop\/(?:index\.html)?$/.test(window.location.pathname)) return;
+    query = new URLSearchParams(window.location.search).get('s') || '';
+    normalized = query.trim().toLocaleLowerCase();
+    if (!normalized) return;
+
+    document.querySelectorAll('[data-siini-product-card]').forEach(function (card) {
+      var isMatch = card.textContent.toLocaleLowerCase().indexOf(normalized) !== -1;
+      card.hidden = !isMatch;
+      if (isMatch) matched += 1;
+    });
+    document.title = 'Поиск: ' + query.trim() + ' - SINI';
+    document.documentElement.dataset.siiniStaticSearchMatches = String(matched);
+  }
+
   document.addEventListener('click', function (event) {
     var trigger = event.target.closest('a, button');
     if (!trigger) return;
@@ -60,7 +92,7 @@
       return;
     }
 
-    if (trigger.matches('.single_add_to_cart_button, .add_to_cart_button, [data-siini-card-cta], .wc-block-mini-cart__button, .wc-block-mini-cart__footer-checkout, .wc-block-mini-cart__footer-cart, [data-static-preview-action]')) {
+    if (trigger.matches('.single_add_to_cart_button, .add_to_cart_button, [data-siini-card-cta], [data-static-preview-action]')) {
       event.preventDefault();
       event.stopImmediatePropagation();
       showNotice();
@@ -77,10 +109,30 @@
   document.addEventListener('submit', function (event) {
     var form = event.target;
     var action = form.getAttribute('action') || window.location.href;
-    if (form.dataset.staticPreview || blockUrl(action) || form.matches('.woocommerce-product-search, .search-form, .wc-block-product-search')) {
+    if (form.matches('.siini-product-search__form')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      submitStaticSearch(form);
+      return;
+    }
+
+    if (form.dataset.staticPreview || blockUrl(action)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       showNotice();
     }
   }, true);
+
+  document.addEventListener('keydown', function (event) {
+    var input = event.target;
+    var form;
+    if (event.key !== 'Enter' || !input.matches('[data-siini-search-input]')) return;
+    form = input.closest('.siini-product-search__form');
+    if (!form) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    submitStaticSearch(form);
+  }, true);
+
+  applyStaticSearchResults();
 })();

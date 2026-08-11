@@ -1595,6 +1595,124 @@
 		}));
 	}
 
+	var cartBadgeSyncId = 0;
+
+	function cartApiEndpoint() {
+		var apiRoot = window.wpApiSettings && window.wpApiSettings.root;
+
+		if (apiRoot) {
+			return apiRoot.replace(/\/?$/, '/') + 'wc/store/v1/cart';
+		}
+
+		return '/wp-json/wc/store/v1/cart';
+	}
+
+	function cartItemCount(cart) {
+		if (!cart || !Array.isArray(cart.items)) {
+			return 0;
+		}
+
+		return cart.items.reduce(function (total, item) {
+			return total + Math.max(0, parseInt(item && item.quantity, 10) || 0);
+		}, 0);
+	}
+
+	function cartItemCountFromFragments(response) {
+		var fragments = response && response.fragments;
+		var count = null;
+
+		if (!fragments) {
+			return count;
+		}
+
+		Object.keys(fragments).some(function (selector) {
+			var wrapper = document.createElement('div');
+			var rows;
+
+			wrapper.innerHTML = fragments[selector];
+			rows = Array.prototype.slice.call(wrapper.querySelectorAll('.woocommerce-mini-cart-item'));
+
+			if (!rows.length && !wrapper.querySelector('.woocommerce-mini-cart__empty-message')) {
+				return false;
+			}
+
+			count = rows.reduce(function (total, row) {
+				var quantity = row.querySelector('.quantity');
+				var match = quantity ? (quantity.textContent || '').match(/^\s*(\d+)/) : null;
+
+				return total + (match ? parseInt(match[1], 10) : 1);
+			}, 0);
+
+			return true;
+		});
+
+		return count;
+	}
+
+	function updateHeaderCartBadge(quantity) {
+		var safeQuantity = Math.max(0, parseInt(quantity, 10) || 0);
+		var header = document.querySelector('.siini-site-header');
+		var quantityBadges = Array.prototype.slice.call(document.querySelectorAll('.siini-site-header .wc-block-mini-cart__quantity-badge'));
+		var badges = Array.prototype.slice.call(document.querySelectorAll('.siini-site-header .wc-block-mini-cart__badge'));
+
+		quantityBadges.forEach(function (quantityBadge) {
+			var badge = quantityBadge.querySelector('.wc-block-mini-cart__badge');
+
+			if (badge) {
+				return;
+			}
+
+			badge = document.createElement('span');
+			badge.className = 'wc-block-mini-cart__badge';
+			badge.setAttribute('aria-hidden', 'true');
+			quantityBadge.appendChild(badge);
+			badges.push(badge);
+		});
+
+		badges.forEach(function (badge) {
+			badge.textContent = String(safeQuantity);
+			badge.hidden = safeQuantity === 0;
+		});
+
+		if (header) {
+			var fallback = header.querySelector('[data-siini-header-cart-fallback]');
+
+			if (fallback) {
+				fallback.classList.toggle('has-items', safeQuantity > 0);
+			}
+		}
+	}
+
+	function syncHeaderCartBadge(response) {
+		var syncId = cartBadgeSyncId + 1;
+		var fragmentCount = cartItemCountFromFragments(response);
+
+		cartBadgeSyncId = syncId;
+		if (fragmentCount !== null) {
+			updateHeaderCartBadge(fragmentCount);
+			return Promise.resolve();
+		}
+
+		return window.fetch(cartApiEndpoint(), {
+			credentials: 'same-origin',
+			headers: {
+				'Cache-Control': 'no-cache',
+			},
+		}).then(function (response) {
+			if (!response.ok) {
+				throw new Error('cart-state-error');
+			}
+
+			return response.json();
+		}).then(function (cart) {
+			if (syncId === cartBadgeSyncId) {
+				updateHeaderCartBadge(cartItemCount(cart));
+			}
+		}).catch(function () {
+			// Woo Blocks still receives the add-to-cart event above as a fallback.
+		});
+	}
+
 	function showAddedState(card) {
 		var cta = card.querySelector('[data-siini-card-cta]');
 		var added = card.querySelector('[data-siini-card-added]');
@@ -1693,11 +1811,13 @@
 
 			applyFragments(response);
 			dispatchCartEvents(response, cta);
-			if (!settings.skipAddedState) {
-				showAddedState(card);
-			}
-			setMessage(card, '', false);
-			return response;
+			return syncHeaderCartBadge(response).then(function () {
+				if (!settings.skipAddedState) {
+					showAddedState(card);
+				}
+				setMessage(card, '', false);
+				return response;
+			});
 		}).catch(function (error) {
 			if (error && error.message === 'missing-size') {
 				throw error;
