@@ -1,5 +1,5 @@
 (function () {
-  var message = 'Это статическая демо-копия SINI для просмотра. Корзина, checkout, поиск и формы здесь показаны только визуально.';
+  var message = 'В демо-версии оформление заказа недоступно';
 
   function showNotice() {
     var existing = document.querySelector('.siini-static-demo-notice');
@@ -37,7 +37,7 @@
     var trigger = event.target.closest('a, button');
     if (!trigger) return;
 
-    if (trigger.matches('.single_add_to_cart_button, .add_to_cart_button, .wc-block-mini-cart__button, .wc-block-mini-cart__footer-checkout, .wc-block-mini-cart__footer-cart, .siini-favorite-button, .siini-home-product-card__favorite, [data-static-preview-action]')) {
+    if (trigger.matches('.single_add_to_cart_button, .add_to_cart_button, [data-siini-card-cta], .wc-block-mini-cart__button, .wc-block-mini-cart__footer-checkout, .wc-block-mini-cart__footer-cart, .siini-favorite-button, .siini-home-product-card__favorite, [data-static-preview-action]')) {
       event.preventDefault();
       event.stopImmediatePropagation();
       showNotice();
