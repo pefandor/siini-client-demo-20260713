@@ -33,11 +33,34 @@
       /\/\?s=/.test(url);
   }
 
+  function toggleFavorite(trigger) {
+    var active = trigger.getAttribute('aria-pressed') === 'true';
+    var next = active ? 'false' : 'true';
+    var count = 0;
+    trigger.setAttribute('aria-pressed', next);
+    trigger.setAttribute('aria-label', active ? 'Добавить в избранное' : 'Убрать из избранного');
+    trigger.textContent = active ? '♡' : '♥';
+    document.querySelectorAll('[data-siini-favorite-toggle][aria-pressed="true"]').forEach(function () {
+      count += 1;
+    });
+    document.querySelectorAll('[data-siini-favorites-count]').forEach(function (node) {
+      node.textContent = String(count);
+      node.hidden = count === 0;
+    });
+  }
+
   document.addEventListener('click', function (event) {
     var trigger = event.target.closest('a, button');
     if (!trigger) return;
 
-    if (trigger.matches('.single_add_to_cart_button, .add_to_cart_button, [data-siini-card-cta], .wc-block-mini-cart__button, .wc-block-mini-cart__footer-checkout, .wc-block-mini-cart__footer-cart, .siini-favorite-button, .siini-home-product-card__favorite, [data-static-preview-action]')) {
+    if (trigger.matches('[data-siini-favorite-toggle]')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      toggleFavorite(trigger);
+      return;
+    }
+
+    if (trigger.matches('.single_add_to_cart_button, .add_to_cart_button, [data-siini-card-cta], .wc-block-mini-cart__button, .wc-block-mini-cart__footer-checkout, .wc-block-mini-cart__footer-cart, [data-static-preview-action]')) {
       event.preventDefault();
       event.stopImmediatePropagation();
       showNotice();
