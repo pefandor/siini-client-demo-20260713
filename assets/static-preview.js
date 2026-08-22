@@ -233,7 +233,10 @@
       if (option.getAttribute('aria-pressed') !== pressed) option.setAttribute('aria-pressed', pressed);
     });
     var hint = (form.closest('main') || document).querySelector('[data-siini-size-hint]');
-    if (hint) hint.textContent = selected.size ? 'Размер ' + selected.size.replace('-', '.') + ' выбран.' : 'Выберите размер, чтобы добавить в корзину.';
+    if (hint) {
+      hint.textContent = selected.size ? '' : 'Выберите размер, чтобы добавить в корзину.';
+      hint.hidden = !!selected.size;
+    }
   }
 
   function selectPdpSize(form, value) {
