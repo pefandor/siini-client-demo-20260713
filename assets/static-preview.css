@@ -132,3 +132,36 @@
   position: relative;
   z-index: 1;
 }
+
+/* The source picker uses .is-active; keep the static aria state visibly
+   equivalent even if a captured theme script is unavailable. */
+.siini-product-size-option[aria-pressed="true"] {
+  background: #111 !important;
+  border-color: #111 !important;
+  color: #fff !important;
+}
+
+.siini-product-size-option[aria-pressed="true"] .siini-product-size-option__value {
+  color: #fff !important;
+}
+
+@media (max-width: 900px) {
+  /* A later captured responsive layer can hide the outer menu in a static
+     snapshot.  Restore only the existing native trigger on mobile. */
+  body .siini-site-header .siini-mobile-menu {
+    display: block !important;
+    width: 2.75rem !important;
+  }
+
+  body .siini-site-header .siini-mobile-menu > summary {
+    display: flex !important;
+    height: 2.75rem !important;
+    width: 2.75rem !important;
+  }
+
+  /* The panels are source markup.  This only makes their native <details>
+     state explicit in the static browser preview. */
+  body .siini-mobile-menu[open] [data-siini-mobile-section][open] > .siini-mobile-menu__section-content {
+    display: block !important;
+  }
+}

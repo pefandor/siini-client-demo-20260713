@@ -2,8 +2,10 @@
   'use strict';
 
   var KEY = 'siini.static-demo-cart.v1';
+  var VIEWED_KEY = 'siini.static-demo-viewed.v1';
   var VERSION = 1;
   var MAX = 99;
+  var RELATED_LIMIT = 4;
   var DEFAULT_NOTICE = 'Это действие доступно на рабочем сайте.';
 
   window.addEventListener('error', function (event) {
@@ -221,10 +223,52 @@
   function syncPdp(form) {
     var selected = variation(form);
     var id = form.querySelector('.variation_id');
+    var purchase = form.closest('.siini-product-summary-purchase');
+    var picker = purchase && purchase.querySelector('[data-siini-size-picker]');
     if (id) id.value = selected.entry ? String(selected.entry.variation_id || '') : '0';
-    form.querySelectorAll('[data-siini-size-option]').forEach(function (option) { option.setAttribute('aria-pressed', option.getAttribute('data-value') === selected.size ? 'true' : 'false'); });
+    (picker || form).querySelectorAll('[data-siini-size-option]').forEach(function (option) {
+      var active = option.getAttribute('data-value') === selected.size;
+      option.classList.toggle('is-active', active);
+      var pressed = active ? 'true' : 'false';
+      if (option.getAttribute('aria-pressed') !== pressed) option.setAttribute('aria-pressed', pressed);
+    });
     var hint = (form.closest('main') || document).querySelector('[data-siini-size-hint]');
     if (hint) hint.textContent = selected.size ? 'Размер ' + selected.size.replace('-', '.') + ' выбран.' : 'Выберите размер, чтобы добавить в корзину.';
+  }
+
+  function selectPdpSize(form, value) {
+    var select = form.querySelector('[name="attribute_pa_size"]');
+    if (!select || !value) return;
+    var version = String((Number(form.dataset.siiniStaticSizeVersion || '0') || 0) + 1);
+    form.dataset.siiniStaticSizeVersion = version;
+    function apply() {
+      if (!form.isConnected || form.dataset.siiniStaticSizeVersion !== version) return;
+      select.value = value;
+      syncPdp(form);
+    }
+    apply();
+    // Captured Woo/theme listeners can clear the native select after the
+    // click.  Re-apply once their synchronous task has completed.
+    window.setTimeout(apply, 0);
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(apply);
+    });
+  }
+
+  function guardPdpSizeState(form) {
+    var purchase = form.closest('.siini-product-summary-purchase');
+    var picker = purchase && purchase.querySelector('[data-siini-size-picker]');
+    if (!picker || form.dataset.siiniStaticSizeGuard === '1') return;
+    form.dataset.siiniStaticSizeGuard = '1';
+    var queued = false;
+    new MutationObserver(function () {
+      if (queued) return;
+      queued = true;
+      Promise.resolve().then(function () {
+        queued = false;
+        if (form.isConnected && variation(form).size) syncPdp(form);
+      });
+    }).observe(picker, { attributes: true, attributeFilter: ['class', 'aria-pressed'], subtree: true });
   }
 
   function pdpProduct(form) {
@@ -246,6 +290,167 @@
       url: window.location.pathname,
       quantity: (form.querySelector('[name="quantity"]') || {}).value || 1
     };
+  }
+
+  function viewedItem(value) {
+    if (!value || typeof value !== 'object') return null;
+    var id = clean(value.id, 48);
+    var title = clean(value.title, 240);
+    var url = localUrl(value.url);
+    if (!id || !title || !url) return null;
+    return {
+      id: id,
+      title: title,
+      brand: clean(value.brand, 120),
+      price: amount(value.price),
+      image: localUrl(value.image),
+      url: url
+    };
+  }
+
+  function loadViewed() {
+    try {
+      var raw = JSON.parse(window.localStorage.getItem(VIEWED_KEY) || '[]');
+      var ids = {};
+      return Array.isArray(raw) ? raw.map(viewedItem).filter(function (entry) {
+        if (!entry || ids[entry.id]) return false;
+        ids[entry.id] = true;
+        return true;
+      }) : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function saveViewed(items) {
+    try { window.localStorage.setItem(VIEWED_KEY, JSON.stringify(items.slice(0, 12))); } catch (error) {}
+  }
+
+  function currentViewedProduct(section) {
+    var form = document.querySelector('[data-siini-demo-cart-pdp]');
+    var id = clean(section.getAttribute('data-current-product-id') || (form && form.getAttribute('data-product_id')), 48);
+    var root = document.querySelector('main') || document;
+    var brandNode = Array.prototype.slice.call(root.querySelectorAll('.siini-product-description-details div')).find(function (row) {
+      var term = row.querySelector('dt');
+      return term && clean(term.textContent, 80).toLocaleLowerCase() === 'бренд';
+    });
+    var image = root.querySelector('.woocommerce-product-gallery img, .siini-product-gallery img');
+    var priceNode = root.querySelector('.siini-product-summary .woocommerce-Price-amount, .summary .woocommerce-Price-amount, .woocommerce-Price-amount');
+    return viewedItem({
+      id: id,
+      title: (root.querySelector('h1') || {}).textContent || document.title,
+      brand: brandNode && (brandNode.querySelector('dd') || {}).textContent,
+      price: price(priceNode ? priceNode.textContent : ''),
+      image: image ? image.getAttribute('src') : '',
+      url: window.location.pathname
+    });
+  }
+
+  function fallbackProducts(section) {
+    try {
+      var raw = JSON.parse(section.getAttribute('data-siini-static-recommendations') || '[]');
+      return Array.isArray(raw) ? raw.map(viewedItem).filter(Boolean) : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function shuffled(items) {
+    return items.slice().sort(function () { return Math.random() - 0.5; });
+  }
+
+  function relatedCard(entry, source) {
+    var card = document.createElement('article');
+    card.className = 'siini-home-product-card siini-home-product-card--related';
+    card.dataset.siiniStaticRecommendation = source;
+    var media = document.createElement('a');
+    media.className = 'siini-home-product-card__media';
+    media.href = entry.url;
+    media.setAttribute('aria-label', 'Открыть товар ' + entry.title);
+    if (entry.image) {
+      var image = document.createElement('img');
+      image.className = 'siini-home-product-card__image';
+      image.src = entry.image;
+      image.alt = entry.title;
+      image.loading = 'lazy';
+      media.appendChild(image);
+    }
+    var body = document.createElement('div');
+    body.className = 'siini-home-product-card__body';
+    if (entry.brand) {
+      var brand = document.createElement('p');
+      brand.className = 'siini-home-product-card__brand';
+      brand.textContent = entry.brand;
+      body.appendChild(brand);
+    }
+    var title = document.createElement('h3');
+    var titleLink = document.createElement('a');
+    titleLink.href = entry.url;
+    titleLink.textContent = entry.title;
+    title.appendChild(titleLink);
+    var priceNode = document.createElement('div');
+    priceNode.className = 'siini-home-product-card__price';
+    priceNode.textContent = entry.price ? rubles(entry.price) : '';
+    body.append(title, priceNode);
+    card.append(media, body);
+    return card;
+  }
+
+  function renderRecentlyViewed() {
+    document.querySelectorAll('[data-siini-recently-viewed]').forEach(function (section) {
+      var current = currentViewedProduct(section);
+      if (!current) return;
+      var previous = loadViewed();
+      var picked = previous.filter(function (entry) { return entry.id !== current.id; }).slice(0, RELATED_LIMIT);
+      var used = {};
+      used[current.id] = true;
+      picked.forEach(function (entry) { used[entry.id] = true; });
+      shuffled(fallbackProducts(section)).some(function (entry) {
+        if (picked.length >= RELATED_LIMIT) return true;
+        if (!used[entry.id]) { picked.push(entry); used[entry.id] = true; }
+        return false;
+      });
+      var grid = section.querySelector('[data-siini-recently-viewed-grid]');
+      if (grid && picked.length) {
+        grid.replaceChildren();
+        picked.forEach(function (entry, index) {
+          grid.appendChild(relatedCard(entry, index < previous.filter(function (item) { return item.id !== current.id; }).length ? 'history' : 'fallback'));
+        });
+        section.hidden = false;
+      }
+      saveViewed([current].concat(previous.filter(function (entry) { return entry.id !== current.id; })));
+    });
+  }
+
+  function initStaticMobileSections() {
+    var query = window.matchMedia && window.matchMedia('(max-width: 900px)');
+    function syncOuterMenu() {
+      document.querySelectorAll('[data-siini-mobile-menu]').forEach(function (menu) {
+        var summary = menu.querySelector(':scope > summary');
+        if (query && query.matches) {
+          menu.style.setProperty('display', 'block', 'important');
+          if (summary) summary.style.setProperty('display', 'flex', 'important');
+        } else {
+          menu.style.removeProperty('display');
+          if (summary) summary.style.removeProperty('display');
+        }
+      });
+    }
+    syncOuterMenu();
+    if (query && query.addEventListener) query.addEventListener('change', syncOuterMenu);
+    document.querySelectorAll('[data-siini-mobile-section]').forEach(function (section) {
+      var summary = section.querySelector(':scope > summary');
+      if (!summary) return;
+      function sync() { summary.setAttribute('aria-expanded', section.open ? 'true' : 'false'); }
+      sync();
+      summary.addEventListener('click', function (event) {
+        if (!query || !query.matches) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        section.open = !section.open;
+        sync();
+      }, true);
+    });
   }
 
   function setBadge(cart) {
@@ -335,13 +540,37 @@
   // Woo's captured cart listeners can stop a document-level delegated event.
   // Window capture always precedes them and only owns generated demo controls.
   window.addEventListener('click', handleCartControlClick, true);
+  window.addEventListener('pointerdown', function (event) {
+    var option = event.target.closest('[data-siini-size-option]');
+    if (!option) return;
+    var picker = option.closest('[data-siini-size-picker]');
+    var form = picker && picker.parentElement.querySelector('[data-siini-demo-cart-pdp]');
+    if (form) selectPdpSize(form, option.getAttribute('data-value') || '');
+  }, true);
+  window.addEventListener('focusin', function (event) {
+    var option = event.target.closest && event.target.closest('[data-siini-size-option]');
+    if (!option) return;
+    var picker = option.closest('[data-siini-size-picker]');
+    var form = picker && picker.parentElement.querySelector('[data-siini-demo-cart-pdp]');
+    if (form) selectPdpSize(form, option.getAttribute('data-value') || '');
+  }, true);
+  window.addEventListener('click', function (event) {
+    var option = event.target.closest('[data-siini-size-option]');
+    if (!option) return;
+    var picker = option.closest('[data-siini-size-picker]');
+    var form = picker && picker.parentElement.querySelector('[data-siini-demo-cart-pdp]');
+    if (!form) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    selectPdpSize(form, option.getAttribute('data-value') || '');
+  }, true);
 
   document.addEventListener('click', function (event) {
     var trigger = event.target.closest('a, button');
     if (!trigger) return;
     if (trigger.matches('[data-siini-favorite-toggle]')) { event.preventDefault(); event.stopImmediatePropagation(); favorite(trigger); return; }
     if (trigger.matches('[data-siini-card-size]')) { var card = trigger.closest('[data-siini-product-card]'); if (card) { event.preventDefault(); event.stopImmediatePropagation(); card.querySelectorAll('[data-siini-card-size]').forEach(function (node) { node.setAttribute('aria-pressed', node === trigger ? 'true' : 'false'); }); render(); } return; }
-    if (trigger.matches('[data-siini-size-option]')) { var form = trigger.closest('[data-siini-size-picker]'); form = form && form.parentElement.querySelector('[data-siini-demo-cart-pdp]'); if (form) { event.preventDefault(); event.stopImmediatePropagation(); var select = form.querySelector('[name="attribute_pa_size"]'); if (select) select.value = trigger.getAttribute('data-value') || ''; syncPdp(form); } return; }
+    if (trigger.matches('[data-siini-size-option]')) { var form = trigger.closest('[data-siini-size-picker]'); form = form && form.parentElement.querySelector('[data-siini-demo-cart-pdp]'); if (form) { event.preventDefault(); event.stopImmediatePropagation(); selectPdpSize(form, trigger.getAttribute('data-value') || ''); } return; }
     if (trigger.matches('[data-siini-card-cta]')) { event.preventDefault(); event.stopImmediatePropagation(); var productCard = trigger.closest('[data-siini-product-card]'); var product = productCard && selectedCardProduct(productCard); if (product) add(product, 1); else notice('Сначала выберите размер.', false); return; }
     if (trigger.matches('.single_add_to_cart_button')) { event.preventDefault(); event.stopImmediatePropagation(); var productForm = trigger.closest('[data-siini-demo-cart-pdp]'); var pdp = productForm && pdpProduct(productForm); if (pdp) add(pdp, pdp.quantity); else notice('Сначала выберите размер.', false); return; }
     if (trigger.matches('[data-siini-card-qty-plus], [data-siini-card-qty-minus]')) { var relatedCard = trigger.closest('[data-siini-product-card]'); var related = relatedCard && selectedCardProduct(relatedCard); var saved = related && load().items.find(function (entry) { return entry.stableId === related.stableId; }); if (saved) { event.preventDefault(); event.stopImmediatePropagation(); setQuantity(saved.stableId, saved.quantity + (trigger.matches('[data-siini-card-qty-plus]') ? 1 : -1)); } return; }
@@ -362,6 +591,14 @@
     if (form.dataset.staticPreview || blockUrl(form.getAttribute('action'))) { event.preventDefault(); event.stopImmediatePropagation(); notice(DEFAULT_NOTICE, false); }
   }, true);
 
-  document.querySelectorAll('[data-siini-demo-cart-pdp]').forEach(syncPdp);
+  document.querySelectorAll('[data-siini-demo-cart-pdp]').forEach(function (form) {
+    syncPdp(form);
+    guardPdpSizeState(form);
+  });
+  initStaticMobileSections();
+  renderRecentlyViewed();
+  // The captured theme's empty-endpoint handler runs on DOMContentLoaded and
+  // can hide this section after the static fallback has populated it.
+  window.setTimeout(renderRecentlyViewed, 0);
   render();
 })();
