@@ -223,9 +223,26 @@
   function syncPdp(form) {
     var selected = variation(form);
     var id = form.querySelector('.variation_id');
+    var addButton = form.querySelector('.single_add_to_cart_button');
+    var addWrap = form.querySelector('.woocommerce-variation-add-to-cart');
     var purchase = form.closest('.siini-product-summary-purchase');
     var picker = purchase && purchase.querySelector('[data-siini-size-picker]');
+    var canBuy = !!selected.entry &&
+      selected.entry.is_purchasable !== false &&
+      selected.entry.is_in_stock !== false &&
+      selected.entry.variation_is_active !== false &&
+      selected.entry.variation_is_visible !== false;
     if (id) id.value = selected.entry ? String(selected.entry.variation_id || '') : '0';
+    if (addButton) {
+      addButton.disabled = !canBuy;
+      addButton.classList.toggle('disabled', !canBuy);
+      addButton.classList.toggle('wc-variation-selection-needed', !canBuy);
+      addButton.setAttribute('aria-disabled', canBuy ? 'false' : 'true');
+    }
+    if (addWrap) {
+      addWrap.classList.toggle('woocommerce-variation-add-to-cart-enabled', canBuy);
+      addWrap.classList.toggle('woocommerce-variation-add-to-cart-disabled', !canBuy);
+    }
     (picker || form).querySelectorAll('[data-siini-size-option]').forEach(function (option) {
       var active = option.getAttribute('data-value') === selected.size;
       option.classList.toggle('is-active', active);
