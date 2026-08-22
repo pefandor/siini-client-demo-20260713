@@ -220,7 +220,12 @@
     return { size: size, entry: list.find(function (candidate) { return candidate && candidate.attributes && candidate.attributes.attribute_pa_size === size; }) || null };
   }
 
+  function isVariablePdp(form) {
+    return !!form && (form.classList.contains('variations_form') || !!form.querySelector('[name="variation_id"]'));
+  }
+
   function syncPdp(form) {
+    if (!isVariablePdp(form)) return;
     var selected = variation(form);
     var id = form.querySelector('.variation_id');
     var addButton = form.querySelector('.single_add_to_cart_button');
@@ -293,11 +298,31 @@
 
   function pdpProduct(form) {
     var selected = variation(form);
-    var productId = clean(form.getAttribute('data-product_id') || ((form.querySelector('[name="product_id"]') || {}).value), 48);
-    if (!productId || !selected.size || !selected.entry) return null;
+    var addButton = form.querySelector('[name="add-to-cart"], .single_add_to_cart_button');
+    var productId = clean(form.getAttribute('data-product_id') || ((form.querySelector('[name="product_id"]') || {}).value) || (addButton && addButton.value), 48);
     var root = form.closest('main') || document;
     var image = root.querySelector('.woocommerce-product-gallery img, .siini-product-gallery img');
     var listedPrice = root.querySelector('.siini-product-summary .woocommerce-Price-amount, .summary .woocommerce-Price-amount, .woocommerce-Price-amount');
+
+    if (!productId) return null;
+
+    if (!isVariablePdp(form)) {
+      return {
+        stableId: productId + ':base',
+        productId: productId,
+        variationId: '',
+        size: '',
+        title: (root.querySelector('h1') || {}).textContent || document.title,
+        brand: '',
+        price: price(listedPrice ? listedPrice.textContent : ''),
+        image: image ? image.getAttribute('src') : '',
+        url: window.location.pathname,
+        quantity: (form.querySelector('[name="quantity"]') || {}).value || 1
+      };
+    }
+
+    if (!selected.size || !selected.entry) return null;
+
     return {
       stableId: productId + ':' + clean(selected.entry.variation_id, 48),
       productId: productId,
